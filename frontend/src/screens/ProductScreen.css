@@ -1,0 +1,7 @@
+.productScreen .middle-list .list-group-item {
+  padding: 6px 4px;
+  border: none;
+}
+.productScreen .name-item {
+  border-bottom: 1.5px solid lightgray;
+}

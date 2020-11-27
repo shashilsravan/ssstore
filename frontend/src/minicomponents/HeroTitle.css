@@ -1,0 +1,13 @@
+.heroTitle h4 {
+  width: 100%;
+  text-align: center;
+  font-size: 1.4rem;
+  border-bottom: 1px solid red;
+  line-height: 0.1em;
+  margin: 10px 0 20px;
+}
+
+.heroTitle h4 span {
+  background: #fff;
+  padding: 0 10px;
+}

@@ -1,0 +1,55 @@
+.CardImage .card {
+  border: none;
+  border: 1px solid gray;
+  padding: 0;
+  -webkit-box-shadow: 0 10px 6px -6px #aaa;
+  -moz-box-shadow: 0 10px 6px -6px #aaa;
+  box-shadow: 0 10px 6px -6px #aaa;
+  border-radius: 0;
+  position: relative;
+}
+.CardImage .zoom-effect-container {
+  height: 180px;
+}
+.CardImage .image-card img {
+  height: 200px;
+  width: 110%;
+}
+.CardImage .card-body {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: black;
+  color: white;
+  padding: 0 10px;
+}
+.CardImage .card-body.centered-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  color: white;
+  height: fit-content;
+}
+.CardImage .card-title {
+  padding: 8px 6px;
+  padding-top: 6px;
+  margin: 0;
+}
+
+@media screen and (min-width: 600px) {
+  .CardImage .card-body {
+    display: none;
+  }
+  .CardImage .card:hover .card-body {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .CardImage .zoom-effect-container {
+    height: 180px;
+  }
+}

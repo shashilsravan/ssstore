@@ -1,0 +1,48 @@
+.preheader {
+  width: 100%;
+  display: flex;
+  background: #b4010a;
+  align-items: center;
+  position: fixed;
+  z-index: 99;
+}
+
+.preheader .swiper-container {
+  width: 100%;
+  background: #b4010a;
+  height: 8vh;
+}
+/* .account-container {
+  font-size: 26px;
+  width: 15%;
+}
+.account-container a {
+  color: black;
+  cursor: pointer;
+} */
+
+.preheader .swiper-slide {
+  text-align: center;
+  font-family: "Space Mono", monospace;
+  font-size: 18px;
+  background: #b4010a;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 599px) {
+  .swiper-slide {
+    font-size: 14px;
+  }
+}

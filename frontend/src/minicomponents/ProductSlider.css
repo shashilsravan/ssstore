@@ -1,0 +1,14 @@
+.productSlider .swiper-slide {
+  width: 100%;
+  height: 350px;
+}
+.productSlider .swiper-slide img {
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (max-width: 770px) {
+  .productSlider {
+    margin-bottom: 2rem;
+  }
+}

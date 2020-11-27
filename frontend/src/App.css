@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+main {
+  padding-top: 21vh;
+}
+
+@media screen and (min-width: 1024px) {
+}
+
+@media screen and (max-width: 1023px) {
+  main {
+    padding-top: 24vh;
+  }
+}
+@media screen and (min-width: 700px) and (max-width: 1039px) {
+}
+@media screen and (min-width: 421px) and (max-width: 699px) {
+}
+@media screen and (max-width: 420px) {
+}

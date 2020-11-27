@@ -1,0 +1,132 @@
+header {
+  padding-top: 8vh;
+  position: fixed;
+  width: 100%;
+  z-index: 99;
+}
+.header-desktop {
+  background: #05262b;
+}
+.navbar {
+  background: #05262b;
+  padding: 0;
+}
+.logo {
+  height: 4rem;
+  filter: drop-shadow(0px 0px 2px white);
+}
+.navbar .container-fluid {
+  padding: 0 !important;
+}
+.navbar a {
+  color: white;
+}
+.fa-heart,
+.fa-shopping-cart {
+  color: white;
+  font-size: 22px;
+}
+.fa-user-circle {
+  color: white;
+  font-size: 26px;
+}
+.header-mobile {
+  background: #05262b;
+  padding: 16px 0px;
+  color: white;
+}
+.header-desktop .dropdown-item {
+  color: black !important;
+}
+.header-mobile .container-xl {
+  padding: 0 4px;
+  display: flex;
+  align-items: center;
+}
+.header-mobile .mysearchbar {
+  width: 65%;
+}
+.header-mobile .fa-shopping-cart {
+  margin: 0 4px;
+  font-size: 1.3rem;
+  color: white;
+}
+.header-mobile .form-control {
+  height: 35px;
+}
+.header-mobile .btn {
+  height: 35px;
+  padding: 10px;
+  padding-top: 4px;
+}
+.header-mobile .fa-user-circle {
+  margin: 0 4px;
+  font-size: 1.3rem;
+}
+.header-mobile .fa-heart {
+  margin: 0 3px;
+  margin-left: 0.5rem;
+  font-size: 1.1rem;
+  color: white;
+}
+.font-black {
+  color: black;
+}
+.header-mobile__sidebar {
+  background: white;
+  position: fixed;
+  left: 0;
+  top: 8vh;
+  height: 100vh;
+  width: 240px;
+  padding: 1.2rem;
+  padding-top: 0.8rem;
+  border-right: 1px solid lightgray;
+  box-shadow: 1px 6px 10px rgba(0, 0, 0, 0.4);
+}
+.hide {
+  display: none;
+}
+.header-mobile .line {
+  padding-top: 0.6rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid black;
+}
+.header-mobile__sidebar a {
+  font-size: 1rem;
+  color: black;
+  margin: 4px 0;
+  font-weight: 500;
+  text-decoration: none;
+}
+.header-mobile__sidebar .logoImage {
+  height: 6rem;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+.header-mobile__toggle-sidebar button {
+  background: none;
+  color: white;
+  border: none;
+  outline-width: 0;
+}
+.header-mobile__toggle-sidebar i {
+  font-size: 1.2rem;
+}
+@media screen and (min-width: 1040px) {
+  .header-desktop {
+    display: block !important;
+  }
+  .header-mobile {
+    display: none;
+  }
+}
+@media screen and (max-width: 1039px) {
+  .header-desktop {
+    display: none !important;
+  }
+  .header-mobile {
+    display: block !important;
+  }
+}
