@@ -1,8 +1,16 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import Product from '../components/Product'
-import products from '../Products'
+import axios from 'axios'
 
 export default function HomeScreen() {
+    const [products, setProducts] = useState([])
+    useEffect(() => {
+        const fetchProducts = async () => {
+            const { data } = await axios.get('/api/products')
+            setProducts(data)
+        }
+        fetchProducts()
+    }, [])
     return (
         <div>
             <h5 className="mt-1">All Products</h5>

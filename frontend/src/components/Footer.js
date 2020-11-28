@@ -1,5 +1,6 @@
 import React from 'react'
 import './Footer.css'
+import {Link} from 'react-router-dom'
 
 export default function Footer() {
     return (
@@ -8,19 +9,20 @@ export default function Footer() {
                 <div className="footer-container__left-display">
                     <div className="footer-container__each-detail">
                         <i className="fas fa-question"></i>
-                        <a target="_self" href="#">
+                        <Link target="_self" to="/">
                             <h6>FAQ</h6>
-                        </a>
+                        </Link>
+                        
                     </div>
                     <div className="footer-container__each-detail">
-                        <a target="_self" href="#">
+                        <Link target="_self" to="/">
                             <h6>Leave a message</h6>
-                        </a>
+                        </Link>
                     </div>
                     <div className="footer-container__each-detail">
-                        <a target="_self" href="#">
+                        <Link target="_self" to="/">
                             <h6>About us</h6>
-                        </a>
+                        </Link>
                     </div>
                 </div>
                 <div className="footer-container__right-display">
@@ -28,18 +30,18 @@ export default function Footer() {
                         We are on:
                     </span>
                     <div className="icons-container">
-                        <a target="_self" href="#">
+                        <Link target="_self" to="/">
                             <i className="fab fa-instagram"></i>
-                        </a>
-                        <a target="_self" href="#">
+                        </Link>
+                        <Link target="_self" to="/">
                             <i className="fab fa-facebook"></i>
-                        </a>
-                        <a target="_self" href="#">
+                        </Link>
+                        <Link target="_self" to="/">
                             <i className="far fa-envelope"></i>
-                        </a>
-                        <a target="_self" href="#">
+                        </Link>
+                        <Link target="_self" to="/">
                             <i className="fas fa-phone"></i>
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>

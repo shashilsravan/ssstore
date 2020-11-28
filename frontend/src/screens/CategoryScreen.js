@@ -16,7 +16,7 @@ export default function CategoryScreen() {
                 <div className="row">
                     <div className="col-md-6 col-lg-4">
                         <Link to='/tshirts'>
-                            <CardImage src="https://res.cloudinary.com/alchemy069/image/upload/v1606234146/alchemy/tees_c_nvdxc4.png"
+                            <CardImage src="https://res.cloudinary.com/alchemy069/image/upload/v1606234146/alchemy/Slideshow/tees_c_nvdxc4.png"
                                 title = 'Tshirts' />
                         </Link>
                     </div>

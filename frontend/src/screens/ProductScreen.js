@@ -1,12 +1,20 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import {Link} from 'react-router-dom'
 import ProductSlider from '../minicomponents/ProductSlider'
 import Rating from '../minicomponents/Rating'
-import products from '../Products'
 import './ProductScreen.css'
+import axios from 'axios'
+
 
 export default function ProductScreen({ match }) {
-    const product = products.find(p => p._id == match.params.id)
+    const [product, setProduct] = useState({})
+    useEffect(() => {
+        const fetchProduct = async () => {
+            const { data } = await axios.get(`/api/products/${match.params.id}`)
+            setProduct(data)
+        }
+        fetchProduct()
+    }, [match])
     return (
         <div className="productScreen">
             <Link to="/" className="btn btn-light float-right">
