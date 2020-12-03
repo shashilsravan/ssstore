@@ -3,12 +3,14 @@
   "version": "1.0.0",
   "description": "alchemy website",
   "main": "server.js",
+  "type": "module",
   "scripts": {
     "start": "node backend/server",
     "server": "nodemon backend/server",
-    "client":"npm start --prefix frontend",
+    "client": "npm start --prefix frontend",
     "dev": "concurrently \"npm run server\" \"npm run client\" ",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "data:import": "node backend/seeder im",
+    "data:destroy": "node backend/seeder -d"
   },
   "repository": {
     "type": "git",
@@ -21,7 +23,13 @@
   },
   "homepage": "https://github.com/shashilsravan/Alchemy#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "bcryptjs": "^2.4.3",
+    "colors": "^1.4.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-async-handler": "^1.1.4",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.10.17"
   },
   "devDependencies": {
     "concurrently": "^5.3.0",

@@ -2,7 +2,9 @@ import React from 'react'
 import './Rating.css'
 import PropTypes from 'prop-types'
 
-
+Rating.defaultProps = {
+    value: 0
+}
 export default function Rating({value, text}) {
     return (
         <div className='rating'>

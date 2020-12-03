@@ -1,27 +1,40 @@
 import React, {useEffect, useState} from 'react'
 import {Link} from 'react-router-dom'
+import {useDispatch, useSelector} from 'react-redux'
 import ProductSlider from '../minicomponents/ProductSlider'
 import Rating from '../minicomponents/Rating'
 import './ProductScreen.css'
-import axios from 'axios'
+import {listProductDetail} from '../actions/productAction'
+import Loader from '../minicomponents/Loader'
+import AlertError from '../minicomponents/AlertError'
 
 
-export default function ProductScreen({ match }) {
-    const [product, setProduct] = useState({})
+export default function ProductScreen({ history, match }) {
+    const [quantity, setQuantity] = useState(1)
+    const [size, setSize] = useState("S")
+    const dispatch = useDispatch()
+    const productDetails = useSelector(state => state.productDetails)
+    const { loading, error, product} = productDetails
     useEffect(() => {
-        const fetchProduct = async () => {
-            const { data } = await axios.get(`/api/products/${match.params.id}`)
-            setProduct(data)
-        }
-        fetchProduct()
-    }, [match])
+        dispatch(listProductDetail(match.params.id))
+    }, [dispatch, match])
+    const addToCartHandler = () => {
+        history.push(`/cart/${match.params.id}?qty=${quantity}&size=${size}`)
+    }
+    const addToLikeHandler = () => {
+        history.push(`/liked/${match.params.id}`)
+    }
     return (
         <div className="productScreen">
             <Link to="/" className="btn btn-light float-right">
                 Go Home <i className="fas fa-home"></i>
             </Link>
             <br />
-            <div className="my-4">
+            {loading 
+            ? <Loader />
+            : error 
+            ? <AlertError error={error} />
+            : <div className="my-4">
                 <div className="row">
                     <div className="col-md-5">
                         {/* <img className="img-fluid" src={product.image} alt={product.name}/> */}
@@ -73,16 +86,65 @@ export default function ProductScreen({ match }) {
                                         </div>
                                     </div>
                                 </li>
+                                {product.countInStock > 0 && <li className="list-group-item">
+                                    <div className="d-flex align-items-center">
+                                        <div className="mr-2">
+                                            Qty:
+                                        </div>
+                                        <div className="" style={{width: '100%'}}>
+                                            <select style={{outlineWidth: 0}} className="form-select bg-light" aria-label="Default select example"
+                                                onChange={(e) => {
+                                                    setQuantity(e.target.value)
+                                                }}>
+                                                {[...Array(product.countInStock).keys()].map(x => {
+                                                    return (<option key={x+1} value={x+1}>{x+1}</option>)
+                                                })}
+                                            </select>
+                                        </div>
+                                    </div>
+                                </li>}
+
+                                {product.countInStock > 0 && <li className="list-group-item">
+                                    <div className="d-flex align-items-center">
+                                        <div className="mr-2">
+                                            Size:
+                                        </div>
+                                        <div className="" style={{width: '100%'}}>
+                                            <select 
+                                            disabled={!product.isDress}
+                                            style={{outlineWidth: 0}} className="form-select bg-light" aria-label="Default select example"
+                                                onChange={(e) => {
+                                                    setSize(e.target.value)
+                                                }}>
+                                                <option key="S" value="S">S</option>
+                                                <option key="M" value="M">M</option>
+                                                <option key="L" value="L">L</option>
+                                                <option key="XL" value="XL">XL</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </li>}
+
                                 <li className="list-group-item">
-                                    <button className="btn btn-success btn-block" disabled={product.countInStock == 0}>
+                                    <button 
+                                    onClick={addToCartHandler}
+                                    className="btn btn-success btn-block" disabled={product.countInStock === 0}>
                                         Add to Cart <i className="fas fa-shopping-cart mx-1" style={{fontSize:16}}></i>
+                                    </button>
+                                </li>
+
+                                <li className="list-group-item">
+                                    <button 
+                                    onClick={addToLikeHandler}
+                                    className="btn btn-dark btn-block">
+                                        Like <i className="mx-1" style={{fontSize:16}}></i>
                                     </button>
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> }
         </div>
     )
 }

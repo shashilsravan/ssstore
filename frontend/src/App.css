@@ -2,6 +2,20 @@
 main {
   padding-top: 21vh;
 }
+.btn-chaotic {
+  background: #b4010a;
+  color: white;
+  font-weight: bold;
+  width: 100%;
+}
+.errors {
+  display: none;
+}
+.btn-chaotic:hover {
+  color: #b4010a;
+  background: white;
+  border: 2px solid #b4010a;
+}
 
 @media screen and (min-width: 1024px) {
 }
