@@ -7,6 +7,8 @@ import './ProductScreen.css'
 import {listProductDetail} from '../actions/productAction'
 import Loader from '../minicomponents/Loader'
 import AlertError from '../minicomponents/AlertError'
+import Badge from '../minicomponents/Badge'
+import SizeChart from '../minicomponents/SizeChart'
 
 
 export default function ProductScreen({ history, match }) {
@@ -25,7 +27,7 @@ export default function ProductScreen({ history, match }) {
         history.push(`/liked/${match.params.id}`)
     }
     return (
-        <div className="productScreen">
+        <div className="productScreen my-5">
             <Link to="/" className="btn btn-light float-right">
                 Go Home <i className="fas fa-home"></i>
             </Link>
@@ -36,7 +38,7 @@ export default function ProductScreen({ history, match }) {
             ? <AlertError error={error} />
             : <div className="my-4">
                 <div className="row">
-                    <div className="col-md-5">
+                    <div className="col-lg-5">
                         {/* <img className="img-fluid" src={product.image} alt={product.name}/> */}
                         <ProductSlider 
                             firstImage={product.image}
@@ -44,13 +46,26 @@ export default function ProductScreen({ history, match }) {
                             thirdImage={product.imageThree}
                             fourthImage={product.imageFour}/>
                     </div>
-                    <div className="col-md-4">
+                    <div className="col-lg-4">
                         <ul className="list-group list-group-flush middle-list">
                             <li className="list-group-item name-item">
-                                <h5>{product.name}</h5>
+                                <div className="row">
+                                    <div className="col-9">
+                                        <h5>{product.name}</h5>
+                                    </div>
+                                    <div className="col-3">
+                                        <span 
+                                            onClick={addToLikeHandler}
+                                            className="">
+                                                <i className="far fa-heart liked-heart bs-small"></i>
+                                        </span>
+                                    </div>
+                                </div>
                             </li>
-                            <li className="list-group-item">
-                                <strong>Category: </strong> {product.brand}
+                            <li className="list-group-item d-flex">
+                                <Badge upper variant="danger" text={product.category} />
+                                <div className="mx-1">-</div>
+                                <Badge upper variant="primary" text={product.brand} />
                             </li>
                             <li className="list-group-item">
                                 <Rating value={product.rating} text={`${product.numReviews} reviews`} />
@@ -61,6 +76,7 @@ export default function ProductScreen({ history, match }) {
                                     <span className="actualPrice">₹{product.actualPrice}</span>
                                     <span className="discount">({(100 - (product.price / product.actualPrice)*100).toFixed(0)}% OFF)</span>
                                 </h5>
+                                {product.isDress ? <SizeChart /> : null}
                             </li>
                             <li className="list-group-item">
                                 <strong>Description:</strong>
@@ -69,7 +85,7 @@ export default function ProductScreen({ history, match }) {
                             </li>
                         </ul>
                     </div>
-                    <div className="col-md-3">
+                    <div className="col-lg-3">
                         <div className="card">
                             <ul className="list-group list-group-flush">
                                 <li className="list-group-item">
@@ -82,7 +98,10 @@ export default function ProductScreen({ history, match }) {
                                 <li className="list-group-item">
                                     <div className="row">
                                         <div className="col text-center">
-                                            <strong style={{color:product.countInStock > 0? "green" : "red"}}>{product.countInStock > 0 ? 'In Stock' : 'Out Of Stock'}</strong>
+                                            <strong style={{color:product.countInStock > 0 ? "green" : "red"}}>{product.countInStock > 0 ? 'In Stock' 
+                                            :(
+                                                <span>Out of Stock <i className="far fa-frown"></i></span>
+                                            )}</strong>
                                         </div>
                                     </div>
                                 </li>
@@ -115,11 +134,13 @@ export default function ProductScreen({ history, match }) {
                                             style={{outlineWidth: 0}} className="form-select bg-light" aria-label="Default select example"
                                                 onChange={(e) => {
                                                     setSize(e.target.value)
+                                                    // console.log(size)
                                                 }}>
                                                 <option key="S" value="S">S</option>
                                                 <option key="M" value="M">M</option>
                                                 <option key="L" value="L">L</option>
                                                 <option key="XL" value="XL">XL</option>
+                                                <option key="XXL" value="XXL">XXL</option>
                                             </select>
                                         </div>
                                     </div>
@@ -133,13 +154,6 @@ export default function ProductScreen({ history, match }) {
                                     </button>
                                 </li>
 
-                                <li className="list-group-item">
-                                    <button 
-                                    onClick={addToLikeHandler}
-                                    className="btn btn-dark btn-block">
-                                        Like <i className="mx-1" style={{fontSize:16}}></i>
-                                    </button>
-                                </li>
                             </ul>
                         </div>
                     </div>

@@ -1,14 +1,15 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import Badge from '../minicomponents/Badge'
 import Rating from '../minicomponents/Rating'
 import './Product.css'
 
 export default function Product({ product }) {
     return (
         <div className="custom-product">
-            <div className="card my-3 p-3 rounded">
+            <div className="card my-3 p-2 rounded">
                 <Link to={`/product/${product._id}`}>
-                    <div className="zoom-effect-container">
+                    <div className="zoom-effect-container zoom-effect-container2">
                         <div className="image-card">
                             <img src={product.image} className="card-img-top"/>
                         </div>
@@ -21,18 +22,31 @@ export default function Product({ product }) {
                             {product.name}
                         </div>
                     </Link>
-                    {/* {product.category} */}
+                    
+                    
+
                     <div className="card-text">
                         <div className="my-2">
-                            <Rating value={product.rating} text={`${product.numReviews} reviews`} />
+                            <Rating value={product.rating} text={`${product.numReviews}`} />
                         </div>
                     </div>
 
-                    <h4 className="card-text">
+                    <div className="mb-2">
+                        <Badge upper variant="primary" text={product.brand} />
+                    </div>
+
+                    <h5 className="card-text d-flex align-items-center flex-wrap">
                         ₹{product.price} 
                         <span className="actualPrice">₹{product.actualPrice}</span>
-                        <span className="discount">({(100 - (product.price / product.actualPrice)*100).toFixed(0)}% OFF)</span>
-                    </h4>
+                        
+                        <span className="discount">
+                            <div className="">
+                                <Badge text={`${(100 - (product.price / product.actualPrice)*100).toFixed(0)}% OFF`}
+                                upper variant="danger"
+                                />
+                            </div>
+                        </span>
+                    </h5>
                 </div>
             </div>
         </div>

@@ -3,7 +3,7 @@ import {useDispatch, useSelector} from 'react-redux'
 import {Link} from 'react-router-dom'
 import {addToCart, removeFromCart} from '../actions/cartActions'
 import HeroTitle from '../minicomponents/HeroTitle'
-import AlertError from '../minicomponents/AlertError'
+import Badge from '../minicomponents/Badge'
 import NoItems from '../minicomponents/NoItems'
 
 export default function CartScreen({match, location, history }) {
@@ -51,7 +51,13 @@ export default function CartScreen({match, location, history }) {
                                                 </Link>
                                                 <strong>Total Price:</strong> ₹{item.price * item.qty} 
                                                 <span className="actualPrice">₹{item.actualPrice * item.qty}</span>
-                                                <span className="discount">({(100 - ((item.price * item.qty) / (item.actualPrice * item.qty))*100).toFixed(0)}% OFF)</span>
+                                                <span className="discount mb-2">
+                                                    <div className="">
+                                                        <Badge text={`${(100 - ((item.price * item.qty) / (item.actualPrice * item.qty))*100).toFixed(0)}% OFF`}
+                                                        upper variant="success"
+                                                        />
+                                                    </div>
+                                                </span>
                                                 <div className="mt-2 d-flex align-items-center">
                                                     <div className="mr-2">
                                                         Qty:
@@ -60,7 +66,7 @@ export default function CartScreen({match, location, history }) {
                                                         <select style={{outlineWidth: 0}} className="form-select" aria-label="Default select example"
                                                             onChange={(e) => {
                                                                 dispatch(addToCart(item.product, Number(e.target.value), item.size))
-                                                            }} value={item.qty}>
+                                                            }} defaultValue={item.qty}>
                                                             {[...Array(item.countInStock).keys()].map(x => {
                                                                 return (<option key={x+1} value={x+1}>{x+1}</option>)
                                                             })}
@@ -78,10 +84,42 @@ export default function CartScreen({match, location, history }) {
                                                             onChange={(e) => {
                                                                 dispatch(addToCart(item.product, item.qty, e.target.value))
                                                             }}>
-                                                            <option key="S" value="S">S</option>
-                                                            <option key="M" value="M">M</option>
-                                                            <option key="L" value="L">L</option>
-                                                            <option key="XL" value="XL">XL</option>
+
+                                                            {item.size === "S" ? (
+                                                                <option key="S" value="S" selected>S</option>
+                                                            )
+                                                            :(
+                                                                <option key="S" value="S">S</option>
+                                                            )}
+
+                                                            {item.size === "M" ? (
+                                                                <option key="M" value="M" selected>M</option>
+                                                            )
+                                                            :(
+                                                                <option key="M" value="M">M</option>
+                                                            )}
+
+                                                            {item.size === "L" ? (
+                                                                <option key="L" value="L" selected>L</option>
+                                                            )
+                                                            :(
+                                                                <option key="L" value="L">L</option>
+                                                            )}
+
+                                                            {item.size === "XL" ? (
+                                                                <option key="XL" value="XL" selected>XL</option>
+                                                            )
+                                                            :(
+                                                                <option key="XL" value="XL">XL</option>
+                                                            )}
+
+                                                            {item.size === "XXL" ? (
+                                                                <option key="XXL" value="XXL" selected>XXL</option>
+                                                            )
+                                                            :(
+                                                                <option key="XXL" value="XXL">XXL</option>
+                                                            )}
+                                                            
                                                         </select>
                                                     </div>
                                             </div>

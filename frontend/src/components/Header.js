@@ -1,8 +1,13 @@
 import React, { useEffect } from 'react'
 import {Link} from 'react-router-dom'
 import './Header.css'
+import {useDispatch, useSelector} from 'react-redux'
+import { logout } from '../actions/userActions'
 
 export default function Header() {
+    const userLogin = useSelector(state => state.userLogin)
+    const {userInfo} = userLogin
+    const dispatch = useDispatch()
     useEffect(() => {
         const sidebarToggle = document.querySelector('.header-mobile__toggle-sidebar')
         const sidebar = document.querySelector('.header-mobile__sidebar')
@@ -14,6 +19,9 @@ export default function Header() {
             sidebar.classList.add('hide')
         })
     })
+    const logoutHandler = () => {
+        dispatch(logout())
+    }
     return (
         <header>
             <div className="header-desktop">
@@ -39,13 +47,11 @@ export default function Header() {
                                         Dropdown1
                                     </a>
                                     <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><Link className="dropdown-item" target="_self" to='/'>Sample - 1</Link></li>
-                                    <li><Link className="dropdown-item" target="_self" to='/'>Sample - 2</Link></li>
-                                    <li><Link className="dropdown-item" target="_self" to='/'>Sample - 3</Link></li>
-                                    <li><hr className="dropdown-divider" /></li>
-                                    <li><Link className="dropdown-item" target="_self" to='/'>Sample - 4</Link></li>
-                                    <li><Link className="dropdown-item" target="_self" to='/'>Sample - 5</Link></li>
-                                </ul>
+                                        <li><Link className="dropdown-item" target="_self" to='/'>Sample - 1</Link></li>
+                                        <li><Link className="dropdown-item" target="_self" to='/'>Sample - 2</Link></li>
+                                        <li><hr className="dropdown-divider" /></li>
+                                        <li><Link className="dropdown-item" target="_self" to='/'>Sample - 3</Link></li>
+                                    </ul>
                                 </li>
                             </ul>
                             <form className="d-flex">
@@ -62,16 +68,42 @@ export default function Header() {
                                 </li>
                                 
                                 <li className="nav-item">
-                                    <Link className="nav-link active" to="/login" target="_self">
-                                        <i className="fas fa-user-circle"></i>
-                                    </Link>
-                                </li>
-
-                                <li className="nav-item">
                                     <Link className="nav-link active" target="_self" to="/cart">
                                         <i className="fa fa-shopping-cart"></i>
                                     </Link>
                                 </li>
+
+                                <li className="nav-item d-flex justify-content-center align-items-center">
+                                    {userInfo ? 
+                                    <ul
+                                    style={{padding:0, listStyle: "none"}}>
+                                        <li className="nav-item active dropdown">
+                                            <a className="nav-link dropdown-toggle" 
+                                            style={{fontSize: 18}}
+                                            target="_self" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+                                                {userInfo.name}
+                                            </a>
+                                            <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                <li>
+                                                    <Link className="dropdown-item" target="_self" to='/profile'>
+                                                        <i className="fas fa-user-edit"></i> Profile
+                                                    </Link>
+                                                </li>
+                                                <li>
+                                                    <p className="dropdown-item" target="_self"
+                                                    onClick={logoutHandler}>
+                                                        <i className="fas fa-sign-out-alt"></i> Logout
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    : <Link className="nav-link active" to="/login" target="_self">
+                                        <i className="fas fa-user-circle"></i>
+                                    </Link>}
+                                </li>
+
+                                
                             </ul>
                             </div>
                         </div>
@@ -83,19 +115,32 @@ export default function Header() {
                     <div className="header-mobile__toggle-sidebar">
                         <button><i className="fa fa-bars"></i></button>
                     </div>
-                    <form className="mx-auto mysearchbar d-flex">
-                        <input className="form-control mr-2" type="search" placeholder="Hunt for your Product ..." aria-label="Search" />
-                        <button className="btn btn-outline-success" type="submit">
-                            <i className="fa fa-search"></i>
-                        </button>
-                    </form>
-                    <div className="header-mobile__icons-container ml-auto mr-1">
+                    
+                    <div className="header-mobile__icons-container ml-auto mr-1 d-flex justify-content-center align-items-center">
                         <Link target="_self" to="/cart">
                             <i className="fa fa-shopping-cart"></i>
                         </Link>
-                        <Link target="_self" to="/login">
-                            <i className="fas fa-user-circle"></i>
-                        </Link>
+                        {userInfo ? 
+                            <div className="d-flex align-items-center">
+                                <Link 
+                                style={{color:"white", textDecoration:"none"}}
+                                to='/profile'>
+                                    <h5 className="ml-2 mt-2">
+                                        <i className="fas fa-user-edit"></i>
+                                    </h5>
+                                </Link>
+                                <h5 onClick={logoutHandler}
+                                className="ml-2 mt-2"
+                                style={{color:"white", fontSize:24 ,textDecoration:"none"}}>
+                                    <i className="fas fa-sign-out-alt"></i>
+                                </h5>
+                            </div>
+                            : <Link 
+                            style={{padding:"0.5rem"}}
+                            className="nav-link active" to="/login" target="_self">
+                                <i className="fas fa-user-circle"></i>
+                            </Link>
+                        }
                         
                     </div>
                     <div className="header-mobile__sidebar hide">
@@ -132,6 +177,12 @@ export default function Header() {
                         </div>
                     </div>
                 </div>
+                <form className="mt-1 mx-auto mysearchbar d-flex" style={{width:'90%'}}>
+                        <input className="form-control mr-2" type="search" placeholder="Hunt for your Product ..." aria-label="Search" />
+                        <button className="btn btn-outline-success" type="submit">
+                            <i className="fa fa-search"></i>
+                        </button>
+                    </form>
             </div>
         </header>
     )

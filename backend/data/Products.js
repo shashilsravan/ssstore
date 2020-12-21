@@ -14,7 +14,8 @@ const products = [
     countInStock: 0,
     rating: 0.7,
     numReviews: 2,
-  isDress: true,
+    isDress: true,
+    dressType: 'Women'
   },
   {
     name: 'Plain Tshirts Sample - 2',
@@ -31,7 +32,7 @@ const products = [
     countInStock: 10,
     rating: 0.7,
     numReviews: 2,
-  isDress: true,
+    isDress: true,
   },
   {
     name: 'Plain Tshirts Sample - 3',
@@ -48,7 +49,8 @@ const products = [
     countInStock: 10,
     rating: 0.7,
     numReviews: 2,
-  isDress: true,
+    isDress: true,
+    dressType: 'Women'
   },
   {
     name: 'Animie Tshirts sample - 1',
@@ -65,7 +67,7 @@ const products = [
     countInStock: 10,
     rating: 3.7,
     numReviews: 20,
-  isDress: true,
+    isDress: true,
   },
   {
     name: 'Animie Tshirts sample - 2',
@@ -82,7 +84,7 @@ const products = [
     countInStock: 10,
     rating: 3.7,
     numReviews: 20,
-  isDress: true,
+    isDress: true,
   },
   {
     name: 'Animie Tshirts sample - 3',
@@ -99,7 +101,8 @@ const products = [
     countInStock: 10,
     rating: 3.7,
     numReviews: 20,
-  isDress: true,
+    isDress: true,
+    dressType: 'Women'
   },
   {
     name: 'webseries Tshirts',
@@ -116,7 +119,8 @@ const products = [
     countInStock: 4,
     rating: 4.2,
     numReviews: 10,
-  isDress: true,
+    isDress: true,
+    dressType: 'Boys'
   },
   {
     name: 'Webseries Tshirts',
@@ -133,7 +137,8 @@ const products = [
     countInStock: 4,
     rating: 4.2,
     numReviews: 10,
-  isDress: true,
+    isDress: true,
+    dressType: 'Boys'
   },
   {
     name: 'movies tshirts',
@@ -150,7 +155,7 @@ const products = [
     countInStock: 10,
     rating: 5,
     numReviews: 1,
-  isDress: true,
+    isDress: true,
   },
   {
     name: 'wwe tshirts',
@@ -167,7 +172,7 @@ const products = [
     countInStock: 7,
     rating: 4.7,
     numReviews: 10,
-  isDress: true,
+    isDress: true,
   },
   {
     name: 'wwe tshirts - 2',
@@ -184,7 +189,8 @@ const products = [
     countInStock: 7,
     rating: 4.7,
     numReviews: 10,
-  isDress: true,
+    isDress: true,
+    dressType: 'Boys'
   },
   {
     name: 'graffiti tshirts',
@@ -201,7 +207,7 @@ const products = [
     countInStock: 1,
     rating: 2.3,
     numReviews: 30,
-  isDress: true,
+    isDress: true,
   },
   {
     name: 'cartoons tshirts',
@@ -218,7 +224,7 @@ const products = [
     countInStock: 1,
     rating: 2.3,
     numReviews: 30,
-  isDress: true,
+    isDress: true,
   },
   {
     name: 'memes tshirts - 1',
@@ -235,7 +241,7 @@ const products = [
     countInStock: 1,
     rating: 2.3,
     numReviews: 30,
-  isDress: true,
+    isDress: true,
   },
   {
     name: 'memes tshirts - 2',
@@ -252,7 +258,8 @@ const products = [
     countInStock: 1,
     rating: 2.3,
     numReviews: 30,
-  isDress: true,
+    isDress: true,
+    dressType: 'Girls'
   },
   {
     name: 'quotes tshirts',
@@ -269,7 +276,8 @@ const products = [
     countInStock: 1,
     rating: 2.3,
     numReviews: 30,
-  isDress: true,
+    isDress: true,
+    dressType: 'Girls'
   },
   {
     name: 'sports tshirts',
@@ -286,7 +294,7 @@ const products = [
     countInStock: 1,
     rating: 2.3,
     numReviews: 30,
-  isDress: true,
+    isDress: true,
   },
   {
     name: 'music tshirts',
@@ -303,7 +311,7 @@ const products = [
     countInStock: 1,
     rating: 2.3,
     numReviews: 30,
-  isDress: true,
+    isDress: true,
   },
   {
     name: 'hiphop tshirts',
@@ -320,7 +328,7 @@ const products = [
     countInStock: 1,
     rating: 2.3,
     numReviews: 30,
-  isDress: true,
+    isDress: true,
   },
   {
     name: 'spiritual tshirts',
@@ -337,7 +345,7 @@ const products = [
     countInStock: 1,
     rating: 2.3,
     numReviews: 30,
-  isDress: true,
+    isDress: true,
   },
   {
     name: 'games tshirts',
@@ -354,7 +362,7 @@ const products = [
     countInStock: 1,
     rating: 2.3,
     numReviews: 30,
-  isDress: true,
+    isDress: true,
   },
   {
     name: 'alchemy tshirts',
@@ -371,7 +379,7 @@ const products = [
     countInStock: 1,
     rating: 2.3,
     numReviews: 30,
-  isDress: true,
+    isDress: true,
   },
   {
     name: 'literature tshirts',
@@ -388,7 +396,7 @@ const products = [
     countInStock: 1,
     rating: 2.3,
     numReviews: 30,
-  isDress: true,
+    isDress: true,
   },
   {
     name: 'photography tshirts',
@@ -405,7 +413,7 @@ const products = [
     countInStock: 1,
     rating: 2.3,
     numReviews: 30,
-  isDress: true,
+    isDress: true,
   },
   {
     name: 'superheroes tshirts',
@@ -422,7 +430,7 @@ const products = [
     countInStock: 1,
     rating: 2.3,
     numReviews: 30,
-  isDress: true,
+    isDress: true,
   },
   {
     name: 'regional tshirts',
@@ -439,7 +447,7 @@ const products = [
     countInStock: 1,
     rating: 2.3,
     numReviews: 30,
-  isDress: true,
+    isDress: true,
   },
   {
     name: 'wanderers tshirts',
@@ -456,7 +464,7 @@ const products = [
     countInStock: 1,
     rating: 2.3,
     numReviews: 30,
-  isDress: true,
+    isDress: true,
   },
   {
     name: 'hightees tshirts',
@@ -473,7 +481,7 @@ const products = [
     countInStock: 1,
     rating: 2.3,
     numReviews: 30,
-  isDress: true,
+    isDress: true,
   },
   {
     name: 'combo tshirts',
@@ -490,7 +498,7 @@ const products = [
     countInStock: 1,
     rating: 2.3,
     numReviews: 30,
-  isDress: true,
+    isDress: true,
   },
   {
     name: 'plain hoodies',
@@ -507,7 +515,7 @@ const products = [
     countInStock: 10,
     rating: 3.7,
     numReviews: 20,
-  isDress: true,
+    isDress: true,
   },
   {
     name: 'animie hoodies',
@@ -524,7 +532,7 @@ const products = [
     countInStock: 10,
     rating: 3.7,
     numReviews: 20,
-  isDress: true,
+    isDress: true,
   },
   {
     name: 'webseries hoodies',
@@ -541,7 +549,7 @@ const products = [
     countInStock: 10,
     rating: 3.7,
     numReviews: 20,
-  isDress: true,
+    isDress: true,
   },
   {
     name: 'cartoons hoodies',
@@ -558,7 +566,7 @@ const products = [
     countInStock: 10,
     rating: 3.7,
     numReviews: 20,
-  isDress: true,
+    isDress: true,
   },
   {
     name: 'superhero hoodies',
@@ -575,7 +583,7 @@ const products = [
     countInStock: 10,
     rating: 3.7,
     numReviews: 20,
-  isDress: true,
+    isDress: true,
   },
   {
     name: 'memes hoodies',
@@ -592,7 +600,7 @@ const products = [
     countInStock: 10,
     rating: 3.7,
     numReviews: 20,
-  isDress: true,
+    isDress: true,
   },
   {
     name: 'music hoodies',
@@ -609,7 +617,7 @@ const products = [
     countInStock: 10,
     rating: 3.7,
     numReviews: 20,
-  isDress: true,
+    isDress: true,
   },
   {
     name: 'games hoodies',
@@ -626,7 +634,7 @@ const products = [
     countInStock: 10,
     rating: 3.7,
     numReviews: 20,
-  isDress: true,
+    isDress: true,
   },
   {
     name: 'alchemy hoodies',
@@ -643,7 +651,7 @@ const products = [
     countInStock: 10,
     rating: 3.7,
     numReviews: 20,
-  isDress: true,
+    isDress: true,
   },
   {
     name: 'animie Tshirts',

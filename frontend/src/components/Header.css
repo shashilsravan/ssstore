@@ -32,9 +32,11 @@ header {
 }
 .header-mobile {
   background: #05262b;
-  padding: 16px 0px;
+  padding: 4px 2px;
+  padding-bottom: 12px;
   color: white;
 }
+
 .header-desktop .dropdown-item {
   color: black !important;
 }
@@ -125,6 +127,9 @@ header {
 @media screen and (max-width: 1039px) {
   .header-desktop {
     display: none !important;
+  }
+  .mobility {
+    padding-top: 9rem;
   }
   .header-mobile {
     display: block !important;

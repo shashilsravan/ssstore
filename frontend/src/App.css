@@ -8,6 +8,9 @@ main {
   font-weight: bold;
   width: 100%;
 }
+.bs-small {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
 .errors {
   display: none;
 }
@@ -16,8 +19,20 @@ main {
   background: white;
   border: 2px solid #b4010a;
 }
+.btn-dark {
+  background: black;
+  font-weight: 500;
+}
+.btn-dark:hover {
+  color: black;
+  background: white;
+  border: 2px solid black;
+}
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1041px) {
+  .statusbar p {
+    margin: 0.5rem 2.4rem;
+  }
 }
 
 @media screen and (max-width: 1023px) {
@@ -25,9 +40,25 @@ main {
     padding-top: 24vh;
   }
 }
-@media screen and (min-width: 700px) and (max-width: 1039px) {
+@media screen and (min-width: 600px) and (max-width: 1040px) {
+  .statusbar p {
+    margin: 10px 40px;
+  }
 }
 @media screen and (min-width: 421px) and (max-width: 699px) {
 }
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 600px) {
+  .statusbar p {
+    margin: 10px 12px;
+  }
 }
+
+/* Logo */
+
+/* 1. Gradient change in pre header section */
+/* 2. About us */
+/* searching, sorting and filtering */
+
+/* HTML, CSS, ReactJS */
+/* MongoDB, express and Node */
+/* HelmetJS */

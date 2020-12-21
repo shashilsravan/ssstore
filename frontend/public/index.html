@@ -42,24 +42,17 @@
       <!-- integrity="sha384-popRpmFF9JQgExhfw5tZT4I9/CI5e2QcuUZPOVXb1m7qUmeR2b50u+YFEYe1wgzy" crossorigin="anonymous"></script> -->
     <script>
       window.addEventListener('load', () => {
+        
         new Swiper('.swiper-container-first', {
           speed: 4000,
           loop: true,
-          effect: 'coverflow',
           grabCursor: true,
-          coverflowEffect: {
-            rotate: 50,
-            stretch: 0,
-            depth: 100,
-            modifier: 1,
-            slideShadows: false,
-          },
           autoplay: {
             delay: 2500,
             disableOnInteraction: true,
           },
         })
-        
+
         
       })
     

@@ -5,3 +5,18 @@
 .productScreen .name-item {
   border-bottom: 1.5px solid lightgray;
 }
+.productScreen .liked-heart {
+  cursor: pointer;
+  width: max-content;
+  padding: 8px;
+  border-radius: 20px;
+  font-size: 20px;
+  color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.productScreen .liked-heart:hover {
+  transform: scale(1.2);
+  font-weight: 800;
+}

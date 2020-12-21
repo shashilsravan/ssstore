@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom'
 import {useDispatch, useSelector} from 'react-redux';
 import Loader from '../minicomponents/Loader'
-import AlertError from '../minicomponents/AlertError'
 import { login } from '../actions/userActions'
 import FormContainer from './FormContainer';
 
@@ -16,7 +15,7 @@ export default function LoginScreen({ location, history }) {
 
     useEffect(() => {
         if (userInfo){
-            history.pushState(redirect)
+            history.push(redirect)
         }
     }, [history, userInfo, redirect])
 
@@ -32,6 +31,7 @@ export default function LoginScreen({ location, history }) {
                 {error && <div className="alert alert-danger mt-3" role="alert">
                         {error}
                     </div> }
+                {loading && <Loader />}
                 <form onSubmit={submitHandler}>
                     <div className="form-group">
                         <label htmlFor="exampleInputEmail1">Email address</label>

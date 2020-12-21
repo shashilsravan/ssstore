@@ -59,7 +59,7 @@ export default function CategoryScreen() {
                     <div className="col-md-6 col-lg-4">
                         <Link to='/'>
                             <CardImage src="https://res.cloudinary.com/alchemy069/image/upload/v1606234146/alchemy/Slideshow/notebook_c_qqgqd0.png"
-                                title = 'Laptop skins' />
+                                title = 'Notebooks' />
                         </Link>
                     </div>
 

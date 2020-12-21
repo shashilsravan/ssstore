@@ -21,8 +21,8 @@ const orderSchema = mongoose.Schema({
         phone: { type: Number, required: true },
         address: { type: String, required: true },
         city: { type: String, required: true },
-        State: { type: String, required: true },
-        pincode: { type: Number, required: true },
+        arena: { type: String, required: true },
+        postalCode: { type: Number, required: true },
     },
     paymentMethod: {
         type: String,
@@ -34,9 +34,8 @@ const orderSchema = mongoose.Schema({
         update_time: {type: String},
         email_address: {type: String}
     },
-    taxPrice: {
+    itemsPrice: {
         type: Number,
-        required: true,
         default: 0.0
     },
     shippingPrice: {

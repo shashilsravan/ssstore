@@ -4,8 +4,8 @@ export default function AlertError({error}) {
     return (
         <div>
             <div className="alert alert-danger mt-5" role="alert">
-                        {error}
-                    </div>
+                {error}
+            </div>
         </div>
     )
 }
