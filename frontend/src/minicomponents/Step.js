@@ -2,8 +2,11 @@ import React, {useState} from 'react'
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
 import ProgressBar from 'react-bootstrap/ProgressBar'
+import Alert from 'react-bootstrap/Alert'
+import Moment from 'react-moment';
+import 'moment-timezone';
 
-export default function Step({Paid, Processed, Delivered}) {
+export default function Step({Paid, Processed, Delivered, order}) {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
@@ -39,6 +42,20 @@ export default function Step({Paid, Processed, Delivered}) {
                         <ProgressBar 
                         variant={Delivered ? "success" : "primary"}
                         animated now={Paid ? currentStatus : 5} />
+
+                        <div className="my-5">
+                            {order && order.processedAt && (
+                                <Alert variant="warning">
+                                    Processed At <Moment fromNow>{order.processedAt}</Moment> (<Moment format="hh:mm:ss - DD/MM/YYYY">{ order.processedAt }</Moment>)
+                                </Alert>
+                            )}
+                            <div className="my-1"></div>
+                            {order && order.deliveredAt && (
+                                <Alert variant="success">
+                                    Delivered At <Moment fromNow>{order.deliveredAt}</Moment> (<Moment format="hh:mm:ss - DD/MM/YYYY">{ order.deliveredAt }</Moment>)
+                                </Alert>
+                            )}
+                        </div>
                     </div>
                 </Modal.Body>
                 <Modal.Footer>

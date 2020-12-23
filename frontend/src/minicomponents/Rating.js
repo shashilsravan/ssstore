@@ -53,7 +53,7 @@ export default function Rating({value, text}) {
                     ? 'fa fa-star-half-alt'
                     : 'far fa-star'}></i>
             </span>
-            <span className="ml-1 fromreviews">({ text && text })</span>
+            <span className="ml-1 fromreviews">{ text && (text) }</span>
         </div>
     )
 }

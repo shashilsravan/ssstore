@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import { listProducts } from '../actions/productAction'
 import HeroTitle from '../minicomponents/HeroTitle'
@@ -7,26 +7,28 @@ import AlertError from '../minicomponents/AlertError'
 import Product from '../components/Product'
 import Paginate from '../components/Paginate'
 
-export default function HomeScreen({location, history, match}) {
-    const dispatch = useDispatch()
+
+export default function SearchScreen({ match }) {
+    const keyword = match.params.keyword
 
     const pageNumber = match.params.pageNumber || 1
+
+    const dispatch = useDispatch()
     const productList = useSelector(state => state.productList)
+    const {loading, error, products, page, pages} = productList
 
-    const {loading, error, products, page, pages, allProducts} = productList
-
-    
     useEffect(() => {
-        dispatch(listProducts('', pageNumber))
-    }, [dispatch, pageNumber])
+        dispatch(listProducts(keyword, pageNumber))
+    }, [dispatch, keyword, pageNumber])
+
 
     return (
         <div className="mt-5">
-            <HeroTitle text="All Products" />
+            <HeroTitle text="Search results..." />
             { loading ?  
                 <Loader />
                 : error 
-                ? <AlertError error={error} />
+                ? <AlertError />
                 : <div className="row">
                     {products.map(product => {
                         return(
@@ -41,19 +43,8 @@ export default function HomeScreen({location, history, match}) {
                 <Paginate 
                     pages={pages} 
                     page={page} 
-                    keyword={''} />
+                    keyword={keyword ? keyword : ''} />
             </div>
         </div>
     )
 }
-
-
-{/* <div className="row">
-    {products.map(product => {
-        return(
-            product.category === 'Custom'?
-            <div className="col col-sm-12 col-md-6 col-lg-4">
-                <p>{product.name}</p>
-            </div> : null)
-    })}
-</div> */}

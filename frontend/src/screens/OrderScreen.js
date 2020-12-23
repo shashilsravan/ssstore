@@ -2,11 +2,12 @@ import React, {useEffect, useState} from 'react'
 import {useDispatch, useSelector} from 'react-redux';
 import { PayPalButton } from 'react-paypal-button-v2'
 import { Link } from 'react-router-dom';
-import { getOrderDetails, payOrder } from '../actions/orderActions';
+import { getOrderDetails, payOrder, deliverOrder, processOrder } from '../actions/orderActions';
 import Loader from '../minicomponents/Loader';
 import axios from 'axios'
-import {ORDER_PAY_RESET} from '../constants/orderConstants'
+import {ORDER_PAY_RESET, ORDER_DELIVER_RESET, ORDER_PROCESSED_RESET } from '../constants/orderConstants'
 import Step from '../minicomponents/Step'
+import Button from 'react-bootstrap/esm/Button';
 
 export default function OrderScreen({match, history}) {
     
@@ -22,6 +23,12 @@ export default function OrderScreen({match, history}) {
 
     const orderPay = useSelector(state => state.orderPay)
     const { loading: loadingPay, error: errorPay, success: successPay } = orderPay
+
+    const orderDeliver = useSelector(state => state.orderDeliver)
+    const { success: successDeliver } = orderDeliver
+
+    const orderProcessed = useSelector(state => state.orderProcessed)
+    const { success: successProcessed } = orderProcessed
 
     
     useEffect(() => {
@@ -39,8 +46,10 @@ export default function OrderScreen({match, history}) {
             }
             document.body.appendChild(script)
         }
-        if(!order || successPay){
+        if(successProcessed || !order || successPay || successDeliver){
             dispatch({ type: ORDER_PAY_RESET})
+            dispatch({ type: ORDER_DELIVER_RESET })
+            dispatch({ type: ORDER_PROCESSED_RESET })
             dispatch(getOrderDetails(orderId))
         }
         else if (!order.isPaid){
@@ -50,11 +59,20 @@ export default function OrderScreen({match, history}) {
                 setSdkReady(true)
             }
         }
-    }, [dispatch, orderId, order, successPay])
+    }, [dispatch, orderId, order, history, userInfo,
+        successPay, successDeliver, successProcessed])
 
     const successPaymentHandler = (paymentResult) => {
         console.log(paymentResult)
         dispatch(payOrder(orderId, paymentResult))
+    }
+
+    const deliverHandler = () => {
+        dispatch(deliverOrder(order))
+    }
+
+    const processHandler = () => {
+        dispatch(processOrder(order))
     }
 
     return (
@@ -69,8 +87,8 @@ export default function OrderScreen({match, history}) {
                             <li className="list-group-item">
                                 <h4>Shipping details: </h4>
                                 <p className="border p-2 bs-small mt-2">
-                                    <i className="fas fa-user mx-1"></i> {order.user.name} &nbsp; || &nbsp; 
-                                <i className="fas fa-envelope mx-1"></i> {order.user.email} </p>
+                                {order.user.name} &nbsp; || &nbsp; 
+                                {order.user.email} </p>
                                 <p>
                                     <strong> Address: </strong>
                                     
@@ -140,6 +158,7 @@ export default function OrderScreen({match, history}) {
                                 <h5 className="d-flex align-items-center">
                                     <strong className="mr-2">Order status: </strong>
                                     <Step Paid={order.isPaid}
+                                        order={order}
                                         Processed={order.isProcessed}
                                         Delivered={order.isDelivered} />
                                 </h5>
@@ -192,6 +211,22 @@ export default function OrderScreen({match, history}) {
                                         onSuccess={successPaymentHandler}
                                         />
                                     )}
+                                </li>
+                            )}
+                            {userInfo && userInfo.isAdmin && order.isPaid && !order.isProcessed && (
+                                <li className="list-group list-group-item">
+                                    <Button type='button' className="btn btn-block"
+                                    onClick={processHandler}>
+                                        Mark as Processed
+                                    </Button>
+                                </li>
+                            )}
+                            {userInfo && userInfo.isAdmin && order.isPaid && !order.isDelivered && (
+                                <li className="list-group list-group-item">
+                                    <Button type='button' className="btn btn-block"
+                                    onClick={deliverHandler}>
+                                        Mark as Delivered
+                                    </Button>
                                 </li>
                             )}
                         </ul>

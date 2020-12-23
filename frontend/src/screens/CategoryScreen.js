@@ -36,28 +36,28 @@ export default function CategoryScreen() {
                     </div>
                 
                     <div className="col-md-6 col-lg-4">
-                        <Link to='/'>
+                        <Link to='/api/products/category/stickers'>
                             <CardImage src="https://res.cloudinary.com/alchemy069/image/upload/v1606222610/alchemy/Slideshow/stickers_mozsgq.png"
                                 title = 'Stickers' />
                         </Link>
                     </div>
                 
                     <div className="col-md-6 col-lg-4">
-                        <Link to='/'>
+                        <Link to='/api/products/category/mask'>
                             <CardImage src="https://res.cloudinary.com/alchemy069/image/upload/v1606234141/alchemy/Slideshow/mask_uf9tce.png"
                                 title = 'Mask' />
                         </Link>
                     </div>
 
                     <div className="col-md-6 col-lg-4">
-                        <Link to='/'>
+                        <Link to='/api/products/category/tote'>
                             <CardImage src="https://res.cloudinary.com/alchemy069/image/upload/v1606234143/alchemy/Slideshow/bag_c_gw7zze.png"
                                 title = 'Tote Bags' />
                         </Link>
                     </div>
 
                     <div className="col-md-6 col-lg-4">
-                        <Link to='/'>
+                        <Link to='/api/products/category/notebooks'>
                             <CardImage src="https://res.cloudinary.com/alchemy069/image/upload/v1606234146/alchemy/Slideshow/notebook_c_qqgqd0.png"
                                 title = 'Notebooks' />
                         </Link>

@@ -48,7 +48,8 @@ export default function UserEditScreen({ match, history}) {
                 setIsAdmin(user.isAdmin)
             }
         }
-    }, [dispatch, userInfo, history, user, successUpdate])
+    }, [dispatch, userInfo, history, user, userId,
+        successUpdate])
 
     const submitHandler = (e) => {
         e.preventDefault()

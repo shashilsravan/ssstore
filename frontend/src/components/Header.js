@@ -1,8 +1,11 @@
 import React, { useEffect } from 'react'
-import {Link} from 'react-router-dom'
+import {Link, Route} from 'react-router-dom'
 import './Header.css'
 import {useDispatch, useSelector} from 'react-redux'
 import { logout } from '../actions/userActions'
+import SearchBox from './SearchBox'
+import { confirmAlert } from 'react-confirm-alert'; 
+import 'react-confirm-alert/src/react-confirm-alert.css'; 
 
 export default function Header() {
     const userLogin = useSelector(state => state.userLogin)
@@ -20,7 +23,20 @@ export default function Header() {
         })
     })
     const logoutHandler = () => {
-        dispatch(logout())
+        confirmAlert({
+            title: `Logout`,
+            message: `Are you sure to logout?`,
+            buttons: [
+                {
+                    label: 'Yes!',
+                    onClick: () => dispatch(logout())
+                },
+                {
+                    label: "No!",
+                    onClick: () => console.log()
+                }
+            ]
+        })
     }
     return (
         <header>
@@ -28,7 +44,7 @@ export default function Header() {
                 <div className="container-xl">
                     <nav className="navbar navbar-expand-lg">
                         <div className="container-fluid">
-                            <Link className="navbar-brand" target="_self" to='/'>
+                            <Link className="navbar-brand" to='/'>
                                 <img className="logo" src="https://res.cloudinary.com/alchemy069/image/upload/v1605966215/alchemy/mainlogo_ocs3sl.png" alt=""/>
                             </Link>
                             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,38 +53,34 @@ export default function Header() {
                             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul className="navbar-nav mr-auto mb-2 mb-lg-0">
                                 <li className="nav-item">
-                                    <Link className="nav-link active" aria-current="page" target="_self" to='/'>Home</Link>
+                                    <Link className="nav-link active" aria-current="page" to='/'>Home</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link className="nav-link active" target="_self" to="/about">About us</Link>
+                                    <Link className="nav-link active" to="/about">About us</Link>
                                 </li>
                                 <li className="nav-item active dropdown">
-                                    <a className="nav-link dropdown-toggle" target="_self" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
-                                        Dropdown1
+                                    <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+                                        Shop by
                                     </a>
                                     <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <li><Link className="dropdown-item" target="_self" to='/'>Sample - 1</Link></li>
-                                        <li><Link className="dropdown-item" target="_self" to='/'>Sample - 2</Link></li>
+                                        <li><Link className="dropdown-item" to='/'>Men</Link></li>
+                                        <li><Link className="dropdown-item" to='/'>Women</Link></li>
                                         <li><hr className="dropdown-divider" /></li>
-                                        <li><Link className="dropdown-item" target="_self" to='/'>Sample - 3</Link></li>
+                                        <li><Link className="dropdown-item" to='/'>Boys</Link></li>
+                                        <li><Link className="dropdown-item" to='/'>Girls</Link></li>
                                     </ul>
                                 </li>
                             </ul>
-                            <form className="d-flex">
-                                <input className="form-control mr-2" type="search" placeholder="Search" aria-label="Search" />
-                                <button className="btn btn-outline-success" type="submit">
-                                    <i className="fa fa-search"></i>
-                                </button>
-                            </form>
+                            <Route render={({ history }) => <SearchBox history={history} />} />
                             <ul className="navbar-nav">
                                 <li className="nav-item">
-                                    <Link className="nav-link active" aria-current="page" target="_self" to="/liked">
+                                    <Link className="nav-link active" aria-current="page" to="/liked">
                                         <i className="far fa-heart" style={{fontSize:26}}></i>
                                     </Link>
                                 </li>
                                 
                                 <li className="nav-item">
-                                    <Link className="nav-link active" target="_self" to="/cart">
+                                    <Link className="nav-link active" to="/cart">
                                         <i className="fa fa-shopping-cart"></i>
                                     </Link>
                                 </li>
@@ -80,17 +92,17 @@ export default function Header() {
                                         <li className="nav-item active dropdown">
                                             <a className="nav-link dropdown-toggle" 
                                             style={{fontSize: 18}}
-                                            target="_self" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+                                            href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
                                                 {userInfo.name}
                                             </a>
                                             <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                                                 <li>
-                                                    <Link className="dropdown-item" target="_self" to='/profile'>
+                                                    <Link className="dropdown-item" to='/profile'>
                                                         <i className="fas fa-user-edit"></i> Profile
                                                     </Link>
                                                 </li>
                                                 <li>
-                                                    <p className="dropdown-item" target="_self"
+                                                    <p className="dropdown-item"
                                                     onClick={logoutHandler}>
                                                         <i className="fas fa-sign-out-alt"></i> Logout
                                                     </p>
@@ -98,7 +110,7 @@ export default function Header() {
                                             </ul>
                                         </li>
                                     </ul>
-                                    : <Link className="nav-link active" to="/login" target="_self">
+                                    : <Link className="nav-link active" to="/login">
                                         <i className="fas fa-user-circle"></i>
                                     </Link>}
                                 </li>
@@ -115,9 +127,9 @@ export default function Header() {
                     <div className="header-mobile__toggle-sidebar">
                         <button><i className="fa fa-bars"></i></button>
                     </div>
-                    
+                    <Route render={({ history }) => <SearchBox mobile history={history} />} />
                     <div className="header-mobile__icons-container ml-auto mr-1 d-flex justify-content-center align-items-center">
-                        <Link target="_self" to="/cart">
+                        <Link to="/cart">
                             <i className="fa fa-shopping-cart"></i>
                         </Link>
                         {userInfo ? 
@@ -137,7 +149,7 @@ export default function Header() {
                             </div>
                             : <Link 
                             style={{padding:"0.5rem"}}
-                            className="nav-link active" to="/login" target="_self">
+                            className="nav-link active" to="/login">
                                 <i className="fas fa-user-circle"></i>
                             </Link>
                         }
@@ -147,42 +159,36 @@ export default function Header() {
                         <i className="fa fa-times float-right closeSidebar" style={{color:"#000", cursor: "pointer", fontSize: 20}}></i>
                         <br />
                         <img className="logoImage" src="https://res.cloudinary.com/alchemy069/image/upload/v1605966215/alchemy/mainlogo_ocs3sl.png" alt=""/>
-                        <Link target="_self" to="/">
+                        <Link to="/">
                             Home
                         </Link>
                         <br />
-                        <Link target="_self" to="/about">
+                        <Link to="/about">
                             About us
                         </Link>
                         <br />
-                        <Link to="/liked" target="_self">
+                        <Link to="/liked">
                             Liked Products
                         </Link>
                         <br />
                         <p>
-                            <a data-toggle="collapse" target="_self" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-                                Categories <i className="fa fa-chevron-down"></i>
+                            <a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                Shop By <i className="fa fa-chevron-down"></i>
                             </a>
                         </p>
                         <div className="collapse" id="collapseExample">
                             <div className="card card-body font-black">
                                 <div className="d-flex flex-column">
-                                    <Link target="_self" to="#">Sub category</Link>
-                                    <Link target="_self" to="#">Sub category</Link>
-                                    <Link target="_self" to="#">Sub category</Link>
-                                    <Link target="_self" to="#">Sub category</Link>
-                                    <Link target="_self" to="#">Sub category</Link>
+                                    <Link to="/">Men</Link>
+                                    <Link to="/">Women</Link>
+                                    <Link to="/">Boys</Link>
+                                    <Link to="/">Girls</Link>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <form className="mt-1 mx-auto mysearchbar d-flex" style={{width:'90%'}}>
-                        <input className="form-control mr-2" type="search" placeholder="Hunt for your Product ..." aria-label="Search" />
-                        <button className="btn btn-outline-success" type="submit">
-                            <i className="fa fa-search"></i>
-                        </button>
-                    </form>
+                
             </div>
         </header>
     )

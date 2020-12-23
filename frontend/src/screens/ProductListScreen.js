@@ -4,35 +4,44 @@ import Loader from '../minicomponents/Loader'
 import AlertError from '../minicomponents/AlertError';
 import {Link} from 'react-router-dom'
 import Table from 'react-bootstrap/Table'
-import {logout} from '../actions/userActions'
-import { listProducts, deleteProduct } from '../actions/productAction';
+import { listProducts, deleteProduct, createProduct } from '../actions/productAction';
 import Button from 'react-bootstrap/esm/Button';
 import { confirmAlert } from 'react-confirm-alert'; 
 import 'react-confirm-alert/src/react-confirm-alert.css'; 
+import { PRODUCT_CREATE_RESET } from '../constants/productConstants'
+import Paginate from '../components/Paginate'
 
 export default function ProductListScreen({ history, match }) {
     const dispatch = useDispatch()
 
     const productList = useSelector(state => state.productList)
-    const { loading, error, products } = productList
+    const { loading, error, products, page, pages } = productList
 
     const productDelete = useSelector(state => state.productDelete)
     const { loading: loadingDelete, error: errorDelete, success: successDelete } = productDelete
 
+    const productCreate = useSelector(state => state.productCreate)
+    const { loading: loadingCreate, error: errorCreate, success: successCreate, product: createdProduct } = productCreate
+
     const userLogin = useSelector(state => state.userLogin)
     const {userInfo} = userLogin
 
+    const pageNumber = match.params.pageNumber || 1
+
     useEffect(() => {
-        if (!userInfo){
+        dispatch({ type: PRODUCT_CREATE_RESET })
+
+        if (!userInfo || !userInfo.isAdmin){
             history.push('/login')
         }
-        if (userInfo && !userInfo.isAdmin){
-            dispatch(logout())
+        if (successCreate){
+            history.push(`/AdMIn/product/${createdProduct._id}/edit`)
         }
         else{
-            dispatch(listProducts())
+            dispatch(listProducts("", pageNumber))
         }
-    }, [dispatch, userInfo, history, successDelete])
+    }, [dispatch, userInfo, history, pageNumber,
+        successDelete, successCreate, createProduct])
 
     const deleteHandler = (id) => {
         confirmAlert({
@@ -51,7 +60,8 @@ export default function ProductListScreen({ history, match }) {
         })
     }
 
-    const createProductHandler = (product) => {
+    const createProductHandler = () => {
+        dispatch(createProduct())
     }
 
     return (
@@ -73,12 +83,14 @@ export default function ProductListScreen({ history, match }) {
                 </div>
                 <div className="col text-right">
                     <Button className="my-3" onClick={createProductHandler}>
-                        <i className="fas fa-plus mx-2"></i>    Create Product
+                        <i className="fas fa-plus mx-1"></i> Add Product
                     </Button>
                 </div>
             </div>
             {loadingDelete && <Loader />}
-            {errorDelete && errorDelete}
+            {errorDelete && <AlertError error={errorDelete} />}
+            {loadingCreate && <Loader />}
+            {errorCreate && <AlertError error={errorCreate} />}
             {loading 
                 ? <Loader /> 
                 : error 
@@ -132,6 +144,10 @@ export default function ProductListScreen({ history, match }) {
                     </Table>
                 )
                 }
+            <Paginate
+            isAdmin={true}
+            page={page} pages={pages}
+            ></Paginate>
         </div>
     )
 }

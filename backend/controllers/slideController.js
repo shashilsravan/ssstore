@@ -16,18 +16,18 @@ const getSlides = asyncHandler (async(req, res) => {
 // @access Private/Admin
 
 const createSlide = asyncHandler (async (req, res) => {
-    const { image, text } = req.body
+    const { image, text, link } = req.body
     const slide = await Slide.findOne({ image })
     if (slide){
         res.status(400)
         throw new Error('Slide already there')
     }
     const newSlide = await Slide.create({ 
-        image, text
+        image, text, link
      })
     if (newSlide){
         res.status(200).json({
-            image, text
+            image, text, link
         })
     }
     else{

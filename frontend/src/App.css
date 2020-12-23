@@ -14,6 +14,12 @@ main {
 .errors {
   display: none;
 }
+.list-group-review .d-flex {
+  height: 26px;
+}
+.list-group-review:hover {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
 .btn-chaotic:hover {
   color: #b4010a;
   background: white;
@@ -37,7 +43,7 @@ main {
 
 @media screen and (max-width: 1023px) {
   main {
-    padding-top: 24vh;
+    padding-top: 20vh !important;
   }
 }
 @media screen and (min-width: 600px) and (max-width: 1040px) {
@@ -55,10 +61,6 @@ main {
 
 /* Logo */
 
-/* 1. Gradient change in pre header section */
+/* 1. Gradient change in pre header section -- done */
 /* 2. About us */
-/* searching, sorting and filtering */
-
-/* HTML, CSS, ReactJS */
-/* MongoDB, express and Node */
-/* HelmetJS */
+/* searching, sorting and filtering -- done */

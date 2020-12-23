@@ -148,7 +148,11 @@ export default function ProfileScreen({location, history}) {
                                         </td>
                                         <td>{order.createdAt.substring(0, 10)}</td>
                                         <td>{order.totalPrice}rs</td>
-                                        <td className=""><Step Paid={order.isPaid} Processed={order.isProcessed} Delivered={order.isDelivered} /></td>
+                                        <td className="">
+                                            <Step 
+                                                Paid={order.isPaid} order={order}
+                                                Processed={order.isProcessed} 
+                                                Delivered={order.isDelivered} /></td>
                                         <td><Link to={`/order/${order._id}`}>
                                                 <div className="btn btn-light">
                                                     Details

@@ -1,16 +1,22 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk'
 import { composeWithDevTools } from 'redux-devtools-extension'
-import { productListReducer, productDetailsReducer, productDeleteReducer } from './reducers/productReducers'
+import { productListReducer, productDetailsReducer, productDeleteReducer, productCreateReducer, productUpdateReducer, productReviewCreateReducer, productTopRatedReducer, productsByCatgoryReducer, productsByBrandReducer } from './reducers/productReducers'
 import {cartReducer, likeReducer} from './reducers/cartReducers'
 import { userDeleteReducer, userDetailsReducer, userListReducer, userLoginReducer, userRegisterReducer, userUpdateProfileReducer, userUpdateReducer } from './reducers/userReducers';
-import { orderCreateReducer, orderDetailsReducer, orderListMyReducer, orderPayReducer } from './reducers/orderReducers';
+import { orderCreateReducer, orderDeliverReducer, orderDetailsReducer, orderListMyReducer, orderListReducer, orderPayReducer, orderProcessedReducer } from './reducers/orderReducers';
 import { createSlideReducer, deleteSlideReducer, getSlidesReducer } from './reducers/slideReducers';
 
 const reducer = combineReducers({
     productList: productListReducer,
     productDetails : productDetailsReducer,
     productDelete: productDeleteReducer,
+    productCreate: productCreateReducer,
+    productUpdate: productUpdateReducer,
+    productReviewCreate: productReviewCreateReducer,
+    productTopRated: productTopRatedReducer,
+    productByCategory: productsByCatgoryReducer,
+    productByBrand: productsByBrandReducer,
     cart: cartReducer,
     like: likeReducer,
     userLogin: userLoginReducer,
@@ -24,6 +30,9 @@ const reducer = combineReducers({
     orderDetails: orderDetailsReducer,
     orderPay: orderPayReducer,
     orderListMy: orderListMyReducer,
+    orderList: orderListReducer,
+    orderDeliver: orderDeliverReducer,
+    orderProcessed: orderProcessedReducer,
     getSlides: getSlidesReducer,
     createSlide: createSlideReducer,
     deleteSlide: deleteSlideReducer
