@@ -62,6 +62,9 @@ const productSchema = mongoose.Schema({
     },
     dressType: {
         type: String, required: true, default: "Men"
+    },
+    inDeal: {
+        type: Boolean, required: false, default: false
     }
 }, {
     timestamps: true

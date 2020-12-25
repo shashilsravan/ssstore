@@ -36,6 +36,7 @@ export default function ProductEditScreen({match, history}) {
     const [isDress, setIsDress] = useState(true)
     const [dressType, setDressType] = useState("")
     const [countInStock, setCountInStock] = useState(10)
+    const [inDeal, setInDeal] = useState(false)
 
     useEffect(() => {
         if (!userInfo){
@@ -68,6 +69,7 @@ export default function ProductEditScreen({match, history}) {
                 setIsDress(product.isDress)
                 setDressType(product.dressType)
                 setCountInStock(product.countInStock)
+                setInDeal(product.inDeal)
             }
         }
     }, [dispatch, userInfo, history, product, productId, successUpdate])
@@ -84,7 +86,7 @@ export default function ProductEditScreen({match, history}) {
                             _id: productId,
                             name, price, description, actualPrice, 
                             image, imageTwo, imageThree, imageFour, 
-                            category, brand, isDress, dressType, countInStock
+                            category, brand, isDress, dressType, countInStock, inDeal
                         }))
                     },
                     {
@@ -120,7 +122,7 @@ export default function ProductEditScreen({match, history}) {
                             <label htmlFor="exampleInputName">Product Name:</label>
                             <input type="text" className="form-control" 
                             placeholder={name} value={name}
-                            id="exampleInputName"
+                            id="exampleInputName" minLength={24}
                             onChange={(e) => setName(e.target.value)} required/>
                         </div>
                         <div className="form-group">
@@ -595,6 +597,17 @@ export default function ProductEditScreen({match, history}) {
                             placeholder={countInStock} value={countInStock}
                             id="countInStock"
                             onChange={(e) => setCountInStock(e.target.value)} required/>
+                        </div>
+                        <div className="form-group ml-4">
+                            <input className="form-check-input" 
+                            type="checkbox"
+                            id="flexCheckDefault"
+                            checked={inDeal}
+                            onChange={(e) => setInDeal(e.target.checked)}/>
+                            <label 
+                            className="form-check-label" htmlFor="flexCheckDefault">
+                                Is Deal?
+                            </label>
                         </div>
                         <button type="submit" className="btn btn-chaotic">
                             Update

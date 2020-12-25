@@ -42,16 +42,23 @@
   color: #b4010a;
   font-weight: 400;
 }
+.custom-product .card-body {
+  padding: 8px 4px;
+  padding-top: 0;
+}
 @media screen and (max-width: 800px) {
   .col-6.fine {
     padding: 0 6px;
   }
   .custom-product .card-body {
-    padding: 12px 4px;
+    padding: 4px 4px;
   }
   .zoom-effect-container2 {
     width: 100%;
     height: 150px;
+  }
+  .custom-product .custom-card-title {
+    font-size: 0.9rem;
   }
 }
 @media screen and (max-width: 500px) {

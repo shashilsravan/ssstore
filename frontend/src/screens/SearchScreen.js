@@ -30,7 +30,12 @@ export default function SearchScreen({ match }) {
                 : error 
                 ? <AlertError />
                 : <div className="row">
-                    {products.map(product => {
+                    {
+                    products.length === 0 ?
+                    (<AlertError 
+                        className="mb-5"
+                        error={`No search results found for "${keyword}". Please try searching by product name`} />)
+                    : products.map(product => {
                         return(
                             <div key={product._id} className="col-6 col-md-4 fine">
                                 <Product product={product} />

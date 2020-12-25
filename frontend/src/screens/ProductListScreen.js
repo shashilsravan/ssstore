@@ -111,7 +111,7 @@ export default function ProductListScreen({ history, match }) {
                         <tbody>
                             {products.map((product) => (
                                 <tr key={product._id}>
-                                    <td className="text-capitalize">
+                                    <td className={product.inDeal ? "text-capitalize fw-bold" : "text-capitalize"}>
                                         {product.name}
                                     </td>
                                     <td>{product.price}</td>

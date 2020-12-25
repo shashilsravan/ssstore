@@ -86,7 +86,7 @@ const createProduct = asyncHandler (async(req, res) => {
 const updateProduct = asyncHandler (async(req, res) => {
 
     const {name, price, description, image, imageTwo, imageThree, imageFour, 
-        category, brand, isDress, dressType, actualPrice, countInStock } = req.body
+        category, brand, isDress, dressType, actualPrice, countInStock, inDeal } = req.body
     
     const product = await Product.findById(req.params.id)
 
@@ -104,6 +104,7 @@ const updateProduct = asyncHandler (async(req, res) => {
         product.isDress = isDress
         product.dressType = dressType
         product.countInStock = countInStock
+        product.inDeal = inDeal
         const updatedProduct = await product.save()
         res.json(updatedProduct)
     }
@@ -153,11 +154,11 @@ const createProductReview = asyncHandler (async(req, res) => {
 })
 
 // @desc Get top rated products
-// @route POST /api/products/top
+// @route GET /api/products/top
 // @access Public
 
 const getTopProducts = asyncHandler (async(req, res) => {
-    const products = await Product.find({ }).sort({ rating: -1 }).limit(10)
+    const products = await Product.find({ }).sort({ rating: -1 }).limit(8)
     res.json(products)
 })
 
@@ -192,8 +193,22 @@ const getProductsByBrand = asyncHandler (async(req, res) => {
     }
 })
 
+// @desc Get products by Deals
+// @route GET /api/products/dealsForToday
+// @access Public
+
+const getProductsByDeal = asyncHandler (async(req, res) => {
+    try{
+        const products = await Product.find({ inDeal: true })
+        res.json(products)
+    }
+    catch (error){
+        throw new Error(error)
+    }
+})
+
 export { getProducts, getProductsById, 
     deleteProduct, createProduct, 
-    getProductsByBrand,
+    getProductsByBrand, getProductsByDeal,
     updateProduct, createProductReview,
     getTopProducts, getProductsByCategory }

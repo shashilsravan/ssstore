@@ -34,11 +34,51 @@ main {
   background: white;
   border: 2px solid black;
 }
+.tag {
+  display: inline-block;
+  color: white;
+  line-height: 0.35;
+  text-decoration: none;
+  font-size: 0.8rem;
+  padding: 10px 1rem;
+  background: #25d366;
+  border-top-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  font-weight: bold;
+  text-transform: uppercase;
+  position: relative;
+  transition: 0.2s;
+  -webkit-tap-highlight-color: transparent;
+  animation: sravann 2s infinite;
+}
 
-@media screen and (min-width: 1041px) {
-  .statusbar p {
-    margin: 0.5rem 2.4rem;
+@keyframes sravann {
+  0% {
+    box-shadow: 0px 0px 10px rgba(37, 211, 102, 0);
   }
+  80% {
+    box-shadow: 0px 0px 10px rgba(37, 211, 102, 0.6);
+  }
+  100% {
+    box-shadow: 0px 0px 10px rgba(37, 211, 102, 0);
+  }
+}
+
+.slick-arrow.slick-next::before {
+  color: black;
+  margin-right: 20px;
+  font-size: 1.6rem;
+}
+.slick-slide {
+  padding: 6px;
+}
+.slick-arrow.slick-prev {
+  z-index: 1;
+}
+.slick-arrow.slick-prev::before {
+  color: black;
+  margin-left: 14px;
+  font-size: 1.6rem;
 }
 
 @media screen and (max-width: 1023px) {

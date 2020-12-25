@@ -17,7 +17,7 @@ export const cartReducer = (state = { cartItems: [], shippingAddress: {}}, actio
             }
         case CART_REMOVE_ITEM:
             return {
-                ...state, cartItems: state.cartItems.filter(x => x.product != action.payload)
+                ...state, cartItems: state.cartItems.filter(x => x.product !== action.payload)
             }
         case CART_SAVE_SHIPPING_ADDRESS:
             return {
@@ -51,7 +51,7 @@ export const likeReducer = (state = { likeItems: []}, action) => {
             }
         case LIKE_REMOVE_ITEM:
             return {
-                ...state, likeItems: state.likeItems.filter(x => x.product != action.payload)
+                ...state, likeItems: state.likeItems.filter(x => x.product !== action.payload)
             }
         default:
             return state

@@ -13,6 +13,7 @@ import SizeChart from '../minicomponents/SizeChart'
 import Alert from 'react-bootstrap/Alert'
 import Moment from 'react-moment';
 import 'moment-timezone';
+import CustomTag from '../minicomponents/CustomTag'
 
 
 export default function ProductScreen({ history, match }) {
@@ -43,7 +44,7 @@ export default function ProductScreen({ history, match }) {
             dispatch(listProductDetail(match.params.id))
             dispatch({ type: PRODUCT_CREATE_REVIEW_RESET })
         }
-    }, [dispatch, match, successReview, errorReview, product._id])
+    }, [dispatch, match, successReview, errorReview])
 
     const addToCartHandler = () => {
         history.push(`/cart/${match.params.id}?qty=${quantity}&size=${size}`)
@@ -58,7 +59,7 @@ export default function ProductScreen({ history, match }) {
     }
 
     return (
-        <div className="productScreen my-5">
+        <div className="productScreen mt-4 mb-5">
             <Link to="/" className="btn btn-light float-right">
                 Go Home <i className="fas fa-home"></i>
             </Link>
@@ -93,6 +94,9 @@ export default function ProductScreen({ history, match }) {
                                     </div>
                                 </div>
                             </li>
+                            {product.inDeal && <li className="list-group-item d-flex">
+                                <CustomTag text="In Deal" />
+                            </li>}
                             <li className="list-group-item d-flex">
                                 <Badge upper variant="danger" text={product.category} />
                                 <div className="mx-1">-</div>
@@ -107,6 +111,7 @@ export default function ProductScreen({ history, match }) {
                                     <span className="actualPrice">₹{product.actualPrice}</span>
                                     <span className="discount">({(100 - (product.price / product.actualPrice)*100).toFixed(0)}% OFF)</span>
                                 </h5>
+                                {product.countInStock < 5 && <p className="text-danger fw-bold mt-2">Hurry!!! Only few left.</p>}
                                 {product.isDress ? <SizeChart dressType={product.dressType} /> : null}
                             </li>
                             <li className="list-group-item">

@@ -9,8 +9,8 @@ export default function Footer() {
                 <div className="footer-container__left-display">
                     <div className="footer-container__each-detail">
                         <i className="fas fa-question"></i>
-                        <Link target="_self" to="/faq">
-                            <h6>FAQ</h6>
+                        <Link target="_self" to="/allProducts">
+                            <h6>Complete store</h6>
                         </Link>
                         
                     </div>

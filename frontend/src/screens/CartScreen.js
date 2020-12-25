@@ -67,7 +67,7 @@ export default function CartScreen({match, location, history }) {
                                                             onChange={(e) => {
                                                                 dispatch(addToCart(item.product, Number(e.target.value), item.size))
                                                             }} defaultValue={item.qty}>
-                                                            {[...Array(item.countInStock).keys()].map(x => {
+                                                            {[...Array(item.countInStock > 3 ? 3 : item.countInStock).keys()].map(x => {
                                                                 return (<option key={x+1} value={x+1}>{x+1}</option>)
                                                             })}
                                                         </select>

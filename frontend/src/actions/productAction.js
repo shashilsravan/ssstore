@@ -1,6 +1,6 @@
 import {PRODUCT_LIST_FAIL, PRODUCT_LIST_SUCCESS, PRODUCT_LIST_REQUEST,
      PRODUCT_DETAILS_REQUEST, PRODUCT_DETAILS_SUCCESS, PRODUCT_DETAILS_FAIL, 
-     PRODUCT_DELETE_REQUEST, PRODUCT_DELETE_FAIL, PRODUCT_DELETE_SUCCESS, PRODUCT_CREATE_REQUEST, PRODUCT_CREATE_SUCCESS, PRODUCT_CREATE_FAIL, PRODUCT_CREATE_RESET, PRODUCT_UPDATE_REQUEST, PRODUCT_UPDATE_SUCCESS, PRODUCT_UPDATE_FAIL, PRODUCT_CREATE_REVIEW_REQUEST, PRODUCT_CREATE_REVIEW_SUCCESS, PRODUCT_CREATE_REVIEW_FAIL, PRODUCT_TOP_REQUEST, PRODUCT_TOP_SUCCESS, PRODUCT_TOP_FAIL, PRODUCT_BY_CATEGORY_REQUEST, PRODUCT_BY_CATEGORY_SUCCESS, PRODUCT_BY_CATEGORY_FAIL, PRODUCT_BY_BRAND_REQUEST, PRODUCT_BY_BRAND_SUCCESS, PRODUCT_BY_BRAND_FAIL} from '../constants/productConstants'
+     PRODUCT_DELETE_REQUEST, PRODUCT_DELETE_FAIL, PRODUCT_DELETE_SUCCESS, PRODUCT_CREATE_REQUEST, PRODUCT_CREATE_SUCCESS, PRODUCT_CREATE_FAIL, PRODUCT_CREATE_RESET, PRODUCT_UPDATE_REQUEST, PRODUCT_UPDATE_SUCCESS, PRODUCT_UPDATE_FAIL, PRODUCT_CREATE_REVIEW_REQUEST, PRODUCT_CREATE_REVIEW_SUCCESS, PRODUCT_CREATE_REVIEW_FAIL, PRODUCT_TOP_REQUEST, PRODUCT_TOP_SUCCESS, PRODUCT_TOP_FAIL, PRODUCT_BY_CATEGORY_REQUEST, PRODUCT_BY_CATEGORY_SUCCESS, PRODUCT_BY_CATEGORY_FAIL, PRODUCT_BY_BRAND_REQUEST, PRODUCT_BY_BRAND_SUCCESS, PRODUCT_BY_BRAND_FAIL, PRODUCT_BY_DEAL_REQUEST, PRODUCT_BY_DEAL_SUCCESS, PRODUCT_BY_DEAL_FAIL} from '../constants/productConstants'
 import axios from 'axios'
 import { logout } from './userActions'
 
@@ -169,7 +169,7 @@ export const listTopProducts = () => async (dispatch, getState) => {
             type: PRODUCT_TOP_REQUEST,
         })
 
-        const {data} = await axios.get(`/api/products/top`)
+        const { data } = await axios.get(`/api/products/top`)
 
         dispatch({
             type: PRODUCT_TOP_SUCCESS,
@@ -180,10 +180,6 @@ export const listTopProducts = () => async (dispatch, getState) => {
         const message = error.response && error.response.data.message
             ? error.response.data.message
             : error.message
-
-        if (message === 'Not authorized, token failed') {
-            dispatch(logout())
-        }
         dispatch({
             type: PRODUCT_TOP_FAIL,
             payload: message,
@@ -238,6 +234,30 @@ export const productsFromBrand = (category, brand) => async (dispatch, getState)
         }
         dispatch({
             type: PRODUCT_BY_BRAND_FAIL,
+            payload: message,
+        })
+    }
+}
+
+export const listDealProducts = () => async (dispatch, getState) => {
+    try {
+        dispatch({
+            type: PRODUCT_BY_DEAL_REQUEST,
+        })
+
+        const { data } = await axios.get(`/api/products/dealsForToday`)
+
+        dispatch({
+            type: PRODUCT_BY_DEAL_SUCCESS,
+            payload: data
+        })
+        
+    } catch (error) {
+        const message = error.response && error.response.data.message
+            ? error.response.data.message
+            : error.message
+        dispatch({
+            type: PRODUCT_BY_DEAL_FAIL,
             payload: message,
         })
     }

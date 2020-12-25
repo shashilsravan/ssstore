@@ -2,6 +2,7 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import Badge from '../minicomponents/Badge'
 import Rating from '../minicomponents/Rating'
+import CustomTag from '../minicomponents/CustomTag'
 import './Product.css'
 
 export default function Product({ product }) {
@@ -18,25 +19,24 @@ export default function Product({ product }) {
 
                 <div className="card-body">
                     <Link to={`/product/${product._id}`} className="product-name">
-                        <div className="card-title">
-                            {product.name}
+                        <div className="card-title custom-card-title">
+                            <div className="fst-italic">{product.name}</div>
                         </div>
                     </Link>
                     
                     
-
                     <div className="card-text">
                         <div className="my-2">
                             <Rating value={product.rating} text={`${product.numReviews}`} />
                         </div>
                     </div>
 
-                    <div className="mb-2">
+                    <div className="mb-2"> 
                         <Badge upper variant="primary" text={product.brand} />
                     </div>
 
-                    <h5 className="card-text d-flex align-items-center flex-wrap">
-                        ₹{product.price} 
+                    <span className="card-text d-flex align-items-center flex-wrap">
+                        <strong>₹{product.price} </strong>
                         <span className="actualPrice">₹{product.actualPrice}</span>
                         
                         <span className="discount">
@@ -46,7 +46,7 @@ export default function Product({ product }) {
                                 />
                             </div>
                         </span>
-                    </h5>
+                    </span>
                 </div>
             </div>
         </div>
