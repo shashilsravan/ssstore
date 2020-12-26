@@ -33,14 +33,7 @@ export const gettingSlides = () => async (dispatch, getState) => {
         dispatch({
             type: SLIDE_DETAILS_REQUEST,
         })
-        const { userLogin: { userInfo } } = getState()
-        const config = {
-            headers: {
-                'Content-Type': 'application/json',
-                Authorization : `Bearer ${userInfo.token}`
-            },
-        }
-        const { data } = await axios.get(`/api/slideshow`, config)
+        const { data } = await axios.get(`/api/slideshow`)
         dispatch({
             type: SLIDE_DETAILS_SUCCESS,
             payload: data,

@@ -25,6 +25,16 @@ const authUser = asyncHandler (async(req, res) => {
     }
 })
 
+const getIsAdminById = asyncHandler (async(req, res) => {
+    try{
+        const user = await User.findOne({ _id: req.user._id })
+        res.json(user)
+    }
+    catch (error){
+        throw new Error(error)
+    }
+})
+
 // @desc Auth user profile
 // @route GET /api/users/profile
 // @access Private
@@ -176,5 +186,5 @@ const updateUserProfile = asyncHandler (async(req, res) => {
 
 
 
-export {authUser, getUserProfile, registerUser, 
+export {authUser, getUserProfile, registerUser, getIsAdminById, 
     updateUserProfile, getUsers, deleteUser, getUserById, updateUser}

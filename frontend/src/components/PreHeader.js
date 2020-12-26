@@ -1,15 +1,32 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
+import {useDispatch, useSelector} from 'react-redux';
+import { creatingSlide, deletingSlide, gettingSlides } from '../actions/slideActions';
+
 import './PreHeader.css'
 
 export default function PreHeader() {
+    const dispatch = useDispatch()
+    
+    const getSlides = useSelector(state => state.getSlides)
+    const { loading, slides } = getSlides
+
+    useEffect(() => {
+        dispatch(gettingSlides())
+    }, [dispatch])
+
+
     return (
         <div className="preheader">
             <div className="swiper-container swiper-container-first">
                 <div className="swiper-wrapper">
                     <div className="swiper-slide">CHAOTIC</div>
-                    <div className="swiper-slide">Lorem ipsum dolor sit amet.</div>
-                    <div className="swiper-slide">Lorem ipsum dolor sit.</div>
-                    <div className="swiper-slide">Lorem ipsum dolor sit amet consectetur.</div>
+                    {!loading && slides && (
+                        slides.map(slide => (
+                            <div className="swiper-slide" key={slide._id}>
+                                {slide.text}
+                            </div>
+                        ))
+                    )}
                 </div>
             </div>
         </div>

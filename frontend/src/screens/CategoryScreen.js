@@ -1,18 +1,16 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import DealProducts from '../components/DealProducts'
+import TopCarousel from '../components/TopCarousel'
 import TopProducts from '../components/TopProducts'
 import CardImage from '../minicomponents/CardImage'
 import HeroTitle from '../minicomponents/HeroTitle'
 
-// Tshirts, Hoodies, 
-// Posters, Stickers, 
-// Mask, Tote Bags,
-//  Laptop skins, all
 
 export default function CategoryScreen() {
     return (
         <div className="CategoryScreen py-2">
+            <TopCarousel />
             <HeroTitle text="Deals for Today"/>
             <DealProducts />
             <HeroTitle text="Shop by Category"/>

@@ -10,6 +10,8 @@ import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css'; 
 import { PRODUCT_CREATE_RESET } from '../constants/productConstants'
 import Paginate from '../components/Paginate'
+import { checkUser } from '../actions/userActions'
+
 
 export default function ProductListScreen({ history, match }) {
     const dispatch = useDispatch()
@@ -26,11 +28,14 @@ export default function ProductListScreen({ history, match }) {
     const userLogin = useSelector(state => state.userLogin)
     const {userInfo} = userLogin
 
+    const userCheck = useSelector(state => state.userCheck)
+    const {loading: loadingCheck, success: successCheck} = userCheck
+
     const pageNumber = match.params.pageNumber || 1
 
     useEffect(() => {
         dispatch({ type: PRODUCT_CREATE_RESET })
-
+        dispatch(checkUser())
         if (!userInfo || !userInfo.isAdmin){
             history.push('/login')
         }
@@ -95,7 +100,7 @@ export default function ProductListScreen({ history, match }) {
                 ? <Loader /> 
                 : error 
                 ? <AlertError error={error} />
-                : (
+                : successCheck && (
                     <Table striped bordered hover responsive className='table-sm'>
                         <thead>
                             <tr>

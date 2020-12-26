@@ -32,7 +32,8 @@ header {
 }
 .header-mobile {
   background: #05262b;
-  padding: 4px 2px;
+  padding: 4px 16px;
+  padding-left: 2px;
   padding-bottom: 12px;
   color: white;
 }

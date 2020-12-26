@@ -207,8 +207,24 @@ const getProductsByDeal = asyncHandler (async(req, res) => {
     }
 })
 
+
+// @desc Get products by Age Group
+// @route GET /api/products/shopby/:grouping
+// @access Public
+
+const getProductsByGrouping = asyncHandler (async(req, res) => {
+    const userGrouping = req.params.grouping
+    try{
+        const products = await Product.find({ dressType: userGrouping })
+        res.json(products)
+    }
+    catch (error){
+        throw new Error(error)
+    }
+})
+
 export { getProducts, getProductsById, 
-    deleteProduct, createProduct, 
+    deleteProduct, createProduct, getProductsByGrouping,
     getProductsByBrand, getProductsByDeal,
     updateProduct, createProductReview,
     getTopProducts, getProductsByCategory }

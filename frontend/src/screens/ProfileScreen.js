@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux';
 import Loader from '../minicomponents/Loader'
+import { checkUser } from '../actions/userActions'
 import { getUserDetails, updateUserProfile } from '../actions/userActions'
 import HeroTitle from '../minicomponents/HeroTitle'
 import { listMyOrders } from '../actions/orderActions';
@@ -28,6 +29,9 @@ export default function ProfileScreen({location, history}) {
     const userUpdateProfile = useSelector(state => state.userUpdateProfile)
     const { success } = userUpdateProfile
 
+    const userCheck = useSelector(state => state.userCheck)
+    const {loading: loadingCheck, success: successCheck} = userCheck
+
     useEffect(() => {
         if (!userInfo){
             history.push('/login')
@@ -44,6 +48,7 @@ export default function ProfileScreen({location, history}) {
                 setEmail(user.email)
             }
         }
+        dispatch(checkUser())
     }, [dispatch, history, userInfo, user])
 
     const submitHandler  = (e) => {
@@ -112,7 +117,7 @@ export default function ProfileScreen({location, history}) {
                         </button>
                     </form>
 
-                    {userInfo && userInfo.isAdmin ? (<Link to='/AdMIn' className="text-decoration-none">
+                    {userInfo && userInfo.isAdmin && successCheck ? (<Link to='/AdMIn' className="text-decoration-none">
                         <button className="btn btn-block btn-chaotic my-4">
                             <i className="fas fa-user-shield"></i> Admin Panel <i className="fas fa-user-lock"></i>
                         </button>

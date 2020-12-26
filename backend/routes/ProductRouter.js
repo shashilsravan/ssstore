@@ -4,12 +4,17 @@ import { protect, admin } from '../middleware/AuthMiddleware.js';
 import { deleteProduct, getProducts, 
     getProductsById, createProduct, 
     updateProduct, createProductReview,
-    getTopProducts, getProductsByCategory, getProductsByBrand, getProductsByDeal } from '../controllers/productController.js'
+    getTopProducts, getProductsByCategory, 
+    getProductsByBrand, getProductsByDeal,
+    getProductsByGrouping } from '../controllers/productController.js'
 const router = express.Router()
 
 router.route('/top').get(getTopProducts)
 
 router.route('/dealsForToday').get(getProductsByDeal)
+
+router.route('/shopby/:grouping').get(getProductsByGrouping)
+
 
 router.route('/').get(getProducts).post(protect, admin, createProduct)
 

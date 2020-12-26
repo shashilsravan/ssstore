@@ -1,17 +1,13 @@
 import React, {useEffect, useState} from 'react'
 import {useSelector} from 'react-redux';
 
-export default function LeaveMessage({location, history}) {
+export default function LeaveMessage({history}) {
     const userLogin = useSelector(state => state.userLogin)
     const { userInfo } = userLogin
 
     const [userName, setUserName] = useState("")
     const [userEmail, setUserEmail] = useState("")
     const [userProblem, setUserProblem] = useState("")
-
-    const handleSendingMail = () => {
-        console.log()
-    }
 
     useEffect(() => {
         if (!userInfo){
@@ -48,7 +44,7 @@ export default function LeaveMessage({location, history}) {
                     </a>
                 </div>
                 <div className="col-md-4">
-                    <div class="alert alert-primary" role="alert">
+                    <div className="alert alert-primary" role="alert">
                         <p>
                             We will get back to you by email based on your query within 12-15 hours. 
                             <br/>

@@ -1,9 +1,9 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk'
 import { composeWithDevTools } from 'redux-devtools-extension'
-import { productListReducer, productDetailsReducer, productDeleteReducer, productCreateReducer, productUpdateReducer, productReviewCreateReducer, productTopRatedReducer, productsByCatgoryReducer, productsByBrandReducer, productDealRatedReducer } from './reducers/productReducers'
+import { productListReducer, productDetailsReducer, productDeleteReducer, productCreateReducer, productUpdateReducer, productReviewCreateReducer, productTopRatedReducer, productsByCatgoryReducer, productsByBrandReducer, productDealRatedReducer, productsByGroupReducer } from './reducers/productReducers'
 import {cartReducer, likeReducer} from './reducers/cartReducers'
-import { userDeleteReducer, userDetailsReducer, userListReducer, userLoginReducer, userRegisterReducer, userUpdateProfileReducer, userUpdateReducer } from './reducers/userReducers';
+import { userCheckReducer, userDeleteReducer, userDetailsReducer, userListReducer, userLoginReducer, userRegisterReducer, userUpdateProfileReducer, userUpdateReducer } from './reducers/userReducers';
 import { orderCreateReducer, orderDeliverReducer, orderDetailsReducer, orderListMyReducer, orderListReducer, orderPayReducer, orderProcessedReducer } from './reducers/orderReducers';
 import { createSlideReducer, deleteSlideReducer, getSlidesReducer } from './reducers/slideReducers';
 
@@ -16,6 +16,7 @@ const reducer = combineReducers({
     productReviewCreate: productReviewCreateReducer,
     productTopRated: productTopRatedReducer,
     productDealRated: productDealRatedReducer,
+    productsByGroup: productsByGroupReducer,
     productByCategory: productsByCatgoryReducer,
     productByBrand: productsByBrandReducer,
     cart: cartReducer,
@@ -23,6 +24,7 @@ const reducer = combineReducers({
     userLogin: userLoginReducer,
     userRegister: userRegisterReducer,
     userDetails: userDetailsReducer,
+    userCheck: userCheckReducer,
     userUpdateProfile: userUpdateProfileReducer,
     userList: userListReducer,
     userDelete: userDeleteReducer,

@@ -47,7 +47,7 @@ export default function Rating({value, text}) {
             <span>
                 <i 
                 className={
-                    value == 5 
+                    value === 5 
                     ? 'fa fa-star' 
                     : value >= 4.5 
                     ? 'fa fa-star-half-alt'

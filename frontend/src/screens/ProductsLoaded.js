@@ -1,7 +1,6 @@
 import React, {useState} from 'react'
 import Dropdown from 'react-bootstrap/Dropdown'
 import Product from '../components/Product'
-import Form from 'react-bootstrap/Form'
 import ComingSoon from '../components/ComingSoon'
 
 export default function ProductsLoaded({data, isDress}) {

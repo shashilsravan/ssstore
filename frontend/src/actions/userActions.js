@@ -4,7 +4,7 @@ import { USER_DETAILS_FAIL, USER_DETAILS_REQUEST,
     USER_LOGIN_SUCCESS, USER_LOGOUT, USER_REGISTER_FAIL, 
     USER_REGISTER_REQUEST, USER_REGISTER_SUCCESS, 
     USER_UPDATE_PROFILE_FAIL, USER_UPDATE_PROFILE_REQUEST, 
-    USER_UPDATE_PROFILE_SUCCESS, USER_DETAILS_RESET, USER_LIST_RESET, USER_LIST_REQUEST, USER_LIST_SUCCESS, USER_LIST_FAIL, USER_DELETE_REQUEST, USER_DELETE_SUCCESS, USER_DELETE_FAIL, USER_UPDATE_REQUEST, USER_UPDATE_SUCCESS, USER_UPDATE_FAIL } from '../constants/userConstants'
+    USER_UPDATE_PROFILE_SUCCESS, USER_DETAILS_RESET, USER_LIST_RESET, USER_LIST_REQUEST, USER_LIST_SUCCESS, USER_LIST_FAIL, USER_DELETE_REQUEST, USER_DELETE_SUCCESS, USER_DELETE_FAIL, USER_UPDATE_REQUEST, USER_UPDATE_SUCCESS, USER_UPDATE_FAIL, USER_ISADMIN_REQUEST, USER_ISADMIN_SUCCESS, USER_ISADMIN_FAIL } from '../constants/userConstants'
 
 import { ORDER_LIST_MY_RESET } from '../constants/orderConstants';
 
@@ -217,6 +217,36 @@ export const updateUser = (user) => async (dispatch, getState) => {
     } catch (error) {
         dispatch({
             type: USER_UPDATE_FAIL,
+            payload: 
+                error.response && error.response.data.message 
+                ? error.response.data.message 
+                : error.message
+        })
+    }
+}
+
+export const checkUser = () => async (dispatch, getState) => {
+    try {
+        dispatch({
+            type: USER_ISADMIN_REQUEST,
+        })
+
+        const { userLogin: { userInfo } } = getState()
+
+        const config = {
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization : `Bearer ${userInfo.token}`
+            },
+        }
+        await axios.get(`/api/users/isAdmin`, config)
+        dispatch({
+            type: USER_ISADMIN_SUCCESS
+        })
+        
+    } catch (error) {
+        dispatch({
+            type: USER_ISADMIN_FAIL,
             payload: 
                 error.response && error.response.data.message 
                 ? error.response.data.message 

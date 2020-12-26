@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react'
 import {useDispatch, useSelector} from 'react-redux';
 import {Link} from 'react-router-dom'
 import { creatingSlide, deletingSlide, gettingSlides } from '../actions/slideActions';
-import { logout } from '../actions/userActions'
+import { logout, checkUser } from '../actions/userActions'
 import Loader from '../minicomponents/Loader'
 import AlertError from '../minicomponents/AlertError'
 import { confirmAlert } from 'react-confirm-alert'; 
@@ -13,6 +13,9 @@ export default function AdminScreen({history}) {
 
     const userLogin = useSelector(state => state.userLogin)
     const {userInfo} = userLogin
+
+    const userCheck = useSelector(state => state.userCheck)
+    const {loading: loadingCheck, success: successCheck} = userCheck
 
     const getSlides = useSelector(state => state.getSlides)
     const { loading: loadingSlides, slides } = getSlides
@@ -25,6 +28,7 @@ export default function AdminScreen({history}) {
 
     const [url, setUrl] = useState("")
     const [text, setText] = useState("")
+    const [link, setLink] = useState("")
 
     useEffect(() => {
         if (!userInfo){
@@ -33,6 +37,7 @@ export default function AdminScreen({history}) {
         if (userInfo && !userInfo.isAdmin){
             dispatch(logout())
         }
+        dispatch(checkUser())
         dispatch(gettingSlides())
     }, [userInfo, history, dispatch, successDelete, successCreate])
 
@@ -63,13 +68,16 @@ export default function AdminScreen({history}) {
     const submitHandler = (e) => {
         e.preventDefault()
         if (url !== "" && text !== ""){
-            dispatch(creatingSlide({ image: url, text}))
+            dispatch(creatingSlide({ image: url, text, link}))
         }
         refreshHandler()
     }
 
     return (
         <div className="my-5">
+            {loadingCheck ? <Loader />
+            : successCheck &&
+            (<>
             <h3 className="text-warning">Hello Admin <i className="far fa-smile-beam"></i> </h3>
 
             <div className="mt-4">
@@ -82,32 +90,42 @@ export default function AdminScreen({history}) {
                 {errorCreating && 
                     <AlertError error={errorCreating}/>
                 }
+                <div className="row mb-4">
                 {loadingSlides ? <Loader /> : 
                 slides &&
                     slides.map(image => (
-                    <p
-                    key={image._id}>
-                        {image.image}
-                        <button 
-                        onClick={() => deleteHandler(image._id)}
-                        className="ml-2 btn btn-danger btn-sm">
-                            Delete
-                        </button>
-                    </p>
-                ))}
+                        <div key={image._id} className="col-6 mt-2 col-md-4">
+                            <Link to={image.link}>
+                                <img 
+                                className="img-fluid"
+                                src={image.image} alt={image.link}/>
+                            </Link>
+                            <button 
+                            onClick={() => deleteHandler(image._id)}
+                            className="mt-2 btn btn-danger btn-block btn-sm">
+                                Delete
+                            </button>
+                        </div>
+                    ))}
+                </div>
                 <form onSubmit={(e) => submitHandler(e)}>
                     <div className="input-group d-flex flex-column">
                         <input 
                         type="text" value={text}
                         onChange={(e) => setText(e.target.value)}
                         className="form-control my-2"
-                        style={{ width: '100%'}} maxLength={50}
+                        style={{ width: '100%'}} maxLength={54}
                         placeholder="Text in pre header" aria-label="Username" aria-describedby="addon-wrapping" />
                         <input 
                         type="text" onChange={(e) => setUrl(e.target.value)}
                         className="form-control my-2" value={url}
                         style={{ width: '100%'}}
                         placeholder="Slide URL..." aria-label="Username" aria-describedby="addon-wrapping" />
+                        <input 
+                        type="text" onChange={(e) => setLink(e.target.value)}
+                        className="form-control my-2" value={link}
+                        style={{ width: '100%'}}
+                        placeholder="Link to be displayed" aria-label="Username" aria-describedby="addon-wrapping" />
                         <button type="submit" className="btn btn-success mx-4">
                             Add <i className="fas fa-plus"></i>
                         </button>
@@ -150,6 +168,8 @@ export default function AdminScreen({history}) {
                     </div>
                 </div>
             </div>
+                        
+            </>)}
         </div>
     )
 }

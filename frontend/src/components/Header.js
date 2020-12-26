@@ -63,11 +63,11 @@ export default function Header() {
                                         Shop by
                                     </a>
                                     <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <li><Link className="dropdown-item" to='/'>Men</Link></li>
-                                        <li><Link className="dropdown-item" to='/'>Women</Link></li>
+                                        <li><Link className="dropdown-item" to='/api/products/shopby/Men'>Men</Link></li>
+                                        <li><Link className="dropdown-item" to='/api/products/shopby/Women'>Women</Link></li>
                                         <li><hr className="dropdown-divider" /></li>
-                                        <li><Link className="dropdown-item" to='/'>Boys</Link></li>
-                                        <li><Link className="dropdown-item" to='/'>Girls</Link></li>
+                                        <li><Link className="dropdown-item" to='/api/products/shopby/Boys'>Boys</Link></li>
+                                        <li><Link className="dropdown-item" to='/api/products/shopby/Girls'>Girls</Link></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -179,10 +179,10 @@ export default function Header() {
                         <div className="collapse" id="collapseExample">
                             <div className="card card-body font-black">
                                 <div className="d-flex flex-column">
-                                    <Link to="/">Men</Link>
-                                    <Link to="/">Women</Link>
-                                    <Link to="/">Boys</Link>
-                                    <Link to="/">Girls</Link>
+                                    <Link to="/api/products/shopby/Men">Men</Link>
+                                    <Link to="/api/products/shopby/Women">Women</Link>
+                                    <Link to="/api/products/shopby/Boys">Boys</Link>
+                                    <Link to="/api/products/shopby/Girls">Girls</Link>
                                 </div>
                             </div>
                         </div>

@@ -2,7 +2,6 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import Badge from '../minicomponents/Badge'
 import Rating from '../minicomponents/Rating'
-import CustomTag from '../minicomponents/CustomTag'
 import './Product.css'
 
 export default function Product({ product }) {
@@ -12,7 +11,10 @@ export default function Product({ product }) {
                 <Link to={`/product/${product._id}`}>
                     <div className="zoom-effect-container zoom-effect-container2">
                         <div className="image-card">
-                            <img src={product.image} className="card-img-top"/>
+                            <img
+                            src={product.image} 
+                            alt={product.name}
+                            className="card-img-top"/>
                         </div>
                     </div>
                 </Link>

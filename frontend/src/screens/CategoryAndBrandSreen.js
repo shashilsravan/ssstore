@@ -23,7 +23,7 @@ export default function CategoryAndBrandSreen({ match, history }) {
         else{
             history.push('/')
         }
-    }, [category, history, brand])
+    }, [category, history, brand, dispatch])
 
     return (
         <div className="my-5">

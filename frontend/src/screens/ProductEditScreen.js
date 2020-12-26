@@ -3,7 +3,7 @@ import {useDispatch, useSelector} from "react-redux";
 import Loader from "../minicomponents/Loader"
 import FormContainer from "./FormContainer";
 import {Link} from "react-router-dom"
-import {logout} from "../actions/userActions"
+import {logout, checkUser} from "../actions/userActions"
 import { confirmAlert } from "react-confirm-alert"; 
 import { listProductDetail, updateProduct } from "../actions/productAction"
 import "react-confirm-alert/src/react-confirm-alert.css"; 
@@ -17,6 +17,9 @@ export default function ProductEditScreen({match, history}) {
 
     const productDetails = useSelector((state) => state.productDetails)
     const { loading, error, product } = productDetails
+
+    const userCheck = useSelector(state => state.userCheck)
+    const {loading: loadingCheck, success: successCheck} = userCheck
 
     const productUpdate = useSelector((state) => state.productUpdate)
     const { loading: loadingUpdate, error: errorUpdate, success: successUpdate } = productUpdate
@@ -72,6 +75,7 @@ export default function ProductEditScreen({match, history}) {
                 setInDeal(product.inDeal)
             }
         }
+        dispatch(checkUser())
     }, [dispatch, userInfo, history, product, productId, successUpdate])
 
     const submitHandler = (e) => {
@@ -116,7 +120,7 @@ export default function ProductEditScreen({match, history}) {
                     </div> }
                 {loading 
                 ? <Loader />
-                : (
+                : successCheck && (
                     <form onSubmit={submitHandler}>
                         <div className="form-group">
                             <label htmlFor="exampleInputName">Product Name:</label>

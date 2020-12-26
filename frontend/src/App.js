@@ -1,7 +1,7 @@
 import React from 'react'
 import {BrowserRouter as Router, Route} from 'react-router-dom'
 import './App.css';
-import FAQ from './components/FAQ';
+import About from './components/About';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import LeaveMessage from './components/LeaveMessage';
@@ -27,6 +27,7 @@ import ProfileScreen from './screens/ProfileScreen';
 import RegisterScreen from './screens/RegisterScreen';
 import SearchScreen from './screens/SearchScreen';
 import ShippingScreen from './screens/ShippingScreen';
+import ShopByScreen from './screens/ShopByScreen';
 import Tshirts from './screens/Tshirts';
 import UserEditScreen from './screens/UserEditScreen';
 import UserListScreen from './screens/UserListScreen';
@@ -46,13 +47,13 @@ const App = () => {
         <Route path='/cart/:id?' component={CartScreen} exact/>
         <Route path='/liked/:id?' component={LikedScreen} exact/>
         <Route path='/login' component={LoginScreen} exact />
+        <Route path='/about' component={About} exact />
         <Route path='/register' component={RegisterScreen} exact />
         <Route path='/profile' component={ProfileScreen} exact />
         <Route path='/shipping' component={ShippingScreen} exact />
         <Route path='/payment' component={PaymentScreen} exact />
         <Route path='/placeorder' component={PlaceOrderScreen} exact />
         <Route path='/contactus' component={LeaveMessage} exact />
-        <Route path='/faq' component={FAQ} exact />
         <Route path='/order/:id' component={OrderScreen} exact />
         <Route path='/AdMIn' component={AdminScreen} exact />
         <Route path='/AdMIn/userList' component={UserListScreen} exact />
@@ -66,6 +67,7 @@ const App = () => {
         <Route path='/search/:keyword/page/:pageNumber' component={SearchScreen} exact />
         <Route path='/api/products/category/:category' component={ProductByCategoryScreen} exact />
         <Route path='/api/products/category/:category/brand/:brand' component={CategoryAndBrandSreen} exact />
+        <Route path='/api/products/shopby/:grouping' component={ShopByScreen} exact />
         <Route path='/' component={MainPage} exact />
       </main>
       <Footer />

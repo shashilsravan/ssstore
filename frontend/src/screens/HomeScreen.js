@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import { listProducts } from '../actions/productAction'
 import HeroTitle from '../minicomponents/HeroTitle'
@@ -13,7 +13,7 @@ export default function HomeScreen({location, history, match}) {
     const pageNumber = match.params.pageNumber || 1
     const productList = useSelector(state => state.productList)
 
-    const {loading, error, products, page, pages, allProducts} = productList
+    const {loading, error, products, page, pages} = productList
 
     
     useEffect(() => {
@@ -46,14 +46,3 @@ export default function HomeScreen({location, history, match}) {
         </div>
     )
 }
-
-
-{/* <div className="row">
-    {products.map(product => {
-        return(
-            product.category === 'Custom'?
-            <div className="col col-sm-12 col-md-6 col-lg-4">
-                <p>{product.name}</p>
-            </div> : null)
-    })}
-</div> */}

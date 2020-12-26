@@ -6,15 +6,13 @@ import {Link} from 'react-router-dom'
 import Table from 'react-bootstrap/Table'
 import { logout } from '../actions/userActions'
 import { listOrders } from '../actions/orderActions';
-import Button from 'react-bootstrap/esm/Button';
-import { confirmAlert } from 'react-confirm-alert'; 
-import 'react-confirm-alert/src/react-confirm-alert.css'; 
 
 export default function OrderListScreen({ history }) {
     const dispatch = useDispatch()
 
     const orderList = useSelector(state => state.orderList)
     const { loading, error, orders } = orderList
+
 
     const userLogin = useSelector(state => state.userLogin)
     const {userInfo} = userLogin

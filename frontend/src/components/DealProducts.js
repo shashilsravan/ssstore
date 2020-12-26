@@ -14,7 +14,7 @@ export default function DealProducts({ history }) {
 
     useEffect(() => {
         dispatch(listDealProducts())
-    }, [])
+    }, [dispatch])
 
     return (
         <div>

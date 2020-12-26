@@ -22,7 +22,7 @@ export default function OrderScreen({match, history}) {
     const { loading, error, order } = orderDetails
 
     const orderPay = useSelector(state => state.orderPay)
-    const { loading: loadingPay, error: errorPay, success: successPay } = orderPay
+    const { loading: loadingPay, success: successPay } = orderPay
 
     const orderDeliver = useSelector(state => state.orderDeliver)
     const { success: successDeliver } = orderDeliver
@@ -34,6 +34,9 @@ export default function OrderScreen({match, history}) {
     useEffect(() => {
         if (!userInfo){
             history.push('/login')
+        }
+        if(!order || order._id !== orderId) {
+            dispatch(getOrderDetails(orderId))
         }
         const addPayPalScript = async () => {
             const { data: clientId } = await axios.get('/api/config/paypal')
