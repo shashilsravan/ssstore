@@ -4,6 +4,7 @@ import ProductsLoaded from './ProductsLoaded';
 import AlertError from '../minicomponents/AlertError'
 import HeroTitle from '../minicomponents/HeroTitle'
 import Loader from '../minicomponents/Loader'
+import Meta from '../minicomponents/Meta'
 import { productsFromCategory } from '../actions/productAction'
 
 export default function ProductByCategoryScreen({ match, history }) {
@@ -19,6 +20,7 @@ export default function ProductByCategoryScreen({ match, history }) {
     return (
         <div className="my-5">
             <HeroTitle text={`Products in ${category}`} />
+            <Meta title={`Chaotic | ${category}`} />
             { loading ?  
                 <Loader />
                 : error 

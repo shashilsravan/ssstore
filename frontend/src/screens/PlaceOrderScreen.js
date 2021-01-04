@@ -3,6 +3,9 @@ import {useDispatch, useSelector} from 'react-redux';
 import { Link } from 'react-router-dom';
 import { createOrder } from '../actions/orderActions';
 import CheckOutSteps from '../components/CheckOutSteps';
+import { CART_RESET } from '../constants/cartConstants';
+import Meta from '../minicomponents/Meta'
+
 
 export default function PlaceOrderScreen({history}) {
     const cart = useSelector(state => state.cart)
@@ -32,6 +35,8 @@ export default function PlaceOrderScreen({history}) {
             history.push('/login')
         }
         if (success){
+            localStorage.removeItem('cartItems')
+            dispatch({ type: CART_RESET })
             history.push(`/order/${order._id}`)
         }
         // eslint-disable-next-line
@@ -50,6 +55,7 @@ export default function PlaceOrderScreen({history}) {
 
     return (
         <div className="my-5">
+            <Meta title="Chaotic | Placing Order" />
             <CheckOutSteps step1 step2 step3 step4 />
             <div className="row">
                 <div className="col-md-8">

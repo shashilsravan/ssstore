@@ -5,14 +5,18 @@ import {addToCart, removeFromCart} from '../actions/cartActions'
 import HeroTitle from '../minicomponents/HeroTitle'
 import Badge from '../minicomponents/Badge'
 import NoItems from '../minicomponents/NoItems'
+import Meta from '../minicomponents/Meta'
+
 
 export default function CartScreen({match, location, history }) {
     const productId = match.params.id
     var numberPattern = /\d+/g;
     const size = location.search ? location.search.split('=')[2] : "M"
     const qty = location.search ? Number(location.search.match(numberPattern)) : 1
+  
     const dispatch = useDispatch()
     const cart = useSelector(state => state.cart)
+    
     const {cartItems} = cart
     const removeFromCartHandler = (id) => {
         dispatch(removeFromCart(id))
@@ -24,9 +28,10 @@ export default function CartScreen({match, location, history }) {
         if (productId){
             dispatch(addToCart(productId, qty, size))
         }
-    }, [dispatch, productId, qty, size])
+    }, [dispatch, productId, qty, size, cart, cartItems])
     return (
-        <div>
+        <div className="my-5 pb-5">
+            <Meta title="Chaotic | My Cart" />
             <Link to="/" className="btn btn-light float-right mt-2">
                 Go Home <i className="fas fa-home"></i>
             </Link>

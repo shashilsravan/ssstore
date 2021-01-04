@@ -1,5 +1,6 @@
 export const CART_ADD_ITEM = 'CART_ADD_ITEM'
 export const CART_REMOVE_ITEM = 'CART_REMOVE_ITEM'
+export const CART_RESET = 'CART_RESET'
 
 export const LIKE_ADD_ITEM = 'LIKE_ADD_ITEM'
 export const LIKE_REMOVE_ITEM = 'LIKE_REMOVE_ITEM'

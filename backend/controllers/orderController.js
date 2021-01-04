@@ -51,12 +51,6 @@ const updateOrderToPaid = asyncHandler (async (req, res) => {
     if (order) {
         order.isPaid = true
         order.paidAt = Date.now()
-        order.paymentResult = {
-            id: req.body.id,
-            status: req.body.status,
-            update_time: req.body.update_time,
-            email: req.body.payer.email_address
-        }
         const updatedOrder = await order.save()
         res.json(updatedOrder)
     }
@@ -89,9 +83,11 @@ const updateOrderToDelivered = asyncHandler (async (req, res) => {
 // @access Private/Admin
 
 const updateOrderToProcessed = asyncHandler (async (req, res) => {
+    const message = req.body.message
     const order = await Order.findById(req.params.id)
     if (order) {
         order.isProcessed = true
+        order.information = message
         order.processedAt = Date.now()
         const updatedOrder = await order.save()
         res.json(updatedOrder)
@@ -119,6 +115,7 @@ const getOrders = asyncHandler (async (req, res) => {
     const orders = await Order.find({}).populate('user', 'id name email')
     res.json(orders)
 })
+
 
 export {addOrderItems, getOrderById, 
     updateOrderToPaid, getMyOrders, 

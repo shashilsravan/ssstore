@@ -6,6 +6,7 @@ import Loader from '../minicomponents/Loader'
 import AlertError from '../minicomponents/AlertError'
 import Product from '../components/Product'
 import Paginate from '../components/Paginate'
+import Meta from '../minicomponents/Meta'
 
 
 export default function SearchScreen({ match }) {
@@ -24,6 +25,7 @@ export default function SearchScreen({ match }) {
 
     return (
         <div className="mt-5">
+            <Meta title={`search results for ${keyword}`} />
             <HeroTitle text="Search results..." />
             { loading ?  
                 <Loader />

@@ -6,6 +6,8 @@ import AlertError from '../minicomponents/AlertError'
 import HeroTitle from '../minicomponents/HeroTitle'
 import Loader from '../minicomponents/Loader'
 import { productsFromBrand } from '../actions/productAction'
+import Meta from '../minicomponents/Meta'
+
 
 export default function CategoryAndBrandSreen({ match, history }) {
     const category = match.params.category
@@ -27,6 +29,7 @@ export default function CategoryAndBrandSreen({ match, history }) {
 
     return (
         <div className="my-5">
+            <Meta title={`Chaotic | ${brand} - ${category}`} />
             <HeroTitle text={`${brand} brand in ${category}`} />
             <Link to={`/${category}`} className="float-right">
                 <button className="btn btn-dark">

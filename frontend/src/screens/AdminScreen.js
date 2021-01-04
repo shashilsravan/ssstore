@@ -7,6 +7,7 @@ import Loader from '../minicomponents/Loader'
 import AlertError from '../minicomponents/AlertError'
 import { confirmAlert } from 'react-confirm-alert'; 
 import 'react-confirm-alert/src/react-confirm-alert.css'; 
+import Meta from '../minicomponents/Meta'
 
 export default function AdminScreen({history}) {
     const dispatch = useDispatch()
@@ -74,6 +75,8 @@ export default function AdminScreen({history}) {
     }
 
     return (
+        <>
+        <Meta title='Chaotic Admin' />
         <div className="my-5">
             {loadingCheck ? <Loader />
             : successCheck &&
@@ -171,5 +174,7 @@ export default function AdminScreen({history}) {
                         
             </>)}
         </div>
+        
+        </>
     )
 }

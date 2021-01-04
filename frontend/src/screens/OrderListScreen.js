@@ -6,6 +6,8 @@ import {Link} from 'react-router-dom'
 import Table from 'react-bootstrap/Table'
 import { logout } from '../actions/userActions'
 import { listOrders } from '../actions/orderActions';
+import Meta from '../minicomponents/Meta'
+
 
 export default function OrderListScreen({ history }) {
     const dispatch = useDispatch()
@@ -31,6 +33,7 @@ export default function OrderListScreen({ history }) {
 
     return (
         <div className="my-5">
+            <Meta title='Chaotic | Order List' />
             <nav aria-label="breadcrumb">
                 <ol className="breadcrumb">
                     <li className="breadcrumb-item">

@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom'
 import {useDispatch, useSelector} from 'react-redux';
 import Loader from '../minicomponents/Loader'
+import Meta from '../minicomponents/Meta'
 import { login } from '../actions/userActions'
 import FormContainer from './FormContainer';
 
@@ -25,7 +26,8 @@ export default function LoginScreen({ location, history }) {
     }
     
     return (
-        <div className="my-5">
+        <div className="my-5 py-5">
+            <Meta title='Chaotic | Login' />
             <FormContainer>
                 <h2>Sign in</h2>
                 {error && <div className="alert alert-danger mt-3" role="alert">

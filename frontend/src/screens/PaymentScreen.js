@@ -4,6 +4,8 @@ import { savePaymentMethod } from '../actions/cartActions';
 import CheckOutSteps from '../components/CheckOutSteps';
 import HeroTitle from '../minicomponents/HeroTitle';
 import FormContainer from './FormContainer';
+import Meta from '../minicomponents/Meta'
+
 
 export default function PaymentScreen({history}) {
     const cart = useSelector(state => state.cart)
@@ -25,7 +27,6 @@ export default function PaymentScreen({history}) {
     const submitHandler = (e) => {
         e.preventDefault()
         dispatch(savePaymentMethod(paymentMethod))
-        // console.log(paymentMethod)
         history.push('/placeorder')
     }
 
@@ -40,6 +41,7 @@ export default function PaymentScreen({history}) {
 
     return (
         <div className="my-5">
+            <Meta title="Chaotic | Payments" />
             <CheckOutSteps step1 step2 step3 />
 
             <FormContainer>
@@ -48,9 +50,9 @@ export default function PaymentScreen({history}) {
                     <div className="form-check my-4">
                         <input 
                         onChange={(e) => setPaymentMethod(e.target.value)}
-                        className="form-check-input" type="radio" name="paymentMethod" value='PayPal' id="paypal" checked={paymentMethod == 'PayPal'}/>
+                        className="form-check-input" type="radio" name="paymentMethod" value='Card' id="paypal" checked={paymentMethod == 'PayPal'}/>
                         <label className="form-check-label" htmlFor="paypal">
-                            Paypal or Credit Cart
+                            Credit / Debit Cart
                         </label>
                     </div>
                     <div className="form-check my-4">

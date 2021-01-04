@@ -9,18 +9,18 @@ export default function Footer() {
                 <div className="footer-container__left-display">
                     <div className="footer-container__each-detail">
                         <i className="fas fa-question"></i>
-                        <Link target="_self" to="/allProducts">
+                        <Link to="/allProducts">
                             <h6>Complete store</h6>
                         </Link>
                         
                     </div>
                     <div className="footer-container__each-detail">
-                        <Link target="_self" to="/contactus">
+                        <Link to="/contactus">
                             <h6>Leave a message</h6>
                         </Link>
                     </div>
                     <div className="footer-container__each-detail">
-                        <Link target="_self" to="/">
+                        <Link to="/">
                             <h6>About us</h6>
                         </Link>
                     </div>
@@ -30,16 +30,16 @@ export default function Footer() {
                         We are on:
                     </span>
                     <div className="icons-container">
-                        <Link target="_self" to="/">
+                        <Link to="/">
                             <i className="fab fa-instagram"></i>
                         </Link>
-                        <Link target="_self" to="/">
+                        <Link to="/">
                             <i className="fab fa-facebook"></i>
                         </Link>
-                        <Link target="_self" to="/">
+                        <Link to="/">
                             <i className="far fa-envelope"></i>
                         </Link>
-                        <Link target="_self" to="/">
+                        <Link to="/">
                             <i className="fas fa-phone"></i>
                         </Link>
                     </div>

@@ -4,6 +4,8 @@ import {Link} from 'react-router-dom'
 import {addToLike, removeFromLike} from '../actions/cartActions'
 import HeroTitle from '../minicomponents/HeroTitle'
 import NoItems from '../minicomponents/NoItems'
+import Meta from '../minicomponents/Meta'
+
 
 export default function LikedScreen({match, location, history}) {
     const productId = match.params.id
@@ -21,7 +23,8 @@ export default function LikedScreen({match, location, history}) {
     }, [dispatch, productId])
     
     return (
-        <div>
+        <div className="my-5">
+            <Meta title="Chaotic | My Likes" />
             <HeroTitle text="Liked Products" />
             <br />
             {likeItems.length === 0

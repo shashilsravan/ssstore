@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import {useSelector} from 'react-redux';
+import Meta from '../minicomponents/Meta'
 
 export default function LeaveMessage({history}) {
     const userLogin = useSelector(state => state.userLogin)
@@ -20,7 +21,10 @@ export default function LeaveMessage({history}) {
     }, [userInfo])
     
     return (
+        <>
+        <Meta title="Leave a message" />
         <div className="my-5">
+            
             <div className="row">
                 <div className="col-md-8">
                     <h5 className="mb-4">Hi {userName}!</h5>
@@ -54,5 +58,6 @@ export default function LeaveMessage({history}) {
                 </div>
             </div>
         </div>
+        </>
     )
 }

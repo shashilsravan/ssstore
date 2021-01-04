@@ -4,11 +4,14 @@ import DealProducts from '../components/DealProducts'
 import TopCarousel from '../components/TopCarousel'
 import TopProducts from '../components/TopProducts'
 import CardImage from '../minicomponents/CardImage'
+import Meta from '../minicomponents/Meta'
 import HeroTitle from '../minicomponents/HeroTitle'
 
 
 export default function CategoryScreen() {
     return (
+        <>
+        <Meta />
         <div className="CategoryScreen py-2">
             <TopCarousel />
             <HeroTitle text="Deals for Today"/>
@@ -79,5 +82,6 @@ export default function CategoryScreen() {
             <HeroTitle text="Top Selling Products"/>
             <TopProducts />
         </div>
+        </>
     )
 }

@@ -2,10 +2,13 @@ import React from 'react'
 import CardImage from '../minicomponents/CardImage'
 import {Link} from 'react-router-dom'
 import HeroTitle from '../minicomponents/HeroTitle'
+import Meta from '../minicomponents/Meta'
+
 
 export default function Hoodies() {
     return (
         <div className="SubCategories SubHoodies my-4">
+            <Meta title="Chaotic | Hoodies" />
             <Link to='/' className="btn btn-dark text-right mb-2">
                 Go Home <i className="fas fa-home"></i>
             </Link>

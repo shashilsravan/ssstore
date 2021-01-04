@@ -8,6 +8,9 @@ import { listMyOrders } from '../actions/orderActions';
 import Table from 'react-bootstrap/Table'
 import {Link} from 'react-router-dom';
 import Step from '../minicomponents/Step';
+import Meta from '../minicomponents/Meta'
+import { USER_UPDATE_PROFILE_RESET } from '../constants/userConstants'
+
 
 export default function ProfileScreen({location, history}) {
     const [name, setName] = useState('')
@@ -29,16 +32,16 @@ export default function ProfileScreen({location, history}) {
     const userUpdateProfile = useSelector(state => state.userUpdateProfile)
     const { success } = userUpdateProfile
 
-    const userCheck = useSelector(state => state.userCheck)
-    const {loading: loadingCheck, success: successCheck} = userCheck
+    // const userCheck = useSelector(state => state.userCheck)
+    // const {loading: loadingCheck, success: successCheck} = userCheck
 
     useEffect(() => {
         if (!userInfo){
             history.push('/login')
         }
         else{
-            if (user && !user.name){
-
+            if ((user && !user.name) || success){
+                dispatch({type: USER_UPDATE_PROFILE_RESET})
                 dispatch(getUserDetails('profile'))
                 dispatch(listMyOrders())
                 
@@ -49,7 +52,7 @@ export default function ProfileScreen({location, history}) {
             }
         }
         dispatch(checkUser())
-    }, [dispatch, history, userInfo, user])
+    }, [dispatch, history, userInfo, user, success])
 
     const submitHandler  = (e) => {
         e.preventDefault()
@@ -63,6 +66,7 @@ export default function ProfileScreen({location, history}) {
 
     return (
         <div className="my-4 mb-5">
+            <Meta title='Chaotic | Profile' />
             <div className="row">
                 <div className="col-md-4">
                     <HeroTitle text="User profile" />
@@ -117,7 +121,7 @@ export default function ProfileScreen({location, history}) {
                         </button>
                     </form>
 
-                    {userInfo && userInfo.isAdmin && successCheck ? (<Link to='/AdMIn' className="text-decoration-none">
+                    {userInfo && userInfo.isAdmin ? (<Link to='/AdMIn' className="text-decoration-none">
                         <button className="btn btn-block btn-chaotic my-4">
                             <i className="fas fa-user-shield"></i> Admin Panel <i className="fas fa-user-lock"></i>
                         </button>

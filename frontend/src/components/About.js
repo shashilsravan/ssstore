@@ -1,9 +1,15 @@
 import React from 'react'
 import HeroTitle from '../minicomponents/HeroTitle'
+import { Helmet } from 'react-helmet'
 import Typed from 'react-typed';
 
 export default function About() {
     return (
+        <>
+        <Helmet>
+            <title>About Chaotic</title>
+            <meta name='About us' content=' We are three socially awkward yet brilliant minded' />
+        </Helmet>
         <div className="my-5 about-section">
             <HeroTitle text="About Chaotic" />
 
@@ -66,5 +72,6 @@ export default function About() {
             </div>
 
         </div>
+        </>
     )
 }

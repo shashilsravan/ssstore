@@ -1,18 +1,22 @@
 import React, {useEffect, useState} from 'react'
 import {useDispatch, useSelector} from 'react-redux';
-import { PayPalButton } from 'react-paypal-button-v2'
+import StripeCheckout from 'react-stripe-checkout'
 import { Link } from 'react-router-dom';
 import { getOrderDetails, payOrder, deliverOrder, processOrder } from '../actions/orderActions';
 import Loader from '../minicomponents/Loader';
-import axios from 'axios'
 import {ORDER_PAY_RESET, ORDER_DELIVER_RESET, ORDER_PROCESSED_RESET } from '../constants/orderConstants'
 import Step from '../minicomponents/Step'
 import Button from 'react-bootstrap/esm/Button';
+import Meta from '../minicomponents/Meta'
+import Moment from 'react-moment';
+import 'moment-timezone';
+
 
 export default function OrderScreen({match, history}) {
+    const [message, setMessage] = useState("")
+    const [info, setInfo] = useState("")
     
     const orderId = match.params.id
-    const [sdkReady, setSdkReady] = useState(false)
     const dispatch = useDispatch()
 
     const userLogin = useSelector(state => state.userLogin)
@@ -30,7 +34,7 @@ export default function OrderScreen({match, history}) {
     const orderProcessed = useSelector(state => state.orderProcessed)
     const { success: successProcessed } = orderProcessed
 
-    
+   
     useEffect(() => {
         if (!userInfo){
             history.push('/login')
@@ -38,48 +42,56 @@ export default function OrderScreen({match, history}) {
         if(!order || order._id !== orderId) {
             dispatch(getOrderDetails(orderId))
         }
-        const addPayPalScript = async () => {
-            const { data: clientId } = await axios.get('/api/config/paypal')
-            const script = document.createElement('script')
-            script.type = 'text/javascript'
-            script.src = `https://www.paypal.com/sdk/js?client-id=${clientId}&currency=INR`
-            script.async = true
-            script.onload = () => {
-                setSdkReady(true)
-            }
-            document.body.appendChild(script)
-        }
         if(successProcessed || !order || successPay || successDeliver){
             dispatch({ type: ORDER_PAY_RESET})
             dispatch({ type: ORDER_DELIVER_RESET })
             dispatch({ type: ORDER_PROCESSED_RESET })
             dispatch(getOrderDetails(orderId))
         }
-        else if (!order.isPaid){
-            if (!window.paypal) {
-                addPayPalScript()
-            } else {
-                setSdkReady(true)
-            }
-        }
-    }, [dispatch, orderId, order, history, userInfo,
+    }, [dispatch, orderId, order, history, userInfo, message,
         successPay, successDeliver, successProcessed])
 
-    const successPaymentHandler = (paymentResult) => {
-        console.log(paymentResult)
-        dispatch(payOrder(orderId, paymentResult))
+    // TODO: Remove paymentResult
+    const successPaymentHandler = () => {
+        dispatch(payOrder(orderId))
     }
 
     const deliverHandler = () => {
         dispatch(deliverOrder(order))
     }
 
+    const makePayment = token => {
+        const body = {
+            token, order
+        }
+        const headers = {
+            "Content-Type": "application/json"
+        }
+
+        return fetch('/api/orders/payments', {
+            method: "POST",
+            headers,
+            body: JSON.stringify(body)
+        })
+        .then(res => {
+            console.log(res)
+            if( res.status === 200){
+                successPaymentHandler()
+            }
+            else{
+                setMessage("payment Failed! Try again. Contact us if you have any query")
+            }
+        })
+        .catch(err => console.log(err))
+    }
+
     const processHandler = () => {
-        dispatch(processOrder(order))
+        dispatch(processOrder(order, info))
     }
 
     return (
         <div className="my-5">
+            <Meta title="Chaotic | Order" />
             {loading ? <Loader />
             : error ? (<div className="alert alert-danger" role="alert">{error}</div>)
             : (
@@ -110,11 +122,15 @@ export default function OrderScreen({match, history}) {
 
                             {order.isPaid ? 
                             <div className="alert alert-success mt-2" role="alert">
-                                Paid At {order.paidAt}
+                                Paid At <Moment fromNow>{order.paidAt}</Moment> (<Moment format="hh:mm:ss - DD/MM/YYYY">{ order.paidAt }</Moment>)
                             </div>
                             : <div className="alert alert-danger mt-2" role="alert">
                                 Not paid
-                            </div>}
+                            </div>
+                            }
+                            {message !== "" && (<div className="alert alert-danger mt-2" role="alert">
+                                {message}
+                            </div>)}
 
                         </li>
                         <li className="list-group-item">
@@ -205,20 +221,31 @@ export default function OrderScreen({match, history}) {
                             </li>
                             {!order.isPaid && (
                                 <li className="list-group list-group-item">
-                                   {loadingPay && <Loader />}
-                                   {!sdkReady ? (<Loader />) 
-                                   : (
-                                        <PayPalButton
-                                        currency='INR'
-                                        amount={order.totalPrice}
-                                        onSuccess={successPaymentHandler}
-                                        />
-                                    )}
+                                   {!order.isPaid && (
+                                        <>
+                                        <StripeCheckout
+                                            stripeKey="pk_test_51I2zfJHyXFp0ODet2NnP0yfNNtHBdu2c90BhQ669AzOJVG549Qana2E1QsHzglC9LM84YCGKmN8Ns0gg9bojKjGw00H4KL3R6n"
+                                            token={makePayment} 
+                                            name={`Buying ${order.orderItems.length} product/s`} 
+                                            currency='INR' 
+                                            amount={order.totalPrice * 100}
+                                        >
+                                        <button className="btn btn-block btn-chaotic">
+                                            Pay Now
+                                        </button>
+                                        </StripeCheckout>
+                                        </>)
+                                    }
                                 </li>
                             )}
                             {userInfo && userInfo.isAdmin && order.isPaid && !order.isProcessed && (
                                 <li className="list-group list-group-item">
-                                    <Button type='button' className="btn btn-block"
+                                    <label htmlFor="exampleInputName">Enter any message here:</label>
+                                    <input type="text" className="form-control mb-2" 
+                                    placeholder="Your tracking ID is: xxxxxx" value={info}
+                                    id="exampleInputMessage"
+                                    onChange={(e) => setInfo(e.target.value)} />
+                                    <Button variant='warning' type='button' className="btn btn-block"
                                     onClick={processHandler}>
                                         Mark as Processed
                                     </Button>
@@ -226,7 +253,7 @@ export default function OrderScreen({match, history}) {
                             )}
                             {userInfo && userInfo.isAdmin && order.isPaid && !order.isDelivered && (
                                 <li className="list-group list-group-item">
-                                    <Button type='button' className="btn btn-block"
+                                    <Button type='button' variant="success" className="btn btn-block"
                                     onClick={deliverHandler}>
                                         Mark as Delivered
                                     </Button>

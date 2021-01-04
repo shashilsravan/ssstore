@@ -44,6 +44,12 @@ export default function Step({Paid, Processed, Delivered, order}) {
                         animated now={Paid ? currentStatus : 5} />
 
                         <div className="my-5">
+                            {order && order.information && (
+                                <Alert variant="primary">
+                                    <strong>Message: </strong>{order.information}
+                                </Alert>
+                            )}
+                            <div className="my-1"></div>
                             {order && order.processedAt && (
                                 <Alert variant="warning">
                                     Processed At <Moment fromNow>{order.processedAt}</Moment> (<Moment format="hh:mm:ss - DD/MM/YYYY">{ order.processedAt }</Moment>)

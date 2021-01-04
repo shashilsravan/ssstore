@@ -58,19 +58,14 @@ export const getOrderDetails = (id) => async (dispatch, getState) => {
     }
 }
 
-export const payOrder = (orderId, paymentResult) => async (dispatch, getState) => {
+
+export const payOrder = (orderId) => async (dispatch, getState) => {
     try {
         dispatch({
             type: ORDER_PAY_REQUEST,
         })
         const { userLogin: { userInfo } } = getState()
-        const config = {
-            headers: {
-                'Content-Type': 'application/json',
-                Authorization : `Bearer ${userInfo.token}`
-            },
-        }
-        const { data } = await axios.put(`/api/orders/${orderId}/pay`, paymentResult, config)
+        const { data } = await axios.put(`/api/orders/${orderId}/pay`)
         dispatch({
             type: ORDER_PAY_SUCCESS,
             payload: data,
@@ -176,7 +171,7 @@ export const deliverOrder = (order) => async (dispatch, getState) => {
     }
 }
 
-export const processOrder = (order) => async (dispatch, getState) => {
+export const processOrder = (order, message) => async (dispatch, getState) => {
     try {
         dispatch({
             type: ORDER_PROCESSED_REQUEST,
@@ -188,7 +183,7 @@ export const processOrder = (order) => async (dispatch, getState) => {
                 Authorization : `Bearer ${userInfo.token}`
             },
         }
-        const { data } = await axios.put(`/api/orders/${order._id}/processed`, {}, config)
+        const { data } = await axios.put(`/api/orders/${order._id}/processed`, {message}, config)
         dispatch({
             type: ORDER_PROCESSED_SUCCESS,
             payload: data,

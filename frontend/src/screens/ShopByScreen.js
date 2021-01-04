@@ -6,6 +6,7 @@ import HeroTitle from '../minicomponents/HeroTitle'
 import { productsFromGroup } from '../actions/productAction'
 import Loader from '../minicomponents/Loader'
 import ProductsLoaded from './ProductsLoaded';
+import Meta from '../minicomponents/Meta'
 
 
 
@@ -28,6 +29,7 @@ export default function ShopByScreen({ match, history }) {
 
     return (
         <div className="my-5">
+            <Meta title={`Chaotic | ${grouping}`} />
             <HeroTitle text={`Shop By - ${grouping}`} />
             { loading ?  
                 <Loader />

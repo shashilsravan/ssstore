@@ -7,7 +7,7 @@ import {logout, checkUser} from "../actions/userActions"
 import { confirmAlert } from "react-confirm-alert"; 
 import { listProductDetail, updateProduct } from "../actions/productAction"
 import "react-confirm-alert/src/react-confirm-alert.css"; 
-import { PRODUCT_UPDATE_RESET } from "../constants/productConstants";
+import { PRODUCT_UPDATE_RESET, PRODUCT_DETAILS_RESET } from "../constants/productConstants";
 
 export default function ProductEditScreen({match, history}) {
     const dispatch = useDispatch()
@@ -52,6 +52,7 @@ export default function ProductEditScreen({match, history}) {
             dispatch({
                 type: PRODUCT_UPDATE_RESET
             })
+            dispatch({type: PRODUCT_DETAILS_RESET})
             history.push("/AdMIn/productList")
         }
         else{

@@ -14,6 +14,7 @@ import Alert from 'react-bootstrap/Alert'
 import Moment from 'react-moment';
 import 'moment-timezone';
 import CustomTag from '../minicomponents/CustomTag'
+import Meta from '../minicomponents/Meta'
 
 
 export default function ProductScreen({ history, match }) {
@@ -59,6 +60,7 @@ export default function ProductScreen({ history, match }) {
     }
 
     return (
+        <>
         <div className="productScreen mt-4 mb-5">
             <Link to="/" className="btn btn-light float-right">
                 Go Home <i className="fas fa-home"></i>
@@ -68,7 +70,9 @@ export default function ProductScreen({ history, match }) {
             ? <Loader />
             : error 
             ? <AlertError error={error} />
-            : <div className="my-4">
+            : (<> 
+            <Meta title={product.name} />
+            <div className="my-4">
                 <div className="row">
                     <div className="col-lg-5">
                         {/* <img className="img-fluid" src={product.image} alt={product.name}/> */}
@@ -275,7 +279,9 @@ export default function ProductScreen({ history, match }) {
                         </ul>
                     </div>
                 </div>
-            </div> }
+            </div> </>) }
         </div>
+        
+        </>
     )
 }

@@ -8,11 +8,15 @@ import {notFound, errorHandler} from './middleware/ErrorMiddleware.js'
 import userRoutes from './routes/UserRoutes.js'
 import orderRoutes from './routes/OrderRoutes.js'
 import slideRoutes from './routes/slideRoutes.js'
+import { v4 as uuidv4 } from 'uuid';
+import Stripe from 'stripe';
 
 dotenv.config()
 
-connectDB()
+const stripe = new Stripe(process.env.STRIPE_SECRET);
 
+
+connectDB()
 
 const app = express()
 const PORT = process.env.PORT
@@ -27,11 +31,33 @@ app.get('/', (req, res) => {
     res.send('API is running')
 })
 
+app.post('/api/orders/payments', (req, res) => {
+    const {order, token} = req.body;
+    console.log(`order: ${order}`);
+    console.log(`price: ${order.totalPrice}`);
+
+    const idempotencyKey = uuidv4()
+
+    return stripe.customers.create({
+        email: token.email,
+        source: token.id })
+            .then(customer => { stripe.charges.create({
+                customer: customer.id,
+                amount: order.totalPrice * 100,
+                currency: 'inr',
+                receipt_email: token.email
+        }, {idempotencyKey})
+    }).then(result => {
+        res.status(200).json(result)
+    }).catch(error => res.status(400).json(error))
+})
 
 app.use('/api/products', productRoutes)
 app.use('/api/users', userRoutes)
 app.use('/api/orders', orderRoutes)
 app.use('/api/slideshow', slideRoutes)
+
+
 
 app.get('/api/config/paypal', 
     (req, res) => res.send(process.env.PAYPAL_CLIENT_ID))

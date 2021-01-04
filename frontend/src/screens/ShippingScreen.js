@@ -4,6 +4,8 @@ import { saveShippingAddress } from '../actions/cartActions';
 import CheckOutSteps from '../components/CheckOutSteps';
 import HeroTitle from '../minicomponents/HeroTitle';
 import FormContainer from './FormContainer';
+import Meta from '../minicomponents/Meta'
+
 
 export default function ShippingScreen({history}) {
     const cart = useSelector(state => state.cart)
@@ -37,6 +39,7 @@ export default function ShippingScreen({history}) {
 
     return (
         <div className="my-5">
+            <Meta title="Chaotic | Shipping" />
             <CheckOutSteps step1={true} step2={true} />
             <FormContainer>
                 <HeroTitle text="Shipping" />

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import {useDispatch, useSelector} from 'react-redux';
 import Loader from '../minicomponents/Loader'
 import { register } from '../actions/userActions'
+import Meta from '../minicomponents/Meta'
 import FormContainer from './FormContainer';
 
 export default function RegisterScreen({history, location}) {
@@ -32,6 +33,7 @@ export default function RegisterScreen({history, location}) {
     }
     return (
         <div className="my-5">
+            <Meta title='Chaotic | Register' />
             <FormContainer>
                 <h2>Sign Up</h2>
                 {error && <div className="alert alert-danger mt-3" role="alert">

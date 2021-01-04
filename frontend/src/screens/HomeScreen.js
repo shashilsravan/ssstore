@@ -5,6 +5,8 @@ import HeroTitle from '../minicomponents/HeroTitle'
 import Loader from '../minicomponents/Loader'
 import AlertError from '../minicomponents/AlertError'
 import Product from '../components/Product'
+import Meta from '../minicomponents/Meta'
+
 import Paginate from '../components/Paginate'
 
 export default function HomeScreen({location, history, match}) {
@@ -22,6 +24,7 @@ export default function HomeScreen({location, history, match}) {
 
     return (
         <div className="mt-5">
+            <Meta title="Chaotci | All products" />
             <HeroTitle text="All Products" />
             { loading ?  
                 <Loader />
