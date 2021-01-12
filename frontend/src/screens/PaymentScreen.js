@@ -20,7 +20,7 @@ export default function PaymentScreen({history}) {
     
     const cartItems = useSelector(state => state.cart.cartItems)
 
-    const [paymentMethod, setPaymentMethod] = useState('PayPal')
+    const [paymentMethod, setPaymentMethod] = useState('Pre Paid')
 
     const dispatch = useDispatch()
 
@@ -50,9 +50,9 @@ export default function PaymentScreen({history}) {
                     <div className="form-check my-4">
                         <input 
                         onChange={(e) => setPaymentMethod(e.target.value)}
-                        className="form-check-input" type="radio" name="paymentMethod" value='Card' id="paypal" checked={paymentMethod == 'PayPal'}/>
+                        className="form-check-input" type="radio" name="paymentMethod" value='Pre Paid' id="paypal" checked={paymentMethod == 'PayPal'}/>
                         <label className="form-check-label" htmlFor="paypal">
-                            Credit / Debit Cart
+                            UPI / CARD / NET BANKING
                         </label>
                     </div>
                     <div className="form-check my-4">

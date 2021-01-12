@@ -29,6 +29,7 @@ export default function ShippingScreen({history}) {
     }
 
     useEffect(() => {
+        window.scrollTo(0,0)
         if (cartItems.length === 0){
             history.push('/cart')
         }

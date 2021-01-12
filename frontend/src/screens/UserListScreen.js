@@ -22,6 +22,7 @@ export default function UserListScreen({location, history}) {
     const {success: successDelete } = userDelete
 
     useEffect(() => {
+        window.scrollTo(0,0)
         if (!userInfo){
             history.push('/login')
         }

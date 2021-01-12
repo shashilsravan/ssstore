@@ -36,6 +36,7 @@ export default function ProfileScreen({location, history}) {
     // const {loading: loadingCheck, success: successCheck} = userCheck
 
     useEffect(() => {
+        window.scrollTo(0,0)
         if (!userInfo){
             history.push('/login')
         }

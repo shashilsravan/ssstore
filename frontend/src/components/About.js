@@ -1,9 +1,12 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import HeroTitle from '../minicomponents/HeroTitle'
 import { Helmet } from 'react-helmet'
 import Typed from 'react-typed';
 
 export default function About() {
+    useEffect(() => {
+        window.scrollTo(0,0)
+    }, [])
     return (
         <>
         <Helmet>

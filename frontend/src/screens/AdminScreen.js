@@ -32,6 +32,7 @@ export default function AdminScreen({history}) {
     const [link, setLink] = useState("")
 
     useEffect(() => {
+        window.scrollTo(0,0)
         if (!userInfo){
             history.push('/login')
         }

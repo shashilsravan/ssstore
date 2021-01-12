@@ -19,6 +19,7 @@ export default function CategoryAndBrandSreen({ match, history }) {
     const { loading, error, products} = productByBrand
 
     useEffect(() => {
+        window.scrollTo(0,0)
         if (category === 'tshirts' || category === 'hoodies' || category === 'posters'){
             dispatch(productsFromBrand(category, brand))
         }

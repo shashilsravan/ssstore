@@ -27,7 +27,7 @@ export default function UserEditScreen({ match, history}) {
     const { loading: loadingUpdate, error: errorUpdate, success: successUpdate } = userUpdate
 
     useEffect(() => {
-
+        window.scrollTo(0,0)
         if (!userInfo){
             history.push('/login')
         }

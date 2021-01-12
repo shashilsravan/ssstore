@@ -36,6 +36,7 @@ export default function ProductScreen({ history, match }) {
     const { error: errorReview, success: successReview } = productReviewCreate
 
     useEffect(() => {
+        window.scrollTo(0,0)
         if (successReview){
             setRating(0)
             setComment('')

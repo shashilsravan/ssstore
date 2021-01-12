@@ -10,7 +10,21 @@ import Button from 'react-bootstrap/esm/Button';
 import Meta from '../minicomponents/Meta'
 import Moment from 'react-moment';
 import 'moment-timezone';
+import axios from 'axios';
 
+function showRazorPay(srcc){
+    return new Promise((resolve) => {
+        const rScript = document.createElement('script')
+        rScript.src = srcc
+        rScript.onload = () => {
+            resolve(true)
+        }
+        rScript.onerror = () => {
+            resolve(false)
+        }
+        document.body.appendChild(rScript)
+    })
+}
 
 export default function OrderScreen({match, history}) {
     const [message, setMessage] = useState("")
@@ -87,6 +101,52 @@ export default function OrderScreen({match, history}) {
 
     const processHandler = () => {
         dispatch(processOrder(order, info))
+    }
+
+    async function displayRazorpay(){
+        const res = await showRazorPay('https://checkout.razorpay.com/v1/checkout.js')
+
+        if (!res){
+            alert('Error loading payments please make sure you are connected to internet or try refreshing again')
+            return
+        }
+
+        const data = await axios.post(`http://localhost:5000/razorpay/${order.totalPrice}`, {})
+
+        console.log("data", data.data);
+
+
+        const options = {
+            "key": process.env.RAZOR_KEY,
+            "amount": data.data.amount.toString(), 
+            "currency": data.data.currency,
+            "name": `order by ${order.user.name}`,
+            "order_id": data.data.id,
+            "description": `ordering ${order.orderItems.length} item/s`,
+            "image": "https://res.cloudinary.com/alchemy069/image/upload/v1605966215/alchemy/mainlogo_ocs3sl.png",
+            "handler": function (response){
+                successPaymentHandler()
+            },
+            "prefill": {
+                "name": `${order.user.name}`,
+                "email": `${order.user.email}`,
+                "contact": `${order.shippingAddress.phone}`
+            },
+            "notes": {
+                "address": "Razorpay Corporate Office"
+            },
+            "theme": {
+                "color": "#3399cc"
+            }
+        };
+
+        
+        const paymentObject = new window.Razorpay(options);
+        paymentObject.on('payment.failed', function (response){
+                setMessage(response.error.description);
+        });
+        paymentObject.open();
+
     }
 
     return (
@@ -223,17 +283,11 @@ export default function OrderScreen({match, history}) {
                                 <li className="list-group list-group-item">
                                    {!order.isPaid && (
                                         <>
-                                        <StripeCheckout
-                                            stripeKey="pk_test_51I2zfJHyXFp0ODet2NnP0yfNNtHBdu2c90BhQ669AzOJVG549Qana2E1QsHzglC9LM84YCGKmN8Ns0gg9bojKjGw00H4KL3R6n"
-                                            token={makePayment} 
-                                            name={`Buying ${order.orderItems.length} product/s`} 
-                                            currency='INR' 
-                                            amount={order.totalPrice * 100}
-                                        >
-                                        <button className="btn btn-block btn-chaotic">
+                                        <a 
+                                        onClick={displayRazorpay} target="_blank" rel="noopener noreferrer"
+                                        className="btn btn-chaotic btn-block mt-2">
                                             Pay Now
-                                        </button>
-                                        </StripeCheckout>
+                                        </a>
                                         </>)
                                     }
                                 </li>

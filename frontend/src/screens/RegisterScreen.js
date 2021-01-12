@@ -17,6 +17,7 @@ export default function RegisterScreen({history, location}) {
     const { loading, error, userInfo } = userRegister
     const redirect = location.search ? location.search.split('=')[1] : '/'
     useEffect(() => {
+        window.scrollTo(0,0)
         if (userInfo){
             history.push(redirect)
         }

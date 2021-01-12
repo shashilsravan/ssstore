@@ -15,6 +15,7 @@ export default function LoginScreen({ location, history }) {
     const {loading, error, userInfo } = userLogin
 
     useEffect(() => {
+        window.scrollTo(0,0)
         if (userInfo){
             history.push(redirect)
         }

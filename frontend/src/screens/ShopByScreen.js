@@ -18,6 +18,7 @@ export default function ShopByScreen({ match, history }) {
     const { loading, error, products } = productsByGroup
 
     useEffect(() => {
+        window.scrollTo(0,0)
         if (grouping === "Men" || grouping === "Women" || grouping === "Boys" || grouping === "Girls"){
             dispatch(productsFromGroup(grouping))
         }
