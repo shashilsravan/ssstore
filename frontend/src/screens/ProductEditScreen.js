@@ -127,7 +127,7 @@ export default function ProductEditScreen({match, history}) {
                             <label htmlFor="exampleInputName">Product Name:</label>
                             <input type="text" className="form-control" 
                             placeholder={name} value={name}
-                            id="exampleInputName" minLength={24}
+                            id="exampleInputName"
                             onChange={(e) => setName(e.target.value)} required/>
                         </div>
                         <div className="form-group">
@@ -163,21 +163,21 @@ export default function ProductEditScreen({match, history}) {
                             <input type="text" className="form-control" 
                             placeholder={imageTwo} value={imageTwo}
                             id="image2"
-                            onChange={(e) => setImageTwo(e.target.value)} required/>
+                            onChange={(e) => setImageTwo(e.target.value)}/>
                         </div>
                         <div className="form-group">
                             <label htmlFor="image3">Product Image - 3:</label>
                             <input type="text" className="form-control" 
                             placeholder={imageThree} value={imageThree}
                             id="image3"
-                            onChange={(e) => setImageThree(e.target.value)} required/>
+                            onChange={(e) => setImageThree(e.target.value)}/>
                         </div>
                         <div className="form-group">
                             <label htmlFor="image4">Product Image - 4:</label>
                             <input type="text" className="form-control" 
                             placeholder={imageFour} value={imageFour}
                             id="image4"
-                            onChange={(e) => setImageFour(e.target.value)} required/>
+                            onChange={(e) => setImageFour(e.target.value)}/>
                         </div>
                         <div className="form-group">
                             <select 

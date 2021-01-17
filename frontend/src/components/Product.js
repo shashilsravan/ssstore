@@ -19,7 +19,7 @@ export default function Product({ product }) {
                     </div>
                 </Link>
 
-                <div className="card-body">
+                <div className="card-body mt-2">
                     <Link to={`/product/${product._id}`} className="product-name">
                         <div className="card-title custom-card-title">
                             <div className="fst-italic">{product.name}</div>

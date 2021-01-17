@@ -31,7 +31,8 @@ import ShopByScreen from './screens/ShopByScreen';
 import Tshirts from './screens/Tshirts';
 import UserEditScreen from './screens/UserEditScreen';
 import UserListScreen from './screens/UserListScreen';
-
+import PasswordReset from './screens/PasswordReset';
+import ChangePassword from './screens/ChangePassword';
 
 const App = () => {
   return (
@@ -49,6 +50,8 @@ const App = () => {
         <Route path='/login' component={LoginScreen} exact />
         <Route path='/about' component={About} exact />
         <Route path='/register' component={RegisterScreen} exact />
+        <Route path='/forgotPassword' component={PasswordReset} exact />
+        <Route path='/changing' component={ChangePassword} exact />
         <Route path='/profile' component={ProfileScreen} exact />
         <Route path='/shipping' component={ShippingScreen} exact />
         <Route path='/payment' component={PaymentScreen} exact />

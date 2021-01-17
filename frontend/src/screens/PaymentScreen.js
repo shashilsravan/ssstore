@@ -50,7 +50,7 @@ export default function PaymentScreen({history}) {
                     <div className="form-check my-4">
                         <input 
                         onChange={(e) => setPaymentMethod(e.target.value)}
-                        className="form-check-input" type="radio" name="paymentMethod" value='Pre Paid' id="paypal" checked={paymentMethod == 'PayPal'}/>
+                        className="form-check-input" type="radio" name="paymentMethod" value='Pre Paid' id="paypal" checked={paymentMethod == 'Pre Paid'}/>
                         <label className="form-check-label" htmlFor="paypal">
                             UPI / CARD / NET BANKING
                         </label>

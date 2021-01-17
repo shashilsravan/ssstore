@@ -1,5 +1,5 @@
 import { USER_LOGIN_SUCCESS, USER_LOGIN_FAIL, USER_UPDATE_PROFILE_RESET,
-USER_LOGIN_REQUEST, USER_LOGOUT, USER_REGISTER_REQUEST, USER_REGISTER_SUCCESS, USER_REGISTER_FAIL, USER_DETAILS_REQUEST, USER_DETAILS_SUCCESS, USER_DETAILS_FAIL, USER_UPDATE_PROFILE_REQUEST, USER_UPDATE_PROFILE_SUCCESS, USER_UPDATE_PROFILE_FAIL, USER_DETAILS_RESET, USER_LIST_REQUEST, USER_LIST_SUCCESS, USER_LIST_FAIL, USER_LIST_RESET, USER_DELETE_REQUEST, USER_DELETE_SUCCESS, USER_DELETE_FAIL, USER_UPDATE_REQUEST, USER_UPDATE_SUCCESS, USER_UPDATE_FAIL, USER_UPDATE_RESET, USER_ISADMIN_REQUEST, USER_ISADMIN_SUCCESS, USER_ISADMIN_FAIL } from '../constants/userConstants'
+USER_LOGIN_REQUEST, USER_LOGOUT, USER_REGISTER_REQUEST, USER_REGISTER_SUCCESS, USER_REGISTER_FAIL, USER_DETAILS_REQUEST, USER_DETAILS_SUCCESS, USER_DETAILS_FAIL, USER_UPDATE_PROFILE_REQUEST, USER_UPDATE_PROFILE_SUCCESS, USER_UPDATE_PROFILE_FAIL, USER_DETAILS_RESET, USER_LIST_REQUEST, USER_LIST_SUCCESS, USER_LIST_FAIL, USER_LIST_RESET, USER_DELETE_REQUEST, USER_DELETE_SUCCESS, USER_DELETE_FAIL, USER_UPDATE_REQUEST, USER_UPDATE_SUCCESS, USER_UPDATE_FAIL, USER_UPDATE_RESET, USER_ISADMIN_REQUEST, USER_ISADMIN_SUCCESS, USER_ISADMIN_FAIL, USER_BYEMAIL_REQUEST, USER_BYEMAIL_SUCCESS, USER_BYEMAIL_FAIL, USER_UPDATE_PROFILEE_REQUEST, USER_UPDATE_PROFILEE_SUCCESS, USER_UPDATE_PROFILEE_FAIL } from '../constants/userConstants'
 
 export const userLoginReducer = (state = {}, action) => {
     switch(action.type){
@@ -59,6 +59,21 @@ export const userUpdateProfileReducer = (state = {}, action) => {
     }
 }
 
+export const userUpdateProfilePublicReducer = (state = {}, action) => {
+    switch(action.type){
+        case USER_UPDATE_PROFILEE_REQUEST:
+            return { ...state, loading: true }
+        case USER_UPDATE_PROFILEE_SUCCESS:
+            return { loading: false, success: true }
+        case USER_UPDATE_PROFILEE_FAIL:
+            return { loading: false, error: action.payload }
+        case USER_UPDATE_PROFILE_RESET:
+            return {}
+        default:
+            return state
+    }
+}
+
 export const userListReducer = (state = { users: [] }, action) => {
     switch(action.type){
         case USER_LIST_REQUEST:
@@ -109,6 +124,19 @@ export const userCheckReducer = (state = { user: {}}, action) => {
         case USER_ISADMIN_SUCCESS:
             return { loading: false, success: true }
         case USER_ISADMIN_FAIL:
+            return { loading: false, error: action.payload }
+        default:
+            return state
+    }
+}
+
+export const userByMailReducer = (state = { user: {}}, action) => {
+    switch(action.type){
+        case USER_BYEMAIL_REQUEST:
+            return { loading: true }
+        case USER_BYEMAIL_SUCCESS:
+            return { loading: false, user: action.payload }
+        case USER_BYEMAIL_FAIL:
             return { loading: false, error: action.payload }
         default:
             return state

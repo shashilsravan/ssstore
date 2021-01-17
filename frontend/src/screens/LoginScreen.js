@@ -63,6 +63,15 @@ export default function LoginScreen({ location, history }) {
                                 Register here!
                             </Link>
                         </div>
+                        <br />
+                    </div>
+                    <div className="row mt-1">
+                        <div className="col">
+                            Forgot Password? &nbsp;
+                            <Link to='/forgotPassword'>
+                                Click here!
+                            </Link>
+                        </div>
                     </div>
                 </form>
             </FormContainer>

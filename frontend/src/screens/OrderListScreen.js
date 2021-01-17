@@ -30,6 +30,7 @@ export default function OrderListScreen({ history }) {
         else{
             dispatch(listOrders())
         }
+        // eslint-disable-next-line
     }, [dispatch, userInfo, history])
 
     return (

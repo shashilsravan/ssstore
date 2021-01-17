@@ -48,6 +48,7 @@ export default function UserEditScreen({ match, history}) {
                 setIsAdmin(user.isAdmin)
             }
         }
+        // eslint-disable-next-line
     }, [dispatch, userInfo, history, user, userId,
         successUpdate])
 

@@ -28,6 +28,8 @@ export default function PlaceOrderScreen({history}) {
     const {order, success, error} = orderCreate
 
     useEffect(() => {
+        // scroll to top
+        window.scrollTo(0, 0)
         if (cartItems.length === 0){
             history.push('/cart')
         }

@@ -4,7 +4,7 @@ import { USER_DETAILS_FAIL, USER_DETAILS_REQUEST,
     USER_LOGIN_SUCCESS, USER_LOGOUT, USER_REGISTER_FAIL, 
     USER_REGISTER_REQUEST, USER_REGISTER_SUCCESS, 
     USER_UPDATE_PROFILE_FAIL, USER_UPDATE_PROFILE_REQUEST, 
-    USER_UPDATE_PROFILE_SUCCESS, USER_DETAILS_RESET, USER_LIST_RESET, USER_LIST_REQUEST, USER_LIST_SUCCESS, USER_LIST_FAIL, USER_DELETE_REQUEST, USER_DELETE_SUCCESS, USER_DELETE_FAIL, USER_UPDATE_REQUEST, USER_UPDATE_SUCCESS, USER_UPDATE_FAIL, USER_ISADMIN_REQUEST, USER_ISADMIN_SUCCESS, USER_ISADMIN_FAIL } from '../constants/userConstants'
+    USER_UPDATE_PROFILE_SUCCESS, USER_DETAILS_RESET, USER_LIST_RESET, USER_LIST_REQUEST, USER_LIST_SUCCESS, USER_LIST_FAIL, USER_DELETE_REQUEST, USER_DELETE_SUCCESS, USER_DELETE_FAIL, USER_UPDATE_REQUEST, USER_UPDATE_SUCCESS, USER_UPDATE_FAIL, USER_ISADMIN_REQUEST, USER_ISADMIN_SUCCESS, USER_ISADMIN_FAIL, USER_BYEMAIL_REQUEST, USER_BYEMAIL_SUCCESS, USER_BYEMAIL_FAIL, USER_UPDATE_PROFILEE_REQUEST, USER_UPDATE_PROFILEE_SUCCESS, USER_UPDATE_PROFILEE_FAIL } from '../constants/userConstants'
 
 import { ORDER_LIST_MY_RESET } from '../constants/orderConstants';
 
@@ -103,6 +103,28 @@ export const getUserDetails = (id) => async (dispatch, getState) => {
     }
 }
 
+export const getUserByEmail = (email) => async (dispatch) => {
+    try {
+        dispatch({
+            type: USER_BYEMAIL_REQUEST,
+        })
+        const { data } = await axios.get(`/api/users/getemaildetails/${email}`)
+        dispatch({
+            type: USER_BYEMAIL_SUCCESS,
+            payload: data,
+        })
+        
+    } catch (error) {
+        dispatch({
+            type: USER_BYEMAIL_FAIL,
+            payload: 
+                error.response && error.response.data.message 
+                ? error.response.data.message 
+                : error.message
+        })
+    }
+}
+
 export const updateUserProfile = (user) => async (dispatch, getState) => {
     try {
         dispatch({
@@ -128,6 +150,27 @@ export const updateUserProfile = (user) => async (dispatch, getState) => {
     } catch (error) {
         dispatch({
             type: USER_UPDATE_PROFILE_FAIL,
+            payload: 
+                error.response && error.response.data.message 
+                ? error.response.data.message 
+                : error.message
+        })
+    }
+}
+
+export const updateUserProfilePublic = (user) => async (dispatch) => {
+    try {
+        dispatch({
+            type: USER_UPDATE_PROFILEE_REQUEST,
+        })
+        const { data } = await axios.put(`/api/users/profilee/${user._id}`, user)
+        dispatch({
+            type: USER_UPDATE_PROFILEE_SUCCESS,
+            payload: data,
+        })
+    } catch (error) {
+        dispatch({
+            type: USER_UPDATE_PROFILEE_FAIL,
             payload: 
                 error.response && error.response.data.message 
                 ? error.response.data.message 

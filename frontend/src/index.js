@@ -6,10 +6,14 @@ import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import AuthProvider from './AuthContext';
+
 
 ReactDOM.render(
   <Provider store={Store}>
-    <App />
+    <AuthProvider>
+      <App />
+    </AuthProvider>
   </Provider>,
   document.getElementById('root')
 );

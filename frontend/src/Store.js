@@ -3,7 +3,7 @@ import thunk from 'redux-thunk'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import { productListReducer, productDetailsReducer, productDeleteReducer, productCreateReducer, productUpdateReducer, productReviewCreateReducer, productTopRatedReducer, productsByCatgoryReducer, productsByBrandReducer, productDealRatedReducer, productsByGroupReducer } from './reducers/productReducers'
 import {cartReducer, likeReducer} from './reducers/cartReducers'
-import { userCheckReducer, userDeleteReducer, userDetailsReducer, userListReducer, userLoginReducer, userRegisterReducer, userUpdateProfileReducer, userUpdateReducer } from './reducers/userReducers';
+import { userByMailReducer, userCheckReducer, userDeleteReducer, userDetailsReducer, userListReducer, userLoginReducer, userRegisterReducer, userUpdateProfilePublicReducer, userUpdateProfileReducer, userUpdateReducer } from './reducers/userReducers';
 import { orderCreateReducer, orderDeliverReducer, orderDetailsReducer, orderListMyReducer, orderListReducer, orderPayReducer, orderProcessedReducer } from './reducers/orderReducers';
 import { createSlideReducer, deleteSlideReducer, getSlidesReducer } from './reducers/slideReducers';
 
@@ -24,8 +24,10 @@ const reducer = combineReducers({
     userLogin: userLoginReducer,
     userRegister: userRegisterReducer,
     userDetails: userDetailsReducer,
+    userByMail: userByMailReducer,
     userCheck: userCheckReducer,
     userUpdateProfile: userUpdateProfileReducer,
+    userUpdateProfilePublic: userUpdateProfilePublicReducer,
     userList: userListReducer,
     userDelete: userDeleteReducer,
     userUpdate: userUpdateReducer,

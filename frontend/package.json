@@ -10,6 +10,7 @@
     "@testing-library/user-event": "^12.2.2",
     "axios": "^0.21.0",
     "bootstrap": "^4.5.3",
+    "firebase": "^8.2.3",
     "moment": "^2.29.1",
     "moment-timezone": "^0.5.32",
     "node-sass": "^5.0.0",

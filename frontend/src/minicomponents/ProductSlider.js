@@ -20,15 +20,15 @@ export default function ProductSlider(props) {
                 <SwiperSlide>
                     <img src={firstImage} alt=""/>
                 </SwiperSlide>
-                <SwiperSlide>
+                { secondImage && <SwiperSlide>
                     <img src={secondImage} alt=""/>
-                </SwiperSlide>
-                <SwiperSlide>
+                </SwiperSlide>}
+                {thirdImage && <SwiperSlide>
                     <img src={thirdImage} alt=""/>
-                </SwiperSlide>
-                <SwiperSlide>
+                </SwiperSlide>}
+                {fourthImage && <SwiperSlide>
                     <img src={fourthImage} alt=""/>
-                </SwiperSlide>
+                </SwiperSlide>}
                 </Swiper>
         </div>
     )

@@ -93,7 +93,7 @@ export default function OrderScreen({match, history}) {
                 successPaymentHandler()
             }
             else{
-                setMessage("payment Failed! Try again. Contact us if you have any query")
+                setMessage("payment Failed! Try again. If not try reloading the page once if you still get the same error")
             }
         })
         .catch(err => console.log(err))

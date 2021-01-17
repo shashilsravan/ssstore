@@ -24,13 +24,13 @@ const productSchema = mongoose.Schema({
         type: String, required: true
     },
     imageTwo: {
-        type: String, required: true
+        type: String
     },
     imageThree: {
-        type: String, required: true
+        type: String
     },
     imageFour: {
-        type: String, required: true
+        type: String
     },
     description: {
         type: String, required: true
