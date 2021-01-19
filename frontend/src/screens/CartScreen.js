@@ -25,7 +25,6 @@ export default function CartScreen({match, location, history }) {
         history.push('/login?redirect=shipping')
     }
     useEffect(() => {
-        window.scrollTo(0,0)
         if (productId){
             dispatch(addToCart(productId, qty, size))
         }
