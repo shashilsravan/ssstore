@@ -17,8 +17,7 @@ export default function LikedScreen({match, location, history}) {
         dispatch(removeFromLike(id))
     }
     useEffect(() => {
-        // scrolling to Top
-        window.scrollTo(0, 0)
+        
         if (productId){
             dispatch(addToLike(productId))
         }
