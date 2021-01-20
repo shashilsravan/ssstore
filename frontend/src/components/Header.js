@@ -123,7 +123,7 @@ export default function Header() {
                 </div>
             </div>
             <div className="header-mobile">
-                <div className="container-xl">
+                <div className="container-xl my-2">
                     <div className="header-mobile__toggle-sidebar">
                         <button><i className="fa fa-bars"></i></button>
                     </div>
