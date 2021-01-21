@@ -111,7 +111,7 @@ export default function OrderScreen({match, history}) {
             return
         }
 
-        const data = await axios.post(`http://localhost:5000/razorpay/${order.totalPrice}`, {})
+        const data = await axios.post(`https://www.chaoticstores.com/razorpay/${order.totalPrice}`, {})
 
         console.log("data", data.data);
 

@@ -24,7 +24,7 @@ export default function SearchBox({ history, widthh }) {
                     onChange={(e) => setKeyword(e.target.value)} 
                     placeholder="Hunt for products..." className="ml-sm-5" />
                 </div>
-                <div className='col-2 ml-1'>
+                <div className='col-2 ml-2'>
                     <Button type="submit" variant="outline-success" className='pb-1 float-right'>
                         <i className="fa fa-search"></i>
                     </Button>

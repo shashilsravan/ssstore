@@ -91,7 +91,7 @@ export default function RegisterScreen({history, location}) {
                             </small>
                         </div>
                         <button type="submit" className="btn btn-chaotic">
-                            Login
+                            Register
                         </button>
                         <div className="row mt-2">
                             <div className="col">
