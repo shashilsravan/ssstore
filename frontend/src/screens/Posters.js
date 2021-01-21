@@ -156,7 +156,7 @@ export default function Posters() {
 
                 <div className="col">
                     <Link to='/api/products/category/posters'>
-                        <CardImage src=""
+                        <CardImage src="https://res.cloudinary.com/alchemy069/image/upload/v1611198105/alchemy/Slideshow/po_jb5hte.jpg"
                             centered={true} title="All Posters" />
                     </Link>
                 </div>

@@ -68,9 +68,9 @@ export default function CategoryScreen() {
                         </Link>
                     </div>
 
-                    <div className="col">
+                    <div className="col-md-6 col-lg-4">
                         <Link to='/allProducts'>
-                            <CardImage src="https://res.cloudinary.com/alchemy069/image/upload/v1606234145/alchemy/hood_c_zqwnyb.png"
+                            <CardImage src="https://lh3.googleusercontent.com/proxy/n47is_7BaSuRzp_p5bT-A1YaHO0otRFkmWZi6lqEpyKLws5y5fojve3po5_Na3HvK85AyEKBwUid-323UfQTXU7iqmuhAtloaFKOxIQ55TFDG-Hk2A"
                                 title = 'All Products' centered={true} />
                         </Link>
                     </div>

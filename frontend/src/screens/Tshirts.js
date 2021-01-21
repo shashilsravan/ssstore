@@ -163,14 +163,14 @@ export default function Tshirts() {
 
                 <div className="col-6 col-md-4">
                     <Link to='/api/products/category/tshirts/brand/combo'>
-                        <CardImage src="https://res.cloudinary.com/alchemy069/image/upload/v1606297338/alchemy/tshirts_gkbdud.jpg"
+                        <CardImage src="https://res.cloudinary.com/alchemy069/image/upload/v1608905683/alchemy/Slideshow/tees_c_nvdxc4_vlqs9a.jpg"
                             centered={true} title="Combo T-Shirts" />
                     </Link>
                 </div>
 
                 <div className="col">
                     <Link to='/api/products/category/tshirts'>
-                        <CardImage src="https://res.cloudinary.com/alchemy069/image/upload/v1606297338/alchemy/tshirts_gkbdud.jpg"
+                        <CardImage src="https://res.cloudinary.com/alchemy069/image/upload/v1611197982/alchemy/Slideshow/all_t_fqek3p.jpg"
                             centered={true} title="All T-Shirts" />
                     </Link>
                 </div>
