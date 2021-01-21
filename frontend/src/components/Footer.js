@@ -20,7 +20,7 @@ export default function Footer() {
                         </Link>
                     </div>
                     <div className="footer-container__each-detail">
-                        <Link to="/">
+                        <Link to="/about">
                             <h6>About us</h6>
                         </Link>
                     </div>
