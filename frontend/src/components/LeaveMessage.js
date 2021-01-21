@@ -42,7 +42,7 @@ export default function LeaveMessage({history}) {
                         onChange={(e) => setUserProblem(e.target.value)}
                         className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                     </div>
-                    <a href={`mailto:alchemys069@gmail.com?body=${userProblem}`}
+                    <a href={`mailto:support@chaoticstores.com?body=${userProblem}`}
                     className="btn btn-success float-right">
                         Send Email <i className="fas fa-envelope"/>
                     </a>
