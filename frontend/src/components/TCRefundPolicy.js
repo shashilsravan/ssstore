@@ -116,6 +116,11 @@ We reserve the right, at our sole discretion, to update, change or replace any p
             <p>Questions about the Terms of Service should be sent to us at <a href="mailto:support@chaoticstores.com">support@chaoticstores.com</a></p>
             <br />
             <br />
+            <HeroTitle text="Shipping details" />
+            <p>
+                Our services deliveries may take minimum - 3 days to maximum 14 days to deliver your product. In some cases deliveries may take more time due to covid restrictions etc.
+            </p>
+            <br />
 
             <HeroTitle text="Refund Policy" />
             <p>
