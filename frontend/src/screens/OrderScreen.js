@@ -133,10 +133,10 @@ export default function OrderScreen({match, history}) {
                 "contact": `${order.shippingAddress.phone}`
             },
             "notes": {
-                "address": "Razorpay Corporate Office"
+                "address": "Chaotic"
             },
             "theme": {
-                "color": "#3399cc"
+                "color": "#F05151"
             }
         };
 
