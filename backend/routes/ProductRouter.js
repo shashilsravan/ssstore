@@ -13,7 +13,7 @@ router.route('/top').get(getTopProducts)
 
 router.route('/dealsForToday').get(getProductsByDeal)
 
-router.route('/shopby/:grouping').get(getProductsByGrouping)
+router.route('/shopbie/:grouping').get(getProductsByGrouping)
 
 
 router.route('/').get(getProducts).post(protect, admin, createProduct)
@@ -22,8 +22,8 @@ router.route('/:id').get(getProductsById).delete(protect, admin, deleteProduct).
 
 router.route('/:id/reviews').post(protect, createProductReview)
 
-router.route('/category/:category').get(getProductsByCategory)
+router.route('/categorie/:category').get(getProductsByCategory)
 
-router.route('/category/:category/brand/:brand').get(getProductsByBrand)
+router.route('/categorie/:category/brandd/:brand').get(getProductsByBrand)
 
 export default router

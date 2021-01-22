@@ -192,7 +192,7 @@ export const productsFromCategory = (category) => async (dispatch, getState) => 
         dispatch({
             type: PRODUCT_BY_CATEGORY_REQUEST,
         })
-        const {data} = await axios.get(`/api/products/category/${category}`)
+        const {data} = await axios.get(`/api/products/categorie/${category}`)
         dispatch({
             type: PRODUCT_BY_CATEGORY_SUCCESS,
             payload: data
@@ -218,7 +218,7 @@ export const productsFromBrand = (category, brand) => async (dispatch, getState)
         dispatch({
             type: PRODUCT_BY_BRAND_REQUEST,
         })
-        const {data} = await axios.get(`/api/products/category/${category}/brand/${brand}`)
+        const {data} = await axios.get(`/api/products/categorie/${category}/brandd/${brand}`)
         dispatch({
             type: PRODUCT_BY_BRAND_SUCCESS,
             payload: data
@@ -268,7 +268,7 @@ export const productsFromGroup = (group) => async (dispatch, getState) => {
         dispatch({
             type: PRODUCT_BY_GROUP_REQUEST,
         })
-        const {data} = await axios.get(`/api/products/shopby/${group}`)
+        const {data} = await axios.get(`/api/products/shopbie/${group}`)
         dispatch({
             type: PRODUCT_BY_GROUP_SUCCESS,
             payload: data
