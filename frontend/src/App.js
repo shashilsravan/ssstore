@@ -33,6 +33,8 @@ import UserEditScreen from './screens/UserEditScreen';
 import UserListScreen from './screens/UserListScreen';
 import PasswordReset from './screens/PasswordReset';
 import ChangePassword from './screens/ChangePassword';
+import PrivacyPolicy from './components/PrivacyPolicy';
+import TCRefundPolicy from './components/TCRefundPolicy';
 
 const App = () => {
   return (
@@ -52,6 +54,8 @@ const App = () => {
         <Route path='/register' component={RegisterScreen} exact />
         <Route path='/forgotPassword' component={PasswordReset} exact />
         <Route path='/changing' component={ChangePassword} exact />
+        <Route path='/policy' component={PrivacyPolicy} exact />
+        <Route path='/termsandconditions' component={TCRefundPolicy} exact />
         <Route path='/profile' component={ProfileScreen} exact />
         <Route path='/shipping' component={ShippingScreen} exact />
         <Route path='/payment' component={PaymentScreen} exact />

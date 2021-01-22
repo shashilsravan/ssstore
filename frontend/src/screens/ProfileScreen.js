@@ -93,7 +93,7 @@ export default function ProfileScreen({location, history}) {
                             <label htmlFor="exampleInputEmail1">Email address: </label>
                             <input type="email" value={email}
                             className="form-control" id="exampleInputEmail1"
-                            onChange={(e) => setEmail(e.target.value)} />
+                            onChange={(e) => setEmail(e.target.value)} disabled/>
                             <small id="emailError" className="form-text text-danger errors">
                                 Errors will be displayed here.
                             </small>

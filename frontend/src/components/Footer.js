@@ -9,19 +9,19 @@ export default function Footer() {
                 <div className="footer-container__left-display">
                     <div className="footer-container__each-detail">
                         <i className="fas fa-question"></i>
-                        <Link to="/allProducts">
-                            <h6>Complete store</h6>
+                        <Link to="/policy">
+                            <h6>Privacy Policy</h6>
                         </Link>
                         
                     </div>
                     <div className="footer-container__each-detail">
                         <Link to="/contactus">
-                            <h6>Leave a message</h6>
+                            <h6>Contact us</h6>
                         </Link>
                     </div>
                     <div className="footer-container__each-detail">
-                        <Link to="/about">
-                            <h6>About us</h6>
+                        <Link to="/termsandconditions">
+                            <h6>T&C and Refund Policy</h6>
                         </Link>
                     </div>
                 </div>
