@@ -123,7 +123,7 @@ export default function OrderScreen({match, history}) {
             "name": `order by ${order.user.name}`,
             "order_id": data.data.id,
             "description": `ordering ${order.orderItems.length} item/s`,
-            "image": "https://res.cloudinary.com/alchemy069/image/upload/v1605966215/alchemy/mainlogo_ocs3sl.png",
+            "image": "https://res.cloudinary.com/alchemy069/image/upload/v1611065433/alchemy/a_sample_1_qsj6cf.png",
             "handler": function (response){
                 successPaymentHandler()
             },

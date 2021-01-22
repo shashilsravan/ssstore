@@ -108,11 +108,11 @@ export default function ProfileScreen({location, history}) {
                             </small>
                         </div>
                         <div className="form-group">
-                            <label htmlFor="exampleInputPassword1">Re-enter new Password: </label>
+                            <label htmlFor="exampleInputPassword2">Re-enter new Password: </label>
                             <input type="password" minLength={4}
                             value={confirmPassword}
                             onChange={(e) => setConfirmPassword(e.target.value)}
-                            className="form-control" id="exampleInputPassword1" />
+                            className="form-control" id="exampleInputPassword2" />
                             <small id="passwordError" className="form-text text-danger">
                                 {message ?  message :  null}
                             </small>

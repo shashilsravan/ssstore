@@ -81,11 +81,11 @@ export default function RegisterScreen({history, location}) {
                             </small>
                         </div>
                         <div className="form-group">
-                            <label htmlFor="exampleInputPassword1">Confirm Password: </label>
+                            <label htmlFor="exampleInputPassword2">Confirm Password: </label>
                             <input type="password" minLength={4}
                             value={confirmPassword}
                             onChange={(e) => setConfirmPassword(e.target.value)}
-                            className="form-control" id="exampleInputPassword1" />
+                            className="form-control" id="exampleInputPassword2" />
                             <small id="passwordError" className="form-text text-danger">
                                 {message ?  message :  null}
                             </small>
