@@ -30,18 +30,18 @@ export default function Footer() {
                         We are on:
                     </span>
                     <div className="icons-container">
-                        <Link to="/">
+                        <a target="_blank" href="https://www.instagram.com/chaoticofficial_/">
                             <i className="fab fa-instagram"></i>
-                        </Link>
-                        <Link to="/">
+                        </a>
+                        <a target="_blank" href="#">
                             <i className="fab fa-facebook"></i>
-                        </Link>
-                        <Link to="/">
+                        </a>
+                        <a target="_blank" href="mailto:support@chaoticstores.com">
                             <i className="far fa-envelope"></i>
-                        </Link>
-                        <Link to="/">
+                        </a>
+                        <a target="_blank" href="#">
                             <i className="fas fa-phone"></i>
-                        </Link>
+                        </a>
                     </div>
                 </div>
             </div>
