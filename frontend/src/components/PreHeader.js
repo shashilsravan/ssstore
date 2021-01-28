@@ -21,7 +21,7 @@ export default function PreHeader() {
             <div className="swiper-container swiper-container-first">
                 <div className="swiper-wrapper">
                     <div className="swiper-slide">
-                        <Link to='/' className="text-decoration-none">CHAOTIC</Link>
+                        <Link to='/' className="text-decoration-none text-dark">CHAOTIC</Link>
                     </div>
                     {!loading && slides && (
                         slides.map(slide => (
