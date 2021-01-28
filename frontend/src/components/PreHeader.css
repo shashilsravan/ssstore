@@ -45,5 +45,6 @@
   .swiper-slide {
     font-size: 20px !important;
     font-style: italic;
+    color: black;
   }
 }
