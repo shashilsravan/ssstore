@@ -73,7 +73,7 @@ export default function Hoodies() {
                 <div className="col col-md-4">
                     <Link to='/api/products/category/hoodies/brand/collection'>
                         <CardImage src="https://res.cloudinary.com/alchemy069/image/upload/v1605966215/alchemy/mainlogo_ocs3sl.png"
-                            centered={true} title="Alchemy Collection" />
+                            centered={true} title="Chaotic Collection" />
                     </Link>
                 </div>
 

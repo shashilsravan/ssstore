@@ -1,6 +1,7 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux';
-import { creatingSlide, deletingSlide, gettingSlides } from '../actions/slideActions';
+import { Link } from 'react-router-dom'
+import { gettingSlides } from '../actions/slideActions';
 
 import './PreHeader.css'
 
@@ -19,7 +20,9 @@ export default function PreHeader() {
         <div className="preheader">
             <div className="swiper-container swiper-container-first">
                 <div className="swiper-wrapper">
-                    <div className="swiper-slide">CHAOTIC</div>
+                    <div className="swiper-slide">
+                        <Link to='/' className="text-decoration-none">CHAOTIC</Link>
+                    </div>
                     {!loading && slides && (
                         slides.map(slide => (
                             <div className="swiper-slide" key={slide._id}>
