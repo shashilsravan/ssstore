@@ -35,3 +35,8 @@ export default function PreHeader() {
         </div>
     )
 }
+
+
+// justify - in about section
+// remove printed tshirts, printed hoodies
+// alchemy - chaotic (in Tshirts, Hoodies, posters)

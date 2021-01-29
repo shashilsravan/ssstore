@@ -24,28 +24,28 @@ export default function Hoodies() {
                 <div className="col-6 col-md-4">
                     <Link to='/api/products/category/hoodies/brand/animie'>
                         <CardImage src="https://res.cloudinary.com/alchemy069/image/upload/v1606427380/anime_mkou9v.jpg"
-                            centered={true} title="Printed Hoodies - Anime" />
+                            centered={true} title="Anime" />
                     </Link>
                 </div>
 
                 <div className="col-6 col-md-4">
                     <Link to='/api/products/category/hoodies/brand/webseries'>
                         <CardImage src="https://res.cloudinary.com/alchemy069/image/upload/v1606427389/tv_shows_azg6jm.jpg"
-                            centered={true} title="Printed Hoodies - Webseries" />
+                            centered={true} title="Webseries" />
                     </Link>
                 </div>
 
                 <div className="col-6 col-md-4">
                     <Link to='/api/products/category/hoodies/brand/cartoons'>
                         <CardImage src="https://res.cloudinary.com/alchemy069/image/upload/v1606427377/cartoon_nuawdz.jpg"
-                            centered={true} title="Printed Hoodies - Cartoons" />
+                            centered={true} title="Cartoons" />
                     </Link>
                 </div>
 
                 <div className="col-6 col-md-4">
                     <Link to='/api/products/category/hoodies/brand/memesandquotes'>
                         <CardImage src="https://res.cloudinary.com/alchemy069/image/upload/v1606427368/meme_lzhpgz.jpg"
-                            centered={true} title="Printed Hoodies - Memes and Quotes" />
+                            centered={true} title="Memes and Quotes" />
                     </Link>
                 </div>
 

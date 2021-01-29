@@ -70,8 +70,8 @@ const createProduct = asyncHandler (async(req, res) => {
         imageThree: "path/to/image3",
         imageFour: "path/to/image4",
         description: "Sample description of the product",
-        brand: "PlainTees etc",
-        category: "Tshirts etc",
+        brand: "None",
+        category: "None",
         countInStock: 0,
         numReviews: 0
     })
