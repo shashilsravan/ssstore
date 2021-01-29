@@ -157,7 +157,7 @@ export default function ProfileScreen({location, history}) {
                                             ))}
                                         </td>
                                         <td>{order.createdAt.substring(0, 10)}</td>
-                                        <td>{order.totalPrice}rs</td>
+                                        <td>₹{order.totalPrice}</td>
                                         <td className="">
                                             <Step 
                                                 Paid={order.isPaid} order={order}

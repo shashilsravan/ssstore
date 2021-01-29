@@ -2,6 +2,9 @@
 main {
   padding-top: 21vh;
 }
+.text-justi {
+  text-align: justify !important;
+}
 .btn-chaotic {
   background: #b4010a;
   color: white;

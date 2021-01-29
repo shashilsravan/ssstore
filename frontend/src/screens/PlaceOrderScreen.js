@@ -147,7 +147,7 @@ export default function PlaceOrderScreen({history}) {
                                     <div className="col">
                                         {cart.shippingPrice === 0 
                                         ? '-/-' 
-                                        : <strong> {cart.shippingPrice} rs </strong>}
+                                        : <strong> ₹{cart.shippingPrice}</strong>}
                                     </div>
                                 </div>
                             </li>

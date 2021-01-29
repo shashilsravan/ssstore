@@ -52,27 +52,27 @@ export default function Hoodies() {
                 <div className="col-6 col-md-4">
                     <Link to='/api/products/category/hoodies/brand/superheroes'>
                         <CardImage src="https://res.cloudinary.com/alchemy069/image/upload/v1606427377/superhero_twffhv.jpg"
-                            centered={true} title="Printed Tshirts - Superheroes" />
+                            centered={true} title="Superheroes" />
                     </Link>
                 </div>
 
                 <div className="col-6 col-md-4">
                     <Link to='/api/products/category/hoodies/brand/games'>
                         <CardImage src="https://res.cloudinary.com/alchemy069/image/upload/v1606427392/games_vjucmc.jpg"
-                            centered={true} title="Printed Tshirts - Games" />
+                            centered={true} title="Games" />
                     </Link>
                 </div>
 
                 <div className="col-6 col-md-4">
                     <Link to='/api/products/category/hoodies/brand/music'>
                         <CardImage src="https://res.cloudinary.com/alchemy069/image/upload/v1606427386/music_opxjqj.jpg"
-                            centered={true} title="Printed Tshirts - Music" />
+                            centered={true} title="Music" />
                     </Link>
                 </div>
 
                 <div className="col col-md-4">
                     <Link to='/api/products/category/hoodies/brand/collection'>
-                        <CardImage src="https://res.cloudinary.com/alchemy069/image/upload/v1605966215/alchemy/mainlogo_ocs3sl.png"
+                        <CardImage src="https://res.cloudinary.com/alchemy069/image/upload/v1611065433/alchemy/a_sample_1_qsj6cf.png"
                             centered={true} title="Chaotic Collection" />
                     </Link>
                 </div>

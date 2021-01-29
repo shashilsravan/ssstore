@@ -147,7 +147,7 @@ export default function CartScreen({match, location, history }) {
                                 <h5>Ordering - {cartItems.reduce((acc, item) => acc + item.qty, 0)} products</h5>
                             </li>
                             <li className="list-group-item d-flex">
-                                Total Price: <h5 className="ml-2"> {cartItems.reduce((acc, item) => acc + item.qty * item.price, 0).toFixed(2)} rs </h5>
+                                Total Price: <h5 className="ml-2"> ₹ {cartItems.reduce((acc, item) => acc + item.qty * item.price, 0).toFixed(2)}</h5>
                             </li>
                             <li className="list-group-item">
                                 <button 

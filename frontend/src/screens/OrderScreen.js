@@ -263,7 +263,7 @@ export default function OrderScreen({match, history}) {
                                     <div className="col">
                                         {order.shippingPrice === 0 
                                         ? '-/-' 
-                                        : <strong> {order.shippingPrice} rs </strong>}
+                                        : <strong> ₹{order.shippingPrice}</strong>}
                                     </div>
                                 </div>
                             </li>
