@@ -120,7 +120,7 @@ export default function ProductsLoaded({data, isDress}) {
                     {sortedProducts.length === 0 ? <ComingSoon />
                     : sortedProducts.map(product => {
                         return(
-                            <div key={product._id} className="col-6 col-md-4 fine">
+                            <div key={product._id} className="col-6 col-md-3 fine">
                                 <Product product={product} />
                             </div>
                         )

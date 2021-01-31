@@ -24,7 +24,7 @@ export default function HomeScreen({location, history, match}) {
 
     return (
         <div className="mt-5">
-            <Meta title="Chaotci | All products" />
+            <Meta title="Chaotic | All products" />
             <HeroTitle text="All Products" />
             { loading ?  
                 <Loader />
@@ -33,7 +33,7 @@ export default function HomeScreen({location, history, match}) {
                 : <div className="row">
                     {products.map(product => {
                         return(
-                            <div key={product._id} className="col-6 col-md-4 fine">
+                            <div key={product._id} className="col-6 col-md-3 fine">
                                 <Product product={product} />
                             </div>
                         )

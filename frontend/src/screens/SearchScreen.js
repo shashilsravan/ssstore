@@ -40,7 +40,7 @@ export default function SearchScreen({ match }) {
                         error={`No search results found for "${keyword}". Please try searching by product name`} />)
                     : products.map(product => {
                         return(
-                            <div key={product._id} className="col-6 col-md-4 fine">
+                            <div key={product._id} className="col-6 col-md-3 fine">
                                 <Product product={product} />
                             </div>
                         )

@@ -55,17 +55,13 @@
   }
   .zoom-effect-container2 {
     width: 100%;
-    height: 150px;
+    height: 160px;
   }
   .custom-product .custom-card-title {
     font-size: 0.9rem;
   }
 }
 @media screen and (max-width: 500px) {
-  .zoom-effect-container2 {
-    width: 100%;
-    height: 130px;
-  }
   .actualPrice {
     color: gray;
     margin: 0 0.4rem;
@@ -80,5 +76,17 @@
   }
   .card-title {
     font-size: 1rem;
+  }
+}
+@media screen and (min-width: 381px) and (max-width: 500px) {
+  .zoom-effect-container2 {
+    width: 100%;
+    height: 190px;
+  }
+}
+@media screen and (max-width: 380px) {
+  .zoom-effect-container2 {
+    width: 100%;
+    height: 130px;
   }
 }

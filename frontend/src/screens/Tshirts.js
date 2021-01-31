@@ -168,7 +168,7 @@ export default function Tshirts() {
                     </Link>
                 </div>
 
-                <div className="col">
+                <div className="col-6 col-md-4">
                     <Link to='/api/products/category/tshirts'>
                         <CardImage src="https://res.cloudinary.com/alchemy069/image/upload/v1611197982/alchemy/Slideshow/all_t_fqek3p.jpg"
                             centered={true} title="All T-Shirts" />
