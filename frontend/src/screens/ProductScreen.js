@@ -102,11 +102,12 @@ export default function ProductScreen({ history, match }) {
                             {product.inDeal && <li className="list-group-item d-flex">
                                 <CustomTag text="In Deal" />
                             </li>}
-                            <li className="list-group-item d-flex">
+                            {product.category !== "None" && 
+                            (<li className="list-group-item d-flex">
                                 <Badge upper variant="danger" text={product.category} />
                                 <div className="mx-1">-</div>
                                 <Badge upper variant="primary" text={product.brand} />
-                            </li>
+                            </li>) }
                             <li className="list-group-item">
                                 <Rating value={product.rating} text={`${product.numReviews} reviews`} />
                             </li>

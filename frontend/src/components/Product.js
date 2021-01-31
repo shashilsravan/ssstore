@@ -33,9 +33,14 @@ export default function Product({ product }) {
                         </div>
                     </div>
 
-                    <div className="mb-2"> 
+                    {product.brand === 'None' ? (
+                        <div className="mb-2"> 
+                            <Badge upper variant="danger" text={product.category} />
+                        </div>
+                    )
+                    : (<div className="mb-2"> 
                         <Badge upper variant="primary" text={product.brand} />
-                    </div>
+                    </div>)}
 
                     <span className="card-text d-flex align-items-center flex-wrap">
                         <strong>₹{product.price} </strong>
