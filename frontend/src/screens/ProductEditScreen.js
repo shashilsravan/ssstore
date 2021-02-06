@@ -91,7 +91,7 @@ export default function ProductEditScreen({match, history}) {
                             _id: productId,
                             name, price, description, actualPrice, 
                             image, imageTwo, imageThree, imageFour, 
-                            category, brand: isDress ? brand : "None", isDress, dressType, countInStock, inDeal
+                            category, brand: isDress ? brand : "None", isDress, dressType: isDress ? dressType : "None", countInStock, inDeal
                         }))
                     },
                     {
