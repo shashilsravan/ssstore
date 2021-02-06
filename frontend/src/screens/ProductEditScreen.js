@@ -535,7 +535,7 @@ export default function ProductEditScreen({match, history}) {
                                         <option>Brand in Tote bags:</option>
                                         <option 
                                             selected={brand === "none"}
-                                            value="none" className="text-capitalize">
+                                            value="None" className="text-capitalize">
                                                 none 
                                         </option>
                                     </select>
@@ -550,7 +550,7 @@ export default function ProductEditScreen({match, history}) {
                                         <option 
                                             selected={brand === "none"}
                                             value="none" className="text-capitalize">
-                                                none 
+                                                None 
                                         </option>
                                     </select>
                                 )}
