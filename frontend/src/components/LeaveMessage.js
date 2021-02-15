@@ -1,24 +1,8 @@
-import React, {useEffect, useState} from 'react'
-import {useSelector} from 'react-redux';
+import React, {useState} from 'react'
 import Meta from '../minicomponents/Meta'
 
 export default function LeaveMessage({history}) {
-    const userLogin = useSelector(state => state.userLogin)
-    const { userInfo } = userLogin
-
-    const [userName, setUserName] = useState("")
-    const [userEmail, setUserEmail] = useState("")
     const [userProblem, setUserProblem] = useState("")
-
-    useEffect(() => {
-        if (!userInfo){
-            history.push('/login')
-        }
-        else{
-            setUserEmail(userInfo.email)
-            setUserName(userInfo.name)
-        }
-    }, [userInfo])
     
     return (
         <>
@@ -27,13 +11,7 @@ export default function LeaveMessage({history}) {
             
             <div className="row">
                 <div className="col-md-8">
-                    <h5 className="mb-4">Hi {userName}!</h5>
-                    <div className="mb-3">
-                        <label htmlFor="exampleFormControlInput1" className="form-label">
-                            Email ID
-                        </label>
-                        <input type="email" className="form-control" id="exampleFormControlInput1" placeholder={userEmail} disabled />
-                    </div>
+                    <h5 className="mb-4">Hi, welcome to Chaotic!</h5>
                     <div className="mb-3">
                         <label htmlFor="exampleFormControlTextarea1" className="form-label">
                             Write your query:
