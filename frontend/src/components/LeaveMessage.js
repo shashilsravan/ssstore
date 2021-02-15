@@ -7,7 +7,7 @@ export default function LeaveMessage({history}) {
     return (
         <>
         <Meta title="Leave a message" />
-        <div className="my-5">
+        <div className="my-5 py-5">
             
             <div className="row">
                 <div className="col-md-8">
