@@ -11,8 +11,13 @@ export default function LeaveMessage({history}) {
             
             <div className="row">
                 <div className="col-md-8">
-                    <h5 className="mb-4">Hi, welcome to Chaotic!</h5>
-                    <div className="mb-3">
+                    <h5 className="mb-2">Hi, welcome to Chaotic!</h5>
+                    <p className="text-secondary">
+                        Our mail id: chaoticofficial203@gmail.com <br />
+                        For instant support contact us directly at +91 8574198316 (Working days: 10AM - 4PM) <br />
+                        Or reach us on social media platforms instagram/facebook from the icons below.
+                    </p>
+                    <div className="mb-2">
                         <label htmlFor="exampleFormControlTextarea1" className="form-label">
                             Write your query:
                         </label>
@@ -20,7 +25,7 @@ export default function LeaveMessage({history}) {
                         onChange={(e) => setUserProblem(e.target.value)}
                         className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                     </div>
-                    <a href={`mailto:support@chaoticstores.com?body=${userProblem}`}
+                    <a href={`mailto:chaoticofficial203@gmail.com?body=${userProblem}`}
                     className="btn btn-success float-right">
                         Send Email <i className="fas fa-envelope"/>
                     </a>
