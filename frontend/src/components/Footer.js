@@ -33,13 +33,13 @@ export default function Footer() {
                         <a target="_blank" href="https://www.instagram.com/chaoticofficial_/">
                             <i className="fab fa-instagram"></i>
                         </a>
-                        <a target="_blank" href="#">
-                            <i className="fab fa-facebook"></i>
+                        <a target="_blank" href="tel:+91-857-419-8316">
+                            <i className="fas fa-phone"></i>
                         </a>
                         <a target="_blank" href="mailto:support@chaoticstores.com">
                             <i className="far fa-envelope"></i>
                         </a>
-                        <a target="_blank" href="#">
+                        <a target="_blank" href="tel:+91-857-419-8316">
                             <i className="fas fa-phone"></i>
                         </a>
                     </div>

@@ -15,6 +15,7 @@ export default function LeaveMessage({history}) {
                     <p className="text-secondary">
                         Our mail id: chaoticofficial203@gmail.com <br />
                         For instant support contact us directly at +91 8574198316 (Working days: 10AM - 4PM) <br />
+                        Operating Address: 62-A, Kurmitola Chowk. Azamgarh, Uttar Pradesh. Pin code: 276001 <br />
                         Or reach us on social media platforms instagram/facebook from the icons below.
                     </p>
                     <div className="mb-2">
