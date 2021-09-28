@@ -14,21 +14,21 @@ You can add products to your cart or to your wishlist, you can checkout and plac
 And also few things like pagination, searching through the products, add a review to the products you bought, different sorting options on the products and also you can shop products by age group. You also cannot place orders that are out of stock.
 You can add/remove and increase/decrease products from cart page and wishlist page. You can also see the products that are in exclusive deals.
     <br />
-    <a href="https://github.com/shashilsravan/ss-store"><strong>Explore the project »</strong></a>
+    <a href="https://github.com/shashilsravan/ssstore"><strong>Explore the project »</strong></a>
     <br />
     <br />
     <a href="#">View Demo</a>
     ·
-    <a href="https://github.com/shashilsravan/ss-store/issues">Report Bug</a>
+    <a href="https://github.com/shashilsravan/ssstore/issues">Report Bug</a>
     ·
-    <a href="https://github.com/shashilsravan/ss-store/issues">Request Feature</a>
+    <a href="https://github.com/shashilsravan/ssstore/issues">Request Feature</a>
   </p>
 </p>
 
 
 ## First look at the Project
 
-[![Product Name Screen Shot][screenshot1]](https://github.com/shashilsravan/ss-store)
+[![Product Name Screen Shot][screenshot1]](https://github.com/shashilsravan/ssstore)
 
 
 This is how the homepage of the shortTube looks like. A more detailed info of the routes and UX can be seen in *Detailed Info* Section
@@ -59,10 +59,10 @@ You need npm installed on your device to make sure the project is working.
   
 
 ## Usage
-* [![Screenshot2][screenshot2]](https://github.com/shashilsravan/ss-store)
-* [![Screenshot3][screenshot3]](https://github.com/shashilsravan/ss-store)
-* [![Screenshot4][screenshot4]](https://github.com/shashilsravan/ss-store)
-* [![Screenshot5][screenshot5]](https://github.com/shashilsravan/ss-store)
+* [![Screenshot2][screenshot2]](https://github.com/shashilsravan/ssstore)
+* [![Screenshot3][screenshot3]](https://github.com/shashilsravan/ssstore)
+* [![Screenshot4][screenshot4]](https://github.com/shashilsravan/ssstore)
+* [![Screenshot5][screenshot5]](https://github.com/shashilsravan/ssstore)
 
 
 
@@ -83,21 +83,21 @@ Contributions are what make the open source community such an amazing place to l
 
 Your Name - [@me](https://twitter.com/shashilSravan45) - shashilsravan.ss.ss@gmail.com
 
-Project Link: [https://github.com/shashilsravan/ss-store](https://github.com/shashilsravan/ss-store)
+Project Link: [https://github.com/shashilsravan/ssstore](https://github.com/shashilsravan/ssstore)
 
 
 
 
-[contributors-shield]: https://img.shields.io/github/contributors/shashilsravan/ss-store.svg?style=for-the-badge
-[contributors-url]: https://github.com/shashilsravan/ss-store/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/shashilsravan/ss-store.svg?style=for-the-badge
-[forks-url]: https://github.com/shashilsravan/ss-store/network/members
-[stars-shield]: https://img.shields.io/github/stars/shashilsravan/ss-store.svg?style=for-the-badge
-[stars-url]: https://github.com/shashilsravan/ss-store/stargazers
-[issues-shield]: https://img.shields.io/github/issues/shashilsravan/ss-store.svg?style=for-the-badge
-[issues-url]: https://github.com/shashilsravan/ss-store/issues
+[contributors-shield]: https://img.shields.io/github/contributors/shashilsravan/ssstore.svg?style=for-the-badge
+[contributors-url]: https://github.com/shashilsravan/ssstore/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/shashilsravan/ssstore.svg?style=for-the-badge
+[forks-url]: https://github.com/shashilsravan/ssstore/network/members
+[stars-shield]: https://img.shields.io/github/stars/shashilsravan/ssstore.svg?style=for-the-badge
+[stars-url]: https://github.com/shashilsravan/ssstore/stargazers
+[issues-shield]: https://img.shields.io/github/issues/shashilsravan/ssstore.svg?style=for-the-badge
+[issues-url]: https://github.com/shashilsravan/ssstore/issues
 [license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
-[license-url]: https://github.com/shashilsravan/ss-store
+[license-url]: https://github.com/shashilsravan/ssstore
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/shashil-sravan-a5b201191/
 [screenshot1]: images/screenshot1.png
