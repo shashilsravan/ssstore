@@ -72,14 +72,24 @@ You need npm installed on your device to make sure the project is working.
 
 ## Pages (Desktop view)
 * [![Screenshot2][screenshot2]](https://github.com/shashilsravan/ssstore)
-↑ Deals and Top sellers slider secton
-* [![Screenshot3][screenshot3]](https://github.com/shashilsravan/ssstore)
-↑ products list view for tshirts
-* [![Screenshot4][screenshot4]](https://github.com/shashilsravan/ssstore)
-↑ A product detail page with add to cart/wishlist options, size chart modal and able to review if loggedin and bought
-* [![Screenshot5][screenshot5]](https://github.com/shashilsravan/ssstore)
-↑ View of the cart page when u add a product
+* ↑ Deals and Top sellers slider secton
 
+<hr />
+
+* [![Screenshot3][screenshot3]](https://github.com/shashilsravan/ssstore)
+* ↑ products list view for tshirts
+
+<hr />
+
+* [![Screenshot4][screenshot4]](https://github.com/shashilsravan/ssstore)
+* ↑ A product detail page with add to cart/wishlist options, size chart modal and able to review if loggedin and bought
+
+<hr />
+
+* [![Screenshot5][screenshot5]](https://github.com/shashilsravan/ssstore)
+* ↑ View of the cart page when u add a product
+
+<hr />
 
 
 ## Contributing
