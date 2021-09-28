@@ -1,70 +1,180 @@
-# Getting Started with Create React App
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+  <h1 align="center">SS - Store</h1>
 
-## Available Scripts
+  <p align="center">
+    SS Stores is an ecommerce website made with MERN Stack i.e., ReactJS, NodeJS, ExpressJS, MongoDB, Redux for state management and redux thunk for middleware. Scroll down to know more about ss-store
+    <br />
+    <a href="https://github.com/shashilsravan/ssstore"><strong>Explore the project »</strong></a>
+    <br />
+    <br />
+    <a href="#">View Demo</a>
+    ·
+    <a href="https://github.com/shashilsravan/ssstore/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/shashilsravan/ssstore/issues">Request Feature</a>
+  </p>
+</p>
 
-In the project directory, you can run:
 
-### `npm start`
+## First look at the Project
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+[![Product Name Screen Shot][screenshot1]](https://github.com/shashilsravan/ssstore)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
+This is how the homepage of the ss-store looks like. A more detailed info of the routes and UX can be seen in *Detailed Info* Section
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+### Built With
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The application is built with the following libraries/frameworks that you built your project using.
+* [Nodejs](https://nodejs.org/en/)
+* [ReactJS](https://reactjs.org/)
+* [ExpressJS](https://expressjs.com/)
+* [Redux-thunk](https://github.com/reduxjs/redux-thunk)
+* [BcryptJS](https://www.npmjs.com/package/bcryptjs)
+* [react-bootstrap](https://react-bootstrap.github.io/)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Database:
+* [MongoDB](https://www.mongodb.com/)
+* [Firebase](https://console.firebase.google.com/)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<hr />
 
-### `npm run eject`
+**More detailed info about ss-store**
+SS-Store is a responsive and UI friendly ecommerce website made with MERN stack.
+SS-Store includes many thinhs like
+1. Complete user schema - Register / Login / Logout / Forgot password functionality.
+2. Admin functionality to access the dashboard that contains list of products, orders, users details. Due to which an admin can perform CRUD operations on products / users and also can keep track of the orders.
+3. As a customer/user you can add products to your cart or to your wishlist, you can checkout and place an order via COD or online payment support that is integrated. It also includes selecting quanitity and sizes while placing an orders if they are dresses.
+4. There are also few things that attracts every user like pagination, searching through the products, adding a review to the products that you bought, different sorting options on the products and also you can shop products by age group. 
+5. Stock of the products will be frequently changes according to the orders, so you cannot place orders that are out of stock.
+6. You can add/remove and increase/decrease products from cart page and wishlist page. 7. You can also see the products that are in exclusive deals
+7. See images below for a better understanding, Have a great day :)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+<hr />
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Getting Started
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Prerequisites
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+You need npm installed on your device to make sure the project is working.
+* npm
+  ```sh
+  npm install npm@latest -g
+  ```
+  
 
-## Learn More
+## Pages (Desktop view)
+* [![Screenshot2][screenshot2]](https://github.com/shashilsravan/ssstore)
+* ↑ Deals and Top sellers slider section
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<hr />
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+* [![Screenshot3][screenshot3]](https://github.com/shashilsravan/ssstore)
+* ↑ products list view for tshirts
 
-### Code Splitting
+<hr />
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+* [![Screenshot4][screenshot4]](https://github.com/shashilsravan/ssstore)
+* ↑ A product detail page with add to cart/wishlist options, size chart modal and able to review if loggedin and bought
 
-### Analyzing the Bundle Size
+<hr />
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+* [![Screenshot5][screenshot5]](https://github.com/shashilsravan/ssstore)
+* ↑ View of the cart page when u add a product
 
-### Making a Progressive Web App
+<hr />
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+* [![Screenshot6][screenshot6]](https://github.com/shashilsravan/ssstore)
+* ↑ Confirmation page to place the order
 
-### Advanced Configuration
+<hr />
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+* [![Screenshot7][screenshot7]](https://github.com/shashilsravan/ssstore)
+* ↑ Profile page of the user
 
-### Deployment
+<hr />
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+* [![Screenshot8][screenshot8]](https://github.com/shashilsravan/ssstore)
+* ↑ Premium plans for the website
 
-### `npm run build` fails to minify
+<hr />
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Pages (Mobile view)
+* [![Screenshot11][screenshot11]](https://github.com/shashilsravan/ssstore)
+* ↑ Mobile view of exclusive deals slider section
+
+<hr />
+
+* [![Screenshot12][screenshot12]](https://github.com/shashilsravan/ssstore)
+* ↑ Shopping by category
+
+<hr />
+
+* [![Screenshot13][screenshot13]](https://github.com/shashilsravan/ssstore)
+* ↑ Products list view
+
+<hr />
+
+* [![Screenshot14][screenshot14]](https://github.com/shashilsravan/ssstore)
+* ↑ Signin page
+  
+<hr />
+
+* [![Screenshot15][screenshot15]](https://github.com/shashilsravan/ssstore)
+* ↑ reset password screen
+
+
+## Contributing
+
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+
+
+<!-- CONTACT -->
+## Contact
+
+Your Name - [@me](https://twitter.com/shashilSravan45) - shashilsravan.ss.ss@gmail.com
+
+Project Link: [https://github.com/shashilsravan/ssstore](https://github.com/shashilsravan/ssstore)
+
+
+
+
+[contributors-shield]: https://img.shields.io/github/contributors/shashilsravan/ssstore.svg?style=for-the-badge
+[contributors-url]: https://github.com/shashilsravan/ssstore/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/shashilsravan/ssstore.svg?style=for-the-badge
+[forks-url]: https://github.com/shashilsravan/ssstore/network/members
+[stars-shield]: https://img.shields.io/github/stars/shashilsravan/ssstore.svg?style=for-the-badge
+[stars-url]: https://github.com/shashilsravan/ssstore/stargazers
+[issues-shield]: https://img.shields.io/github/issues/shashilsravan/ssstore.svg?style=for-the-badge
+[issues-url]: https://github.com/shashilsravan/ssstore/issues
+[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
+[license-url]: https://github.com/shashilsravan/ssstore
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://www.linkedin.com/in/shashil-sravan-a5b201191/
+[screenshot1]: images/screenshot1.png
+[screenshot2]: images/screenshot2.png
+[screenshot3]: images/screenshot3.png
+[screenshot4]: images/screenshot4.png
+[screenshot5]: images/screenshot5.png
+[screenshot6]: images/screenshot6.png
+[screenshot7]: images/screenshot7.png
+[screenshot8]: images/screenshot8.png
+[screenshot11]: images/screenshot11.png
+[screenshot12]: images/screenshot12.png
+[screenshot13]: images/screenshot13.png
+[screenshot14]: images/screenshot14.png
+[screenshot15]: images/screenshot15.png
