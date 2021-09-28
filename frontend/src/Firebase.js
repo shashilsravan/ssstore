@@ -2,12 +2,12 @@ import firebase from 'firebase/app';
 import 'firebase/auth'
 
 const app = firebase.initializeApp({
-    apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
-    authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
-    projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
-    storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
-    messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
-    appId: process.env.REACT_APP_FIREBASE_APP_ID
+    apiKey: 'AIzaSyB8S0yO7sITOZX7fZj69IiTNRtmsNkTfmQ',
+    authDomain: 'ecommerce-mine-cfc8c.firebaseapp.com',
+    projectId: 'ecommerce-mine-cfc8c',
+    storageBucket: 'ecommerce-mine-cfc8c.appspot.com',
+    messagingSenderId: '347300670121',
+    appId: '1:347300670121:web:5ccb785b7d7a5cfefe97b8'
 })
 
 export const auth = app.auth()
