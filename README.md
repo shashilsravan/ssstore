@@ -72,7 +72,7 @@ You need npm installed on your device to make sure the project is working.
 
 ## Pages (Desktop view)
 * [![Screenshot2][screenshot2]](https://github.com/shashilsravan/ssstore)
-* ↑ Deals and Top sellers slider secton
+* ↑ Deals and Top sellers slider section
 
 <hr />
 
@@ -90,6 +90,45 @@ You need npm installed on your device to make sure the project is working.
 * ↑ View of the cart page when u add a product
 
 <hr />
+
+* [![Screenshot6][screenshot6]](https://github.com/shashilsravan/ssstore)
+* ↑ Confirmation page to place the order
+
+<hr />
+
+* [![Screenshot7][screenshot7]](https://github.com/shashilsravan/ssstore)
+* ↑ Profile page of the user
+
+<hr />
+
+* [![Screenshot8][screenshot8]](https://github.com/shashilsravan/ssstore)
+* ↑ Premium plans for the website
+
+<hr />
+
+## Pages (Mobile view)
+* [![Screenshot11][screenshot11]](https://github.com/shashilsravan/ssstore)
+* ↑ Mobile view of exclusive deals slider section
+
+<hr />
+
+* [![Screenshot12][screenshot12]](https://github.com/shashilsravan/ssstore)
+* ↑ Shopping by category
+
+<hr />
+
+* [![Screenshot13][screenshot13]](https://github.com/shashilsravan/ssstore)
+* ↑ Products list view
+
+<hr />
+
+* [![Screenshot14][screenshot14]](https://github.com/shashilsravan/ssstore)
+* ↑ Signin page
+  
+<hr />
+
+* [![Screenshot15][screenshot15]](https://github.com/shashilsravan/ssstore)
+* ↑ reset password screen
 
 
 ## Contributing
@@ -131,3 +170,11 @@ Project Link: [https://github.com/shashilsravan/ssstore](https://github.com/shas
 [screenshot3]: images/screenshot3.png
 [screenshot4]: images/screenshot4.png
 [screenshot5]: images/screenshot5.png
+[screenshot6]: images/screenshot6.png
+[screenshot7]: images/screenshot7.png
+[screenshot8]: images/screenshot8.png
+[screenshot11]: images/screenshot11.png
+[screenshot12]: images/screenshot12.png
+[screenshot13]: images/screenshot13.png
+[screenshot14]: images/screenshot14.png
+[screenshot15]: images/screenshot15.png
