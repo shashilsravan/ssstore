@@ -8,11 +8,7 @@
   <h1 align="center">SS - Store</h1>
 
   <p align="center">
-    SS Stores is an ecommerce website made with MERN Stack i.e., ReactJS, NodeJS, ExpressJS, MongoDB, Redux for state management and redux thunk for middleware. It is responsive and UI friendly as well.
-It includes complete user schema - Register as an user / Login / Logout / Forgot password functionality. It also includes admin functionality to perform CRUD operations on products / users and also can keep track of the orders.
-You can add products to your cart or to your wishlist, you can checkout and place an order via COD or online payment support that i integrated. It also includes selecting quanitity and sizes while placing an order
-And also few things like pagination, searching through the products, add a review to the products you bought, different sorting options on the products and also you can shop products by age group. You also cannot place orders that are out of stock.
-You can add/remove and increase/decrease products from cart page and wishlist page. You can also see the products that are in exclusive deals.
+    SS Stores is an ecommerce website made with MERN Stack i.e., ReactJS, NodeJS, ExpressJS, MongoDB, Redux for state management and redux thunk for middleware. Scroll down to know more about ss-store
     <br />
     <a href="https://github.com/shashilsravan/ssstore"><strong>Explore the project »</strong></a>
     <br />
@@ -31,21 +27,37 @@ You can add/remove and increase/decrease products from cart page and wishlist pa
 [![Product Name Screen Shot][screenshot1]](https://github.com/shashilsravan/ssstore)
 
 
-This is how the homepage of the shortTube looks like. A more detailed info of the routes and UX can be seen in *Detailed Info* Section
+This is how the homepage of the ss-store looks like. A more detailed info of the routes and UX can be seen in *Detailed Info* Section
 
 
 ### Built With
 
 The application is built with the following libraries/frameworks that you built your project using.
-* [bootstrap](https://react-bootstrap.github.io/)
-* [material-ui icons](https://material-ui.com/components/material-icons/)
-* [react-router-dom](https://reactrouter.com/web/guides/quick-start)
+* [Nodejs](https://nodejs.org/en/)
+* [ReactJS](https://reactjs.org/)
+* [ExpressJS](https://expressjs.com/)
+* [Redux-thunk](https://github.com/reduxjs/redux-thunk)
+* [BcryptJS](https://www.npmjs.com/package/bcryptjs)
+* [react-bootstrap](https://react-bootstrap.github.io/)
 
-Backend perspective:
-Images & Videos hosted on 
-* [AWS S3 Buckets](https://aws.amazon.com)
+Database:
+* [MongoDB](https://www.mongodb.com/)
+* [Firebase](https://console.firebase.google.com/)
 
-Includes - Video streaming with different options, Uploading videos, Searching trhough them and user management
+<hr />
+
+**More detailed info about ss-store**
+SS-Store is a responsive and UI friendly ecommerce website made with MERN stack.
+SS-Store includes many thinhs like
+1. Complete user schema - Register / Login / Logout / Forgot password functionality.
+2. Admin functionality to access the dashboard that contains list of products, orders, users details. Due to which an admin can perform CRUD operations on products / users and also can keep track of the orders.
+3. As a customer/user you can add products to your cart or to your wishlist, you can checkout and place an order via COD or online payment support that is integrated. It also includes selecting quanitity and sizes while placing an orders if they are dresses.
+4. There are also few things that attracts every user like pagination, searching through the products, adding a review to the products that you bought, different sorting options on the products and also you can shop products by age group. 
+5. Stock of the products will be frequently changes according to the orders, so you cannot place orders that are out of stock.
+6. You can add/remove and increase/decrease products from cart page and wishlist page. 7. You can also see the products that are in exclusive deals
+7. See images below for a better understanding, Have a great day :)
+
+<hr />
 
 ## Getting Started
 
@@ -58,7 +70,7 @@ You need npm installed on your device to make sure the project is working.
   ```
   
 
-## Usage
+## Pages (Desktop view)
 * [![Screenshot2][screenshot2]](https://github.com/shashilsravan/ssstore)
 * [![Screenshot3][screenshot3]](https://github.com/shashilsravan/ssstore)
 * [![Screenshot4][screenshot4]](https://github.com/shashilsravan/ssstore)
