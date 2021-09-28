@@ -10,28 +10,50 @@ export default function About() {
     return (
         <>
         <Helmet>
-            <title>About Chaotic</title>
+            <title>About developer</title>
             <meta name='About us' content=' We are three socially awkward yet brilliant minded' />
         </Helmet>
         <div className="my-5 about-section">
-            <HeroTitle text="About Chaotic" />
+            <HeroTitle text="About Developer" />
 
             <div className="mt-5">
                 <h4 className="fst-italic"><Typed
-                    strings={['About the Team']}
+                    strings={['About SS Store']}
+                    loop
+                    typeSpeed={40}
+                    backSpeed={50}
+                    /><strong>
+                    </strong></h4>
+                    <h5 className="fw-normal fst-italic text-justi">
+                        SS Stores is an ecommerce website made with MERN Stack i.e., ReactJS, NodeJS, ExpressJS, MongoDB, Redux for state management and redux thunk for middleware. It is responsive and UI friendly as well.
+                    <br />
+                        It includes complete user schema - Register as an user / Login / Logout / Forgot password functionality. It also includes admin functionality to perform CRUD operations on products / users and also can keep track of the orders.
+                    <br />
+                        You can add products to your cart or to your wishlist, you can checkout and place an order via COD or online payment support that i integrated. It also includes selecting quanitity and sizes while placing an order
+                    <br />
+                        And also few things like pagination, searching through the products, add a review to the products you bought, different sorting options on the products and also you can shop products by age group. You also cannot place orders that are out of stock.
+                    <br />
+                        You can add/remove and increase/decrease products from cart page and wishlist page. You can also see the products that are in exclusive deals. 
+                </h5>
+            </div>
+
+            <div className="mt-5">
+                <h4 className="fst-italic"><Typed
+                    strings={['About the Developer']}
                     typeSpeed={40}
                     backSpeed={50}
                 /><strong>
                     
                     </strong></h4>
                 <h5 className="fw-normal fst-italic text-justi">
-                    We are three socially awkward yet brilliant minded, dynamic individuals who thought that our clothes and accessories should depict our emotions. Hence, we decided to create a space where every person, be it from a fandom, book club, dancer, wanderer, anyone and everyone finds something that they deeply relate or resonate with. We want our customers to fall in love with the designs that are uniquely ours. You shall surely find Peace in this so-called Chaotic Universe.
+                    I am sravan, working as ruby on rails developer at promptcloud. I am good at developing full stack projects with frontend - ReactJS and Backend - Node / Ruby on rails. I love to explore web development and also good at python programming language.
+                    This is an ecommerce website made with MERN Stack
                 </h5>
             </div>
 
             <div className="mt-5">
                 <h4 className="fst-italic"><Typed
-                    strings={['Why Chaotic']}
+                    strings={['About Products']}
                     loop
                     typeSpeed={40}
                     backSpeed={50}
@@ -39,34 +61,13 @@ export default function About() {
                     
                     </strong></h4>
                 <h5 className="fw-normal fst-italic text-justi">
-                    While deciding the name for our company we looked at a lot of sophisticated names and were confused about what would click. Then, one fine day amidst our bantering session we acknowledged that just like some oddly-timed yet funny episodes of sitcoms, this was Chaotic. 
-                    <br />
-                    We make our own designs and we just can’t stress it enough. A genre might be popular but wait till you see our interpretation of it. All our products are high-quality items with unique graphics or designs. It is something we would have bought in a heartbeat while browsing the net, even though it was month end and our student allowance was about to end. 
-                </h5>
-            </div>
-
-            <div className="mt-5">
-                <h4 className="fst-italic"><Typed
-                    strings={['About our Products']}
-                    loop
-                    typeSpeed={40}
-                    backSpeed={50}
-                /><strong>
-                    
-                    </strong></h4>
-                <h5 className="fw-normal fst-italic text-justi">
-                    Our T-Shirts are 100% cotton and very durable. Apart from stunning visuals it would also provide you with much needed comfort. We stand by our motto, “Wear Your Emotions” and want your personality to come through without compromising the comfort factor.
-                    <br />
-                    Our Bags are made from durable materials which is Reusable and 100% Biodegradable. Just a small effort to give back to the planet and make it a better place. Trendy yet Eco-friendly is what we call Sustainable Fashion.
-                    <br />
-                    Our Posters come in a cool bamboo packaging which could be further used for anything. Use them as the cookie boxes that contain yarn and needle. These posters are easy to put and will elevate the aura of your house, cramped hostel room, or a boring study area.
-                    <br />
-                    All our other products like Stickers, Masks, Diaries are also a little piece of our precious personalities. 
+                    The products in this website are placed for just project purpose, just play around / explore the website but dont either pay for 
+                    any products or dont spam by placing multiple orders. And even the image content is taken from the internet
                     <br />
                     <br />
                     <strong>
                         <Typed
-                    strings={['Have a nice shopping experience.', 'Thank you for choosing us.']}
+                    strings={['Have a nice shopping experience.', 'Thank you for Exploring.']}
                     loop
                     typeSpeed={40}
                     backSpeed={50} />

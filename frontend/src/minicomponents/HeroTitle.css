@@ -2,9 +2,10 @@
   width: 100%;
   text-align: center;
   font-size: 1.4rem;
-  border-bottom: 1px solid red;
+  border-bottom: 1px solid #7366ff;
   line-height: 0.1em;
   margin: 10px 0 20px;
+  font-style: italic;
 }
 
 .heroTitle h4 span {

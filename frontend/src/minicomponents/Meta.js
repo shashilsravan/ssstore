@@ -13,7 +13,7 @@ export default function Meta({ title, description, keywords}) {
 }
 
 Meta.defaultProps = {
-    title: 'Welcome to Chaotic',
+    title: 'Welcome to SS Stores',
     description: 'We sell best products for reasonable price',
     keywords: "chaotic, alchemy, tshirts online, best tshirts, printed tshirts"
 }

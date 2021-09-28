@@ -24,7 +24,7 @@ export default function HomeScreen({location, history, match}) {
 
     return (
         <div className="mt-5">
-            <Meta title="Chaotic | All products" />
+            <Meta title="SS Stores | All products" />
             <HeroTitle text="All Products" />
             { loading ?  
                 <Loader />

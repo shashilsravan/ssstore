@@ -78,49 +78,46 @@ export default function ProfileScreen({location, history}) {
                         Profile has been updated !!!
                     </div> }
                     {loading && <Loader />}
-                    <form onSubmit={submitHandler}>
-                        <div className="form-group">
-                            <label htmlFor="exampleInputName">Name:</label>
-                            <input type="text" className="form-control" 
-                            placeholder="John Doe" value={name} maxLength={20}
-                            id="exampleInputName"
-                            onChange={(e) => setName(e.target.value)} /> 
-                            <small id="nameError" className="form-text">
-                                Maximum 20 letters
-                            </small>
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="exampleInputEmail1">Email address: </label>
-                            <input type="email" value={email}
-                            className="form-control" id="exampleInputEmail1"
-                            onChange={(e) => setEmail(e.target.value)} disabled/>
-                            <small id="emailError" className="form-text text-danger errors">
-                                Errors will be displayed here.
-                            </small>
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="exampleInputPassword1">Enter new password: </label>
-                            <input type="password"  value={password} minLength={4} maxLength={15}
-                            onChange={(e) => setPassword(e.target.value)}
-                            className="form-control" id="exampleInputPassword2" />
-                            <small id="passwordError" className="form-text">
-                                Leave it blank if you do not want to change your password
-                            </small>
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="exampleInputPassword2">Re-enter new Password: </label>
-                            <input type="password" minLength={4}
-                            value={confirmPassword}
-                            onChange={(e) => setConfirmPassword(e.target.value)}
-                            className="form-control" id="exampleInputPassword2" />
-                            <small id="passwordError" className="form-text text-danger">
-                                {message ?  message :  null}
-                            </small>
-                        </div>
-                        <button type="submit" className="btn btn-dark">
-                            Update Profile <i className="fas fa-pen mx-2"></i> 
-                        </button>
-                    </form>
+                    <div className='card p-4 bx-shadow'>
+                        <img src="http://drjollydiagnostics.com/wp-content/uploads/2017/11/profile-placeholder.png" 
+                            style={{width: 100, borderRadius: 100}}
+                            alt="" className='mx-auto'/>
+                        <p className='mx-auto my-3'>Hi {name} !!!</p>
+                        <form onSubmit={submitHandler}>
+                            <div className="form-group">
+                                <label htmlFor="exampleInputName">Name:</label>
+                                <input type="text" className="form-control" 
+                                placeholder="John Doe" value={name} maxLength={20}
+                                id="exampleInputName"
+                                onChange={(e) => setName(e.target.value)} /> 
+                                <small id="nameError" className="form-text">
+                                    Maximum 20 letters
+                                </small>
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="exampleInputPassword1">Enter new password: </label>
+                                <input type="password"  value={password} minLength={4} maxLength={15}
+                                onChange={(e) => setPassword(e.target.value)}
+                                className="form-control" id="exampleInputPassword2" />
+                                <small id="passwordError" className="form-text">
+                                    Leave it blank if you do not want to change your password
+                                </small>
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="exampleInputPassword2">Re-enter new Password: </label>
+                                <input type="password" minLength={4}
+                                value={confirmPassword}
+                                onChange={(e) => setConfirmPassword(e.target.value)}
+                                className="form-control" id="exampleInputPassword2" />
+                                <small id="passwordError" className="form-text text-danger">
+                                    {message ?  message :  null}
+                                </small>
+                            </div>
+                            <button type="submit" className="btn btn-dark">
+                                Update Profile <i className="fas fa-pen mx-2"></i> 
+                            </button>
+                        </form>
+                    </div>
 
                     {userInfo && userInfo.isAdmin ? (<Link to='/AdMIn' className="text-decoration-none">
                         <button className="btn btn-block btn-chaotic my-4">

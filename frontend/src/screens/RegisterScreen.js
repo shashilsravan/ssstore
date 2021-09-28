@@ -73,11 +73,11 @@ export default function RegisterScreen({history, location}) {
                         </div>
                         <div className="form-group">
                             <label htmlFor="exampleInputPassword1">Password: </label>
-                            <input type="password"  value={password} minLength={4} maxLength={15}
+                            <input type="password"  value={password} minLength={6} maxLength={15}
                             onChange={(e) => setPassword(e.target.value)}
                             className="form-control" id="exampleInputPassword1" />
                             <small id="passwordError" className="form-text">
-                                Minimum 4 characters and maximum 15 characters
+                                Minimum 6 characters and maximum 15 characters
                             </small>
                         </div>
                         <div className="form-group">

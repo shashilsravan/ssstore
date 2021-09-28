@@ -112,29 +112,6 @@ export default function AdminScreen({history}) {
                         </div>
                     ))}
                 </div>
-                <form onSubmit={(e) => submitHandler(e)}>
-                    <div className="input-group d-flex flex-column">
-                        <input 
-                        type="text" value={text}
-                        onChange={(e) => setText(e.target.value)}
-                        className="form-control my-2"
-                        style={{ width: '100%'}} maxLength={54}
-                        placeholder="Text in pre header" aria-label="Username" aria-describedby="addon-wrapping" />
-                        <input 
-                        type="text" onChange={(e) => setUrl(e.target.value)}
-                        className="form-control my-2" value={url}
-                        style={{ width: '100%'}}
-                        placeholder="Slide URL..." aria-label="Username" aria-describedby="addon-wrapping" />
-                        <input 
-                        type="text" onChange={(e) => setLink(e.target.value)}
-                        className="form-control my-2" value={link}
-                        style={{ width: '100%'}}
-                        placeholder="Link to be displayed" aria-label="Username" aria-describedby="addon-wrapping" />
-                        <button type="submit" className="btn btn-success mx-4">
-                            Add <i className="fas fa-plus"></i>
-                        </button>
-                    </div>
-                </form>
             </div>
 
             <div className="row mt-5">

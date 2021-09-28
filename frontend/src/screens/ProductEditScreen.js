@@ -585,13 +585,13 @@ export default function ProductEditScreen({match, history}) {
                                         </option>
 
                                         <option 
-                                            selected={dressType === "Boys"}
-                                            value="Boys" className="text-capitalize">
+                                            selected={dressType === "boys"}
+                                            value="boys" className="text-capitalize">
                                                 boys
                                         </option>
                                         <option 
-                                            selected={dressType === "Girls"}
-                                            value="Girls" className="text-capitalize">
+                                            selected={dressType === "girl"}
+                                            value="girl" className="text-capitalize">
                                                 girls
                                         </option>
                                     </select>

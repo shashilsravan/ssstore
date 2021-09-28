@@ -1,7 +1,24 @@
+.custom-product {
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+.image-card {
+  position: relative;
+}
+.image-card .deal-badge {
+  position: absolute;
+  background: #51bb25;
+  text-transform: lowercase;
+  top: 12px;
+  font-size: 13px;
+  right: 0;
+  color: white;
+  padding: 4px 16px;
+}
 .custom-product .product-name {
   text-decoration: none;
-  color: #05262b !important;
   text-transform: capitalize;
+  color: #7366ff !important;
+  font-weight: 550;
 }
 
 /* design start */
@@ -34,17 +51,20 @@
   color: gray;
   margin: 0 0.4rem;
   text-decoration: line-through;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   font-weight: 400;
 }
 .discount {
-  font-size: 1rem;
-  color: #b4010a;
+  font-size: 0.9rem;
+  color: #7366ff;
   font-weight: 400;
 }
 .custom-product .card-body {
   padding: 8px 4px;
   padding-top: 0;
+}
+.font-small {
+  font-size: 12px;
 }
 @media screen and (max-width: 800px) {
   .col-6.fine {
@@ -71,7 +91,7 @@
   }
   .discount {
     font-size: 0.85rem;
-    color: #b4010a;
+    color: #7366ff;
     font-weight: 400;
   }
   .card-title {

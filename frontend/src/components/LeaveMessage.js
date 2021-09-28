@@ -11,7 +11,7 @@ export default function LeaveMessage({history}) {
             
             <div className="row">
                 <div className="col-md-8">
-                    <h5 className="mb-2">Hi, welcome to Chaotic!</h5>
+                    <h5 className="mb-2">Hi, welcome to SS Stores!</h5>
                     <p className="text-secondary">
                         Our mail id: chaoticofficial203@gmail.com <br />
                         For instant support contact us directly at +91 8574198316 (Working days: 10AM - 4PM) <br />

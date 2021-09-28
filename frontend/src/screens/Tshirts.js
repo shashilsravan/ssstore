@@ -16,161 +16,155 @@ export default function Tshirts() {
             <div className="row">
                 <div className="col-6 col-md-4">
                     <Link to='/api/products/category/tshirts/brand/plaintees'>
-                        <CardImage src="https://res.cloudinary.com/alchemy069/image/upload/v1606427390/plain_watugh.jpg"
+                        <CardImage src="http://via.placeholder.com/640x360"
                             centered={true} title="Plain Tshirts" />
                     </Link>
                 </div>
 
                 <div className="col-6 col-md-4">
                     <Link to='/api/products/category/tshirts/brand/animie'>
-                        <CardImage src="https://res.cloudinary.com/alchemy069/image/upload/v1606427380/anime_mkou9v.jpg"
+                        <CardImage src="http://via.placeholder.com/640x360"
                             centered={true} title="Anime" />
                     </Link>
                 </div>
 
                 <div className="col-6 col-md-4">
                     <Link to='/api/products/category/tshirts/brand/webseries'>
-                        <CardImage src="https://res.cloudinary.com/alchemy069/image/upload/v1606427389/tv_shows_azg6jm.jpg"
+                        <CardImage src="http://via.placeholder.com/640x360"
                             centered={true} title="Webseries" />
                     </Link>
                 </div>
 
                 <div className="col-6 col-md-4">
                     <Link to='/api/products/category/tshirts/brand/movies'>
-                        <CardImage src="https://res.cloudinary.com/alchemy069/image/upload/v1606427389/movies_b7qihd.jpg"
+                        <CardImage src="http://via.placeholder.com/640x360"
                             centered={true} title="Movies" />
                     </Link>
                 </div>
 
                 <div className="col-6 col-md-4">
                     <Link to='/api/products/category/tshirts/brand/wwe'>
-                        <CardImage src="https://res.cloudinary.com/alchemy069/image/upload/v1606427375/wwe_tsqzr5.jpg"
+                        <CardImage src="http://via.placeholder.com/640x360"
                             centered={true} title="WWE" />
                     </Link>
                 </div>
 
                 <div className="col-6 col-md-4">
                     <Link to='/api/products/category/tshirts/brand/graffiti'>
-                        <CardImage src="https://res.cloudinary.com/alchemy069/image/upload/v1606427392/graffiti_agxcr9.jpg"
+                        <CardImage src="http://via.placeholder.com/640x360"
                             centered={true} title="Graffiti" />
                     </Link>
                 </div>
 
                 <div className="col-6 col-md-4">
                     <Link to='/api/products/category/tshirts/brand/cartoons'>
-                        <CardImage src="https://res.cloudinary.com/alchemy069/image/upload/v1606427377/cartoon_nuawdz.jpg"
+                        <CardImage src="http://via.placeholder.com/640x360"
                             centered={true} title="Cartoons" />
                     </Link>
                 </div>
 
                 <div className="col-6 col-md-4">
                     <Link to='/api/products/category/tshirts/brand/memes'>
-                        <CardImage src="https://res.cloudinary.com/alchemy069/image/upload/v1606427368/meme_lzhpgz.jpg"
+                        <CardImage src="http://via.placeholder.com/640x360"
                             centered={true} title="Memes" />
                     </Link>
                 </div>
 
                 <div className="col-6 col-md-4">
                     <Link to='/api/products/category/tshirts/brand/quotes'>
-                        <CardImage src="https://res.cloudinary.com/alchemy069/image/upload/v1606427364/qu_d5sqlb.jpg"
+                        <CardImage src="http://via.placeholder.com/640x360"
                             centered={true} title="Quotes" />
                     </Link>
                 </div>
 
                 <div className="col-6 col-md-4">
                     <Link to='/api/products/category/tshirts/brand/sports'>
-                        <CardImage src="https://res.cloudinary.com/alchemy069/image/upload/v1606427398/sports_zbrdbn.jpg"
+                        <CardImage src="http://via.placeholder.com/640x360"
                             centered={true} title="Sports" />
                     </Link>
                 </div>
 
                 <div className="col-6 col-md-4">
                     <Link to='/api/products/category/tshirts/brand/music'>
-                        <CardImage src="https://res.cloudinary.com/alchemy069/image/upload/v1606427386/music_opxjqj.jpg"
+                        <CardImage src="http://via.placeholder.com/640x360"
                             centered={true} title="Music" />
                     </Link>
                 </div>
 
                 <div className="col-6 col-md-4">
                     <Link to='/api/products/category/tshirts/brand/hiphop'>
-                        <CardImage src="https://res.cloudinary.com/alchemy069/image/upload/v1606427386/hip_hop_c7uvi3.jpg"
+                        <CardImage src="http://via.placeholder.com/640x360"
                             centered={true} title="HipHop" />
                     </Link>
                 </div>
 
                 <div className="col-6 col-md-4">
                     <Link to='/api/products/category/tshirts/brand/spiritual'>
-                        <CardImage src="https://res.cloudinary.com/alchemy069/image/upload/v1606427406/spritual_vhulig.jpg"
+                        <CardImage src="http://via.placeholder.com/640x360"
                             centered={true} title="Spiritual" />
                     </Link>
                 </div>
 
                 <div className="col-6 col-md-4">
                     <Link to='/api/products/category/tshirts/brand/games'>
-                        <CardImage src="https://res.cloudinary.com/alchemy069/image/upload/v1606427392/games_vjucmc.jpg"
+                        <CardImage src="http://via.placeholder.com/640x360"
                             centered={true} title="Games" />
                     </Link>
                 </div>
 
-                <div className="col-6 col-md-4">
-                    <Link to='/api/products/category/tshirts/brand/collection'>
-                        <CardImage src="https://res.cloudinary.com/alchemy069/image/upload/v1611065433/alchemy/a_sample_1_qsj6cf.png"
-                            centered={true} title="Chaotic Collection" />
-                    </Link>
-                </div>
 
                 <div className="col-6 col-md-4">
                     <Link to='/api/products/category/tshirts/brand/literature'>
-                        <CardImage src="https://res.cloudinary.com/alchemy069/image/upload/v1606427377/litrature_qbrafs.jpg"
+                        <CardImage src="http://via.placeholder.com/640x360"
                             centered={true} title="Literature" />
                     </Link>
                 </div>
 
                 <div className="col-6 col-md-4">
                     <Link to='/api/products/category/tshirts/brand/photography'>
-                        <CardImage src="https://res.cloudinary.com/alchemy069/image/upload/v1606427391/photography_glyxiu.jpg"
+                        <CardImage src="http://via.placeholder.com/640x360"
                             centered={true} title="Photography" />
                     </Link>
                 </div>
 
                 <div className="col-6 col-md-4">
                     <Link to='/api/products/category/tshirts/brand/superheroes'>
-                        <CardImage src="https://res.cloudinary.com/alchemy069/image/upload/v1606427377/superhero_twffhv.jpg"
+                        <CardImage src="http://via.placeholder.com/640x360"
                             centered={true} title="Superheroes" />
                     </Link>
                 </div>
 
                 <div className="col-6 col-md-4">
                     <Link to='/api/products/category/tshirts/brand/regional'>
-                        <CardImage src="https://res.cloudinary.com/alchemy069/image/upload/v1606427367/regional_luimrb.jpg"
+                        <CardImage src="http://via.placeholder.com/640x360"
                             centered={true} title="Regional" />
                     </Link>
                 </div>
 
                 <div className="col-6 col-md-4">
                     <Link to='/api/products/category/tshirts/brand/wanderers'>
-                        <CardImage src="https://res.cloudinary.com/alchemy069/image/upload/v1606427400/wandrer_xkg3gy.jpg"
+                        <CardImage src="http://via.placeholder.com/640x360"
                             centered={true} title="Wanderers" />
                     </Link>
                 </div>
 
                 <div className="col-6 col-md-4">
                     <Link to='/api/products/category/tshirts/brand/hightees'>
-                        <CardImage src="https://res.cloudinary.com/alchemy069/image/upload/v1606297338/alchemy/tshirts_gkbdud.jpg"
+                        <CardImage src="http://via.placeholder.com/640x360"
                             centered={true} title="High Tees" />
                     </Link>
                 </div>
 
                 <div className="col-6 col-md-4">
                     <Link to='/api/products/category/tshirts/brand/combo'>
-                        <CardImage src="https://res.cloudinary.com/alchemy069/image/upload/v1608905683/alchemy/Slideshow/tees_c_nvdxc4_vlqs9a.jpg"
+                        <CardImage src="http://via.placeholder.com/640x360"
                             centered={true} title="Combo T-Shirts" />
                     </Link>
                 </div>
 
                 <div className="col-6 col-md-4">
                     <Link to='/api/products/category/tshirts'>
-                        <CardImage src="https://res.cloudinary.com/alchemy069/image/upload/v1611197982/alchemy/Slideshow/all_t_fqek3p.jpg"
+                        <CardImage src="http://via.placeholder.com/640x360"
                             centered={true} title="All T-Shirts" />
                     </Link>
                 </div>

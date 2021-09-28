@@ -35,13 +35,14 @@ import PasswordReset from './screens/PasswordReset';
 import ChangePassword from './screens/ChangePassword';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import TCRefundPolicy from './components/TCRefundPolicy';
+import PremiumPage from './screens/PremiumPage';
 
 const App = () => {
   return (
     <Router>
       <Header />
-      <PreHeader />
       <main className="container-xl mobility">
+        <Route path='/premium' component={PremiumPage} exact />
         <Route path='/allProducts' component={HomeScreen} exact />
         <Route path='/product/:id' component={ProductScreen} />
         <Route path='/tshirts' component={Tshirts} exact />

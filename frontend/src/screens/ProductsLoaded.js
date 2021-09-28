@@ -41,12 +41,12 @@ export default function ProductsLoaded({data, isDress}) {
 
     const BoyHandler = () => {
         const tempData = [...data]
-        setSortedProducts(tempData.filter((each) => (each.dressType === "Boys")))
+        setSortedProducts(tempData.filter((each) => (each.dressType === "boys")))
     }
 
     const GirlHandler = () => {
         const tempData = [...data]
-        setSortedProducts(tempData.filter((each) => (each.dressType === "Girls")))
+        setSortedProducts(tempData.filter((each) => (each.dressType === "girl")))
     }
 
     const MenHandler = () => {

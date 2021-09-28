@@ -42,10 +42,10 @@ export default function Header() {
         <header>
             <div className="header-desktop">
                 <div className="container-xl">
-                    <nav className="navbar navbar-expand-lg">
+                    <nav className="navbar py-2 navbar-expand-lg">
                         <div className="container-fluid">
                             <Link className="navbar-brand" to='/'>
-                                <img className="logo" src="https://res.cloudinary.com/alchemy069/image/upload/v1611065433/alchemy/a_sample_1_qsj6cf.png" alt=""/>
+                                <img className="logo" src="/images/main.png" style={{height: 50, borderRadius: 80}} alt=""/>
                             </Link>
                             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                                 <span className="navbar-toggler-icon"></span>
@@ -54,9 +54,6 @@ export default function Header() {
                             <ul className="navbar-nav mr-auto mb-2 mb-lg-0">
                                 <li className="nav-item">
                                     <Link className="nav-link active" aria-current="page" to='/'>Home</Link>
-                                </li>
-                                <li className="nav-item">
-                                    <Link className="nav-link active" to="/about">About us</Link>
                                 </li>
                                 <li className="nav-item active dropdown">
                                     <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
@@ -68,7 +65,12 @@ export default function Header() {
                                         <li><hr className="dropdown-divider" /></li>
                                         <li><Link className="dropdown-item" to='/api/products/shopby/Boys'>Boys</Link></li>
                                         <li><Link className="dropdown-item" to='/api/products/shopby/Girls'>Girls</Link></li>
+                                        <li><hr className="dropdown-divider" /></li>
+                                        <li><Link className="dropdown-item" to="/premium">Premium</Link></li>
                                     </ul>
+                                </li>
+                                <li className="nav-item">
+                                    <Link className="nav-link active" to="/about">About dev</Link>
                                 </li>
                             </ul>
                             <Route render={({ history }) => <SearchBox history={history} />} />
@@ -158,13 +160,13 @@ export default function Header() {
                     <div className="header-mobile__sidebar hide">
                         <i className="fa fa-times float-right closeSidebar" style={{color:"#000", cursor: "pointer", fontSize: 20}}></i>
                         <br />
-                        <img className="logoImage" src="https://res.cloudinary.com/alchemy069/image/upload/v1611065433/alchemy/a_sample_1_qsj6cf.png" alt=""/>
+                        <img className="logoImage" src="/images/main.png" alt=""/>
                         <Link to="/">
                             Home
                         </Link>
                         <br />
                         <Link to="/about">
-                            About us
+                            About
                         </Link>
                         <br />
                         <Link to="/liked">
@@ -183,6 +185,8 @@ export default function Header() {
                                     <Link to="/api/products/shopby/Women">Women</Link>
                                     <Link to="/api/products/shopby/Boys">Boys</Link>
                                     <Link to="/api/products/shopby/Girls">Girls</Link>
+                                    <hr />
+                                    <Link to="/premium">Premium</Link>
                                 </div>
                             </div>
                         </div>

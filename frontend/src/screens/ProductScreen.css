@@ -2,6 +2,21 @@
   padding: 6px 4px;
   border: none;
 }
+.btn-sm {
+  font-size: 12px;
+  text-transform: lowercase;
+  padding: 6px 14px;
+}
+.btn-danger {
+  background: #fd2e64;
+}
+.bg-main {
+  background: #7366ff !important;
+  color: white;
+}
+.bx-shadow {
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+}
 .productScreen .name-item {
   border-bottom: 1.5px solid lightgray;
 }

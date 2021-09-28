@@ -17,14 +17,14 @@ export default function TopCarousel() {
     }, [dispatch])
 
     const settings = {
-        dots: true,
+        dots: false,
         arrows: true,
         speed: 1000,
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
         pauseOnHover: true,
-        autoplaySpeed: 5000,
+        autoplaySpeed: 4000,
     };
 
     return (
@@ -34,7 +34,9 @@ export default function TopCarousel() {
                 { slides && slides.length !== 0 && (
                     slides.map((slide) => (
                         <Link key={slide._id} to={slide.link}>
-                            <img className="img-fluid mx-auto d-block" src={slide.image} alt={slide.text} />
+                            <img className="img-fluid mx-auto d-block" 
+                                style={{width: '90%', height: '500px'}}
+                                src={slide.image} alt={slide.text} />
                         </Link>
                     ))
                 )}

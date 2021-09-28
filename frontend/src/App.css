@@ -1,12 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Koh+Santepheap:wght@100;300;400;700;900&display=swap");
 main {
-  padding-top: 21vh;
+  padding-top: 12vh;
+  font-family: "Koh Santepheap", sans-serif;
+}
+html {
+  font-family: "Koh Santepheap", sans-serif;
 }
 .text-justi {
   text-align: justify !important;
 }
 .btn-chaotic {
-  background: #b4010a;
+  background: #7366ff;
   color: white;
   font-weight: bold;
   width: 100%;
@@ -24,9 +29,9 @@ main {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
 }
 .btn-chaotic:hover {
-  color: #b4010a;
+  color: #7366ff;
   background: white;
-  border: 2px solid #b4010a;
+  border: 2px solid #7366ff;
 }
 .btn-dark {
   background: black;
@@ -71,7 +76,7 @@ main {
 }
 
 .slick-arrow.slick-next::before {
-  color: black;
+  color: #fd2e64;
   margin-left: -40px;
   font-size: 1.6rem;
 }
@@ -82,7 +87,7 @@ main {
   z-index: 1;
 }
 .slick-arrow.slick-prev::before {
-  color: black;
+  color: #fd2e64;
   margin-left: 14px;
   font-size: 1.6rem;
 }

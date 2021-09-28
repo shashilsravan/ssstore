@@ -7,7 +7,6 @@ import './ProductScreen.css'
 import {listProductDetail, createProductReview} from '../actions/productAction'
 import Loader from '../minicomponents/Loader'
 import AlertError from '../minicomponents/AlertError'
-import Badge from '../minicomponents/Badge'
 import { PRODUCT_CREATE_REVIEW_RESET } from '../constants/productConstants';
 import SizeChart from '../minicomponents/SizeChart'
 import Alert from 'react-bootstrap/Alert'
@@ -15,7 +14,8 @@ import Moment from 'react-moment';
 import 'moment-timezone';
 import CustomTag from '../minicomponents/CustomTag'
 import Meta from '../minicomponents/Meta'
-
+import { EmailIcon, EmailShareButton, FacebookShareButton, LinkedinShareButton,
+  TelegramShareButton, TwitterShareButton, WhatsappShareButton } from "react-share";
 
 export default function ProductScreen({ history, match }) {
     const [quantity, setQuantity] = useState(1)
@@ -83,18 +83,18 @@ export default function ProductScreen({ history, match }) {
                             thirdImage={product.imageThree}
                             fourthImage={product.imageFour}/>
                     </div>
-                    <div className="col-lg-4">
+                    <div className="col-lg-7">
                         <ul className="list-group list-group-flush middle-list">
                             <li className="list-group-item name-item">
                                 <div className="row">
-                                    <div className="col-9">
+                                    <div className="col-8">
                                         <h5>{product.name}</h5>
                                     </div>
-                                    <div className="col-3">
+                                    <div className="col-4">
                                         <span 
                                             onClick={addToLikeHandler}
-                                            className="">
-                                                <i className="far fa-heart liked-heart bs-small"></i>
+                                            className="btn btn-danger btn-sm">
+                                                 Add to wishlist <i className="fas fa-heart" style={{fontSize: '12px'}}></i>
                                         </span>
                                     </div>
                                 </div>
@@ -102,12 +102,6 @@ export default function ProductScreen({ history, match }) {
                             {product.inDeal && <li className="list-group-item d-flex">
                                 <CustomTag text="In Deal" />
                             </li>}
-                            {product.category !== "None" && 
-                            (<li className="list-group-item d-flex">
-                                <Badge upper variant="danger" text={product.category} />
-                                <div className="mx-1">-</div>
-                                <Badge upper variant="primary" text={product.brand} />
-                            </li>) }
                             <li className="list-group-item">
                                 <Rating value={product.rating} text={`${product.numReviews} reviews`} />
                             </li>
@@ -127,81 +121,132 @@ export default function ProductScreen({ history, match }) {
                             </li>
                         </ul>
                     </div>
-                    <div className="col-lg-3">
-                        <div className="card">
-                            <ul className="list-group list-group-flush">
-                                <li className="list-group-item">
-                                    <div className="row">
-                                        <div className="col text-center">
-                                            <strong>Status:</strong>
+                    <div className='row mt-4 mx-auto'>
+                        <div className="col-md-4">
+                            <div className="card bx-shadow">
+                                <ul className="list-group list-group-flush">
+                                    <li className="list-group-item">
+                                        <div className="row">
+                                            <div className="col text-center">
+                                                <strong>Availability:</strong>
+                                            </div>
                                         </div>
-                                    </div>
-                                </li>
-                                <li className="list-group-item">
-                                    <div className="row">
-                                        <div className="col text-center">
-                                            <strong style={{color:product.countInStock > 0 ? "green" : "red"}}>{product.countInStock > 0 ? 'In Stock' 
-                                            :(
-                                                <span>Out of Stock <i className="far fa-frown"></i></span>
-                                            )}</strong>
+                                    </li>
+                                    <li className="list-group-item">
+                                        <div className="row">
+                                            <div className="col text-center">
+                                                <strong style={{color:product.countInStock > 0 ? "green" : "red"}}>{product.countInStock > 0 ? 'In Stock' 
+                                                :(
+                                                    <span>Out of Stock <i className="far fa-frown"></i></span>
+                                                )}</strong>
+                                            </div>
                                         </div>
-                                    </div>
-                                </li>
-                                {product.countInStock > 0 && <li className="list-group-item">
-                                    <div className="d-flex align-items-center">
-                                        <div className="mr-2">
-                                            Qty:
+                                    </li>
+                                    {product.countInStock > 0 && <li className="list-group-item">
+                                        <div className="d-flex align-items-center">
+                                            <div className="mr-2">
+                                                Qty:
+                                            </div>
+                                            <div className="" style={{width: '100%'}}>
+                                                <select style={{outlineWidth: 0}} className="form-select bg-light" aria-label="Default select example"
+                                                    onChange={(e) => {
+                                                        setQuantity(e.target.value)
+                                                    }}>
+                                                    {[...Array(product.countInStock > 3 ? 3 : product.countInStock).keys()].map(x => {
+                                                        return (<option key={x+1} value={x+1}>{x+1}</option>)
+                                                    })}
+                                                </select>
+                                            </div>
                                         </div>
-                                        <div className="" style={{width: '100%'}}>
-                                            <select style={{outlineWidth: 0}} className="form-select bg-light" aria-label="Default select example"
-                                                onChange={(e) => {
-                                                    setQuantity(e.target.value)
-                                                }}>
-                                                {[...Array(product.countInStock > 3 ? 3 : product.countInStock).keys()].map(x => {
-                                                    return (<option key={x+1} value={x+1}>{x+1}</option>)
-                                                })}
-                                            </select>
-                                        </div>
-                                    </div>
-                                </li>}
+                                    </li>}
 
-                                {product.countInStock > 0 && <li className="list-group-item">
-                                    <div className="d-flex align-items-center">
-                                        <div className="mr-2">
-                                            Size:
+                                    {product.countInStock > 0 && <li className="list-group-item">
+                                        <div className="d-flex align-items-center">
+                                            <div className="mr-2">
+                                                Size:
+                                            </div>
+                                            <div className="" style={{width: '100%'}}>
+                                                <select 
+                                                disabled={!product.isDress}
+                                                style={{outlineWidth: 0}} className="form-select bg-light" aria-label="Default select example"
+                                                    onChange={(e) => {
+                                                        setSize(e.target.value)
+                                                        // console.log(size)
+                                                    }}>
+                                                    <option key="S" value="S">S</option>
+                                                    <option key="M" value="M">M</option>
+                                                    <option key="L" value="L">L</option>
+                                                    <option key="XL" value="XL">XL</option>
+                                                    <option key="XXL" value="XXL">XXL</option>
+                                                </select>
+                                            </div>
                                         </div>
-                                        <div className="" style={{width: '100%'}}>
-                                            <select 
-                                            disabled={!product.isDress}
-                                            style={{outlineWidth: 0}} className="form-select bg-light" aria-label="Default select example"
-                                                onChange={(e) => {
-                                                    setSize(e.target.value)
-                                                    // console.log(size)
-                                                }}>
-                                                <option key="S" value="S">S</option>
-                                                <option key="M" value="M">M</option>
-                                                <option key="L" value="L">L</option>
-                                                <option key="XL" value="XL">XL</option>
-                                                <option key="XXL" value="XXL">XXL</option>
-                                            </select>
-                                        </div>
+                                    </li>}
+
+                                    <li className="list-group-item">
+                                        <button 
+                                        onClick={addToCartHandler}
+                                        className="btn bg-main btn-block" disabled={product.countInStock === 0}>
+                                            Add to Cart <i className="fas fa-shopping-cart mx-1" style={{fontSize:16}}></i>
+                                        </button>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                        <div className="col-md-8">
+                            <div className='card p-3 bx-shadow'>
+                                <div className='row'>
+                                    <div 
+                                        className='col-2 d-flex pb-2 justify-content-end align-items-center'>
+                                        <i className="fas fa-shipping-fast" 
+                                            style={{fontSize: 30, color: '#7366ff'}}></i>
                                     </div>
-                                </li>}
-
-                                <li className="list-group-item">
-                                    <button 
-                                    onClick={addToCartHandler}
-                                    className="btn btn-success btn-block" disabled={product.countInStock === 0}>
-                                        Add to Cart <i className="fas fa-shopping-cart mx-1" style={{fontSize:16}}></i>
-                                    </button>
-                                </li>
-
-                            </ul>
+                                    <div className='col-10'>
+                                        <b style={{color: '#7366ff'}}>Free shipping</b>
+                                        <p className='text-muted'>Free shipping world wide</p>
+                                    </div>
+                                </div>
+                                <div className='row'>
+                                    <div 
+                                        className='col-2 d-flex pb-2 justify-content-end align-items-center'>
+                                        <i className="fas fa-clock" 
+                                            style={{fontSize: 30, color: '#7366ff'}}></i>
+                                    </div>
+                                    <div className='col-10'>
+                                        <b style={{color: '#7366ff'}}>24 x 7 service</b>
+                                        <p className='text-muted'>24 x 7 online service and customer support</p>
+                                    </div>
+                                </div>
+                                <div className='row'>
+                                    <div 
+                                        className='col-2 d-flex pb-2 justify-content-end align-items-center'>
+                                        <i className="fas fa-gifts" 
+                                            style={{fontSize: 30, color: '#7366ff'}}></i>
+                                    </div>
+                                    <div className='col-10'>
+                                        <b style={{color: '#7366ff'}}>Exclusive Discounts</b>
+                                        <p className='text-muted'>Get Exclusive discounts by participating</p>
+                                    </div>
+                                </div>
+                                <div className='row'>
+                                    <div 
+                                        className='col-2 d-flex pb-2 justify-content-end align-items-center'>
+                                        <i className="fas fa-credit-card" 
+                                            style={{fontSize: 30, color: '#7366ff'}}></i>
+                                    </div>
+                                    <div className='col-10'>
+                                        <b style={{color: '#7366ff'}}>Online payment</b>
+                                        <p className='text-muted'>Both COD and pre-paid orders available</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <hr />
                 <div className="row mt-4">
-                    <div className="col-md-6">
+                    <div className="col-md-12">
                         <h4>Reviews: </h4>
                         {
                             product.reviews.length === 0 ? (<Alert variant="primary">

@@ -26,7 +26,6 @@ export default function SearchScreen({ match }) {
 
     return (
         <div className="mt-5">
-            <Meta title={`search results for ${keyword}`} />
             <HeroTitle text="Search results..." />
             { loading ?  
                 <Loader />

@@ -9,7 +9,7 @@
 
 .preheader .swiper-container {
   width: 100%;
-  background: #b4010a;
+  background: #7366ff;
   height: 8vh;
 }
 /* .account-container {
@@ -25,7 +25,7 @@
   text-align: center;
   font-size: 18px;
   color: black;
-  background: linear-gradient(to bottom, #b4010a, rgba(0, 0, 0, 0.4));
+  background: linear-gradient(to bottom, #7366ff, rgba(0, 0, 0, 0.4));
   display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;

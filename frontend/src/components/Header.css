@@ -1,14 +1,13 @@
 header {
-  padding-top: 8vh;
   position: fixed;
   width: 100%;
   z-index: 99;
 }
 .header-desktop {
-  background: #05262b;
+  background: #2c323f;
 }
 .navbar {
-  background: #05262b;
+  background: #2c323f;
   padding: 0;
 }
 .logo {
@@ -31,7 +30,7 @@ header {
   font-size: 26px;
 }
 .header-mobile {
-  background: #05262b;
+  background: #2c323f;
   padding: 4px 16px;
   padding-left: 2px;
   padding-bottom: 12px;
@@ -130,7 +129,7 @@ header {
     display: none !important;
   }
   .mobility {
-    padding-top: 9rem;
+    padding-top: 5rem !important;
   }
   .header-mobile {
     display: block !important;
