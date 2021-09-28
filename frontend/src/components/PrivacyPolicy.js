@@ -10,7 +10,7 @@ export default function PrivacyPolicy() {
     return (
         <div className="my-5">
             <Helmet>
-                <title>Chaotic | Privacy Policy</title>
+                <title>Privacy Policy</title>
             </Helmet>
             <HeroTitle text="Privacy Policy" />
             <br />
@@ -59,7 +59,6 @@ export default function PrivacyPolicy() {
             <p>
                 If you would like to: access, correct, amend or delete 
                 any personal information we have about you, simply want more information contact our 
-                Privacy Compliance Officer at <a href="mailto:support@chaoticstores.com">support@chaoticstores.com</a> by mail.
             </p>
 
 

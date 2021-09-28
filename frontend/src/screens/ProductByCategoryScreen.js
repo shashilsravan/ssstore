@@ -20,7 +20,7 @@ export default function ProductByCategoryScreen({ match, history }) {
     return (
         <div className="my-5">
             <HeroTitle text={`Products in ${category}`} />
-            <Meta title={`Chaotic | ${category}`} />
+            <Meta title={`${category}`} />
             { loading ?  
                 <Loader />
                 : error 

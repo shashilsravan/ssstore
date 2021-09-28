@@ -28,7 +28,7 @@ export default function PasswordReset() {
     }
     return (
         <div className="my-5 py-5">
-            <Meta title='Chaotic | Forgot Password' />
+            <Meta title='Forgot Password' />
             <FormContainer>
                 <h2>Reset Password</h2>
                 {message && (
@@ -51,12 +51,12 @@ export default function PasswordReset() {
                         </small>
                     </div>
                     
-                    <button type="submit" className="btn btn-chaotic">
+                    <button type="submit" className="btn btn-ssstore">
                         Reset Password
                     </button>
                     <div className="row mt-2">
                         <div className="col">
-                            New to Chaotic? &nbsp;
+                            New user? &nbsp;
                             <Link to='/register'>
                                 Register here!
                             </Link>

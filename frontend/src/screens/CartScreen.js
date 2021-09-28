@@ -31,7 +31,7 @@ export default function CartScreen({match, location, history }) {
     }, [dispatch, productId, qty, size, cart, cartItems])
     return (
         <div className="my-5 pb-5">
-            <Meta title="Chaotic | My Cart" />
+            <Meta title=" My Cart" />
             <Link to="/" className="btn btn-light float-right mt-2">
                 Go Home <i className="fas fa-home"></i>
             </Link>

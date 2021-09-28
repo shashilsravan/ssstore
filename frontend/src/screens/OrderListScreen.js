@@ -35,7 +35,7 @@ export default function OrderListScreen({ history }) {
 
     return (
         <div className="my-5">
-            <Meta title='Chaotic | Order List' />
+            <Meta title='Order List' />
             <nav aria-label="breadcrumb">
                 <ol className="breadcrumb">
                     <li className="breadcrumb-item">

@@ -8,7 +8,7 @@ import Meta from '../minicomponents/Meta'
 export default function Posters() {
     return (
         <div className="SubCategories SubPosters my-4">
-            <Meta title="Chaotic | Posters" />
+            <Meta title="Posters" />
             <Link to='/' className="btn btn-dark text-right mb-2">
                 Go Home <i className="fas fa-home"></i>
             </Link>
@@ -108,7 +108,7 @@ export default function Posters() {
                 <div className="col-6 col-md-4">
                     <Link to='/api/products/category/posters/brand/collection'>
                         <CardImage src="http://via.placeholder.com/640x360"
-                            centered={true} title="Chaotic Collection" />
+                            centered={true} title="My Collection" />
                     </Link>
                 </div>
 

@@ -57,7 +57,7 @@ export default function PlaceOrderScreen({history}) {
 
     return (
         <div className="my-5">
-            <Meta title="Chaotic | Placing Order" />
+            <Meta title="Placing Order" />
             <CheckOutSteps step1 step2 step3 step4 />
             <div className="row">
                 <div className="col-md-8">

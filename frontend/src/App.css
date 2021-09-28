@@ -10,7 +10,7 @@ html {
 .text-justi {
   text-align: justify !important;
 }
-.btn-chaotic {
+.btn-ssstore {
   background: #7366ff;
   color: white;
   font-weight: bold;
@@ -28,7 +28,7 @@ html {
 .list-group-review:hover {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
 }
-.btn-chaotic:hover {
+.btn-ssstore:hover {
   color: #7366ff;
   background: white;
   border: 2px solid #7366ff;

@@ -30,7 +30,7 @@ export default function ShopByScreen({ match, history }) {
 
     return (
         <div className="my-5">
-            <Meta title={`Chaotic | ${grouping}`} />
+            <Meta title={`${grouping}`} />
             <HeroTitle text={`Shop By - ${grouping}`} />
             { loading ?  
                 <Loader />

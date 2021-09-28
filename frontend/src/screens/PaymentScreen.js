@@ -41,7 +41,7 @@ export default function PaymentScreen({history}) {
 
     return (
         <div className="my-5">
-            <Meta title="Chaotic | Payments" />
+            <Meta title="Payments" />
             <CheckOutSteps step1 step2 step3 />
 
             <FormContainer>

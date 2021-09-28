@@ -28,7 +28,7 @@ export default function LoginScreen({ location, history }) {
     
     return (
         <div className="my-5 py-5">
-            <Meta title='Chaotic | Login' />
+            <Meta title='Login' />
             <FormContainer>
                 <h2>Sign in</h2>
                 {error && <div className="alert alert-danger mt-3" role="alert">
@@ -53,12 +53,12 @@ export default function LoginScreen({ location, history }) {
                             Errors will be displayed here
                         </small>
                     </div>
-                    <button type="submit" className="btn btn-chaotic">
+                    <button type="submit" className="btn btn-ssstore">
                         Login
                     </button>
                     <div className="row mt-2">
                         <div className="col">
-                            New to Chaotic? &nbsp;
+                            New user? &nbsp;
                             <Link to={redirect ? `/register?redirect=${redirect}` : '/register'}>
                                 Register here!
                             </Link>

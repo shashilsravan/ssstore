@@ -614,7 +614,7 @@ export default function ProductEditScreen({match, history}) {
                                 Is Deal?
                             </label>
                         </div>
-                        <button type="submit" className="btn btn-chaotic">
+                        <button type="submit" className="btn btn-ssstore">
                             Update
                         </button>
                     </form>

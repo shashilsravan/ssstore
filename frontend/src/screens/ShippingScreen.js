@@ -40,7 +40,7 @@ export default function ShippingScreen({history}) {
 
     return (
         <div className="my-5">
-            <Meta title="Chaotic | Shipping" />
+            <Meta title="Shipping" />
             <CheckOutSteps step1={true} step2={true} />
             <FormContainer>
                 <HeroTitle text="Shipping" />

@@ -133,7 +133,7 @@ export default function OrderScreen({match, history}) {
                 "contact": `${order.shippingAddress.phone}`
             },
             "notes": {
-                "address": "Chaotic"
+                "address": "sss"
             },
             "theme": {
                 "color": "#F05151"
@@ -151,7 +151,7 @@ export default function OrderScreen({match, history}) {
 
     return (
         <div className="my-5">
-            <Meta title="Chaotic | Order" />
+            <Meta title=" Order" />
             {loading ? <Loader />
             : error ? (<div className="alert alert-danger" role="alert">{error}</div>)
             : (
@@ -285,7 +285,7 @@ export default function OrderScreen({match, history}) {
                                         <>
                                         <a 
                                         onClick={displayRazorpay} target="_blank" rel="noopener noreferrer"
-                                        className="btn btn-chaotic btn-block mt-2">
+                                        className="btn btn-ssstore btn-block mt-2">
                                             Pay Now
                                         </a>
                                         </>)

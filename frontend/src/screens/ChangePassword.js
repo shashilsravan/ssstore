@@ -59,9 +59,9 @@ export default function ChangePassword({ location, history }) {
 
     return (
         <div className="my-5 py-5">
-            <Meta title='Chaotic | Resetting Password' />
+            <Meta title='Resetting Password' />
             {loading ? <Loader /> : <FormContainer>
-                <h4>Change Password for chaotic account with email id:</h4>
+                <h4>Change Password for your account with email id:</h4>
                 <h6>{email}</h6>
                 {error && (
                     <Alert variant="danger">
@@ -81,7 +81,7 @@ export default function ChangePassword({ location, history }) {
                         onChange={(e) => setConfirmPassword(e.target.value)} required />
                     </div>
                     
-                    <button type="submit" className="btn btn-chaotic">
+                    <button type="submit" className="btn btn-ssstore">
                         Change Password
                     </button>
                 </form>

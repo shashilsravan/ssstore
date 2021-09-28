@@ -67,7 +67,7 @@ export default function ProfileScreen({location, history}) {
 
     return (
         <div className="my-4 mb-5">
-            <Meta title='Chaotic | Profile' />
+            <Meta title='Profile' />
             <div className="row">
                 <div className="col-md-4">
                     <HeroTitle text="User profile" />
@@ -120,7 +120,7 @@ export default function ProfileScreen({location, history}) {
                     </div>
 
                     {userInfo && userInfo.isAdmin ? (<Link to='/AdMIn' className="text-decoration-none">
-                        <button className="btn btn-block btn-chaotic my-4">
+                        <button className="btn btn-block btn-ssstore my-4">
                             <i className="fas fa-user-shield"></i> Admin Panel <i className="fas fa-user-lock"></i>
                         </button>
                     </Link>) : null }

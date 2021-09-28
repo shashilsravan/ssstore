@@ -8,7 +8,7 @@ import Meta from '../minicomponents/Meta'
 export default function Hoodies() {
     return (
         <div className="SubCategories SubHoodies my-4">
-            <Meta title="Chaotic | Hoodies" />
+            <Meta title="Hoodies" />
             <Link to='/' className="btn btn-dark text-right mb-2">
                 Go Home <i className="fas fa-home"></i>
             </Link>
@@ -73,7 +73,7 @@ export default function Hoodies() {
                 <div className="col col-md-4">
                     <Link to='/api/products/category/hoodies/brand/collection'>
                         <CardImage src="http://via.placeholder.com/640x360"
-                            centered={true} title="Chaotic Collection" />
+                            centered={true} title="My Collection" />
                     </Link>
                 </div>
 

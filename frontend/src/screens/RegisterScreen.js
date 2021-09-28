@@ -44,7 +44,7 @@ export default function RegisterScreen({history, location}) {
     return (
         
             <div className="my-5">
-                <Meta title='Chaotic | Sign up' />
+                <Meta title='Sign up' />
                 <FormContainer>
                     <h2>Sign Up</h2>
                     {error && <div className="alert alert-danger mt-3" role="alert">
@@ -90,7 +90,7 @@ export default function RegisterScreen({history, location}) {
                                 {message ?  message :  null}
                             </small>
                         </div>
-                        <button type="submit" className="btn btn-chaotic">
+                        <button type="submit" className="btn btn-ssstore">
                             Register
                         </button>
                         <div className="row mt-2">

@@ -122,7 +122,7 @@ export default function UserEditScreen({ match, history}) {
                             </label>
                         </div>
                         
-                        <button type="submit" className="btn btn-chaotic">
+                        <button type="submit" className="btn btn-ssstore">
                             Update
                         </button>
                     </form>

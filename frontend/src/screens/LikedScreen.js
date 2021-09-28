@@ -25,7 +25,7 @@ export default function LikedScreen({match, location, history}) {
     
     return (
         <div className="my-5">
-            <Meta title="Chaotic | My Likes" />
+            <Meta title="My Likes" />
             <HeroTitle text="Liked Products" />
             <br />
             {likeItems.length === 0

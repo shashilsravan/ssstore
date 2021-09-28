@@ -30,7 +30,7 @@ export default function CategoryAndBrandSreen({ match, history }) {
 
     return (
         <div className="my-5">
-            <Meta title={`Chaotic | ${brand} - ${category}`} />
+            <Meta title={` ${brand} - ${category}`} />
             <HeroTitle text={`${brand} brand in ${category}`} />
             <Link to={`/${category}`} className="float-right">
                 <button className="btn btn-dark">

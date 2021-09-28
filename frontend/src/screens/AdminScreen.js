@@ -77,7 +77,7 @@ export default function AdminScreen({history}) {
 
     return (
         <>
-        <Meta title='Chaotic Admin' />
+        <Meta title='Admin' />
         <div className="my-5">
             {loadingCheck ? <Loader />
             : successCheck &&
