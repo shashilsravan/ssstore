@@ -1,7 +1,7 @@
 {
-  "name": "alchemy",
+  "name": "sstore",
   "version": "1.0.0",
-  "description": "alchemy website",
+  "description": "sstore website",
   "main": "server.js",
   "type": "module",
   "scripts": {
@@ -15,14 +15,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/shashilsravan/Alchemy.git"
+    "url": "git+https://github.com/shashilsravan/sstore.git"
   },
   "author": "shashil",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/shashilsravan/Alchemy/issues"
+    "url": "https://github.com/shashilsravan/sstore/issues"
   },
-  "homepage": "https://github.com/shashilsravan/Alchemy#readme",
+  "homepage": "https://github.com/shashilsravan/sstore#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
