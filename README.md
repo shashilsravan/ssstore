@@ -47,8 +47,10 @@ Database:
 <hr />
 
 **More detailed info about ss-store**
+
 SS-Store is a responsive and UI friendly ecommerce website made with MERN stack.
-SS-Store includes many thinhs like
+
+SS-Store includes many things like-
 1. Complete user schema - Register / Login / Logout / Forgot password functionality.
 2. Admin functionality to access the dashboard that contains list of products, orders, users details. Due to which an admin can perform CRUD operations on products / users and also can keep track of the orders.
 3. As a customer/user you can add products to your cart or to your wishlist, you can checkout and place an order via COD or online payment support that is integrated. It also includes selecting quanitity and sizes while placing an orders if they are dresses.
