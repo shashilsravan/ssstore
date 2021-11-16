@@ -28,7 +28,7 @@ export default function CartScreen({match, location, history }) {
         if (productId){
             dispatch(addToCart(productId, qty, size))
         }
-    }, [dispatch, productId, qty, size, cart, cartItems])
+    }, [])
     return (
         <div className="my-5 pb-5">
             <Meta title=" My Cart" />

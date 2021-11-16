@@ -25,6 +25,11 @@ export default function LoginScreen({ location, history }) {
         e.preventDefault()
         dispatch(login(email, password))
     }
+
+    const fillCreds = () => {
+        setEmail('user@test.com')
+        setPassword('test1234')
+    }
     
     return (
         <div className="my-5 py-5">
@@ -56,6 +61,10 @@ export default function LoginScreen({ location, history }) {
                     <button type="submit" className="btn btn-ssstore">
                         Login
                     </button>
+                    <button className='btn btn-outline-primary mt-3'
+                        onClick={fillCreds} >
+                        Guest Login
+                    </button>
                     <div className="row mt-2">
                         <div className="col">
                             New user? &nbsp;
@@ -74,6 +83,7 @@ export default function LoginScreen({ location, history }) {
                         </div>
                     </div>
                 </form>
+                
             </FormContainer>
         </div>
     )
