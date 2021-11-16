@@ -12,11 +12,12 @@
     "bootstrap": "^4.5.3",
     "firebase": "^8.2.3",
     "moment": "^2.29.1",
-    "node": "^17.1.0",
     "moment-timezone": "^0.5.32",
+    "node": "^16.1.0",
     "react": "^17.0.1",
     "react-accessible-accordion": "^3.3.3",
     "react-bootstrap": "^1.4.0",
+    "react-confirm-alert": "^2.7.0",
     "react-data-table-component": "^7.3.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
@@ -39,6 +40,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "build:test-app:testing": "NODE_OPTIONS=--openssl-legacy-provider ng build test-app --deploy-url  https://test-app.com/ --configuration=test-config",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
