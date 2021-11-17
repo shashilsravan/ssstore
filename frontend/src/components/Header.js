@@ -63,9 +63,6 @@ export default function Header() {
                                         <li><Link className="dropdown-item" to='/api/products/shopby/Men'>Men</Link></li>
                                         <li><Link className="dropdown-item" to='/api/products/shopby/Women'>Women</Link></li>
                                         <li><hr className="dropdown-divider" /></li>
-                                        <li><Link className="dropdown-item" to='/api/products/shopby/Boys'>Boys</Link></li>
-                                        <li><Link className="dropdown-item" to='/api/products/shopby/Girls'>Girls</Link></li>
-                                        <li><hr className="dropdown-divider" /></li>
                                         <li><Link className="dropdown-item" to="/premium">Premium</Link></li>
                                     </ul>
                                 </li>
